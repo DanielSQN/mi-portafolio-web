@@ -43,3 +43,12 @@ NEXT_PUBLIC_SITE_URL=https://tu-dominio.vercel.app
 El contenido principal vive en `src/data/portfolio.js`. Para agregar el PDF real del CV, colocalo en `public/` y cambia `profile.cvUrl` por la ruta del archivo, por ejemplo `/Daniel-Quintero-CV.pdf`.
 
 Los proyectos viven en `src/data/projects.json`; cada item puede tener `name`, `tags`, `description`, `accent` y `url`.
+Tambien puede tener `img`, apuntando a una imagen dentro de `public/`, por ejemplo `/projects/dashboard-financiero.png`.
+
+La foto personal debe ir en:
+
+```bash
+public/profile/daniel-quintero.png
+```
+
+Cuando exista ese archivo, la siguiente iteracion puede conectarlo en la seccion "Sobre mi".

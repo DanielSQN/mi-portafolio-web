@@ -1,40 +1,35 @@
-import { ArrowUpRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import projects from "@/data/projects.json";
+import ProjectsCarousel from "./ProjectsCarousel";
 import Reveal from "./Reveal";
-import SectionHeader from "./SectionHeader";
 
 export default function ProjectsSection() {
-  return (
-    <section className="section-shell content-grid" id="proyectos">
-      <SectionHeader
-        index="03"
-        label="Proyectos"
-        title={"Soluciones que conectan ideas con <span>impacto.</span>"}
-        copy="Proyectos personales y profesionales con enfoque en innovacion, escalabilidad y experiencia de usuario."
-      />
+  const sortedProjects = [...projects].sort(
+    (a, b) => (a.priority || 999) - (b.priority || 999)
+  );
+  const hasMoreProjects = sortedProjects.length > 5;
 
-      <div className="project-grid">
-        {projects.map((project, index) => (
-          <Reveal className="project-card glass-card" delay={index * 100} key={project.name}>
-            <div className={`project-shot ${project.accent}`}>
-              <span />
-              <span />
-              <span />
-            </div>
-            <div className="card-heading">
-              <h3>{project.name}</h3>
-              <a href={project.url || "#contacto"} aria-label={`Consultar sobre ${project.name}`}>
-                <ArrowUpRight size={18} />
-              </a>
-            </div>
-            <div className="tag-row">
-              {project.tags.map((tag) => (
-                <span key={tag}>{tag}</span>
-              ))}
-            </div>
-            <p>{project.description}</p>
-          </Reveal>
-        ))}
+  return (
+    <section className="section-shell" id="proyectos">
+      <div className="projects-showcase glass-card">
+        <Reveal className="projects-intro">
+          <p className="section-kicker">
+            <span>03</span> Proyectos destacados
+          </p>
+          <h2>
+            Soluciones que conectan ideas con <span>impacto.</span>
+          </h2>
+          <p>
+            Algunos proyectos personales y profesionales que reflejan mi enfoque
+            en innovacion, escalabilidad y experiencia de usuario.
+          </p>
+          <a className="ghost-button projects-cta" href="/proyectos">
+            Ver todos los proyectos <ArrowRight size={16} />
+          </a>
+          {hasMoreProjects ? <span className="projects-count">+{sortedProjects.length - 5} mas</span> : null}
+        </Reveal>
+
+        <ProjectsCarousel projects={sortedProjects} />
       </div>
     </section>
   );

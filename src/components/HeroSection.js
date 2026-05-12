@@ -1,25 +1,20 @@
 import {
   ArrowRight,
-  Bot,
-  Braces,
-  Cloud,
-  Code2,
-  Database,
-  MessageCircle,
-  Network,
-  Workflow
+  MessageCircle
 } from "lucide-react";
+import Image from "next/image";
 import { heroJson, profile, stats, typewriterSpecialties } from "@/data/portfolio";
+import HeroJsonCard from "./HeroJsonCard";
 import Reveal from "./Reveal";
 import TypewriterLine from "./TypewriterLine";
 
 const orbitItems = [
-  { label: "Next.js", icon: Code2 },
-  { label: "React", icon: Workflow },
-  { label: "Node.js", icon: Network },
-  { label: "OIC", icon: Cloud },
-  { label: "Python", icon: Bot },
-  { label: "PostgreSQL", icon: Database }
+  { label: "Next.js", icon: "/skills/nextjs.svg" },
+  { label: "React", icon: "/skills/react.svg" },
+  { label: "Node.js", icon: "/skills/nodejs.svg" },
+  { label: "Oracle", icon: "/skills/oracle.svg" },
+  { label: "Python", icon: "/skills/python.svg" },
+  { label: "PostgreSQL", icon: "/skills/postgresql.svg" }
 ];
 
 export default function HeroSection() {
@@ -45,39 +40,12 @@ export default function HeroSection() {
           <div className="orbit-scene" aria-label="Escena visual de tecnologia">
             <div className="orbit-ring orbit-ring-one" />
             <div className="orbit-ring orbit-ring-two" />
-            {orbitItems.map(({ label, icon: Icon }, index) => (
-              <span className={`orbit-chip orbit-chip-${index + 1}`} key={label}>
-                <Icon size={20} />
-                {label}
+            {orbitItems.map(({ label, icon }, index) => (
+              <span className={`orbit-chip orbit-chip-${index + 1}`} key={label} title={label}>
+                <Image alt={label} height={28} src={icon} width={28} />
               </span>
             ))}
-            <div className="laptop">
-              <div className="laptop-screen">
-                <div className="window-dot-row">
-                  <span />
-                  <span />
-                  <span />
-                </div>
-                <code>
-                  <span>{"{"}</span>
-                  <span>  &quot;ingeniero&quot;: &quot;{heroJson.ingeniero}&quot;,</span>
-                  <span>  &quot;sobre_mi&quot;: [</span>
-                  <span>    &quot;{heroJson.sobre_mi[0]}&quot;, &quot;{heroJson.sobre_mi[1]}&quot;,</span>
-                  <span>    &quot;{heroJson.sobre_mi[2]}&quot;, &quot;{heroJson.sobre_mi[3]}&quot;</span>
-                  <span>  ],</span>
-                  <span>  &quot;habilidades&quot;: [</span>
-                  <span>    &quot;{heroJson.habilidades[0]}&quot;,</span>
-                  <span>    &quot;{heroJson.habilidades[1]}&quot;,</span>
-                  <span>    &quot;{heroJson.habilidades[2]}&quot;,</span>
-                  <span>    &quot;{heroJson.habilidades[3]}&quot;</span>
-                  <span>  ],</span>
-                  <span>  &quot;objetivo&quot;: &quot;{heroJson.objetivo}&quot;</span>
-                  <span>{"}"}</span>
-                </code>
-                <Braces className="screen-braces" size={24} />
-              </div>
-              <div className="laptop-base" />
-            </div>
+            <HeroJsonCard data={heroJson} />
           </div>
         </Reveal>
       </div>

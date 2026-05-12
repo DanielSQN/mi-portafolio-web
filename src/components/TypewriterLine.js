@@ -38,7 +38,8 @@ export default function TypewriterLine({ words }) {
 
   return (
     <p className="typewriter-line" aria-live="polite">
-      Especializado en <span>{safeWords[wordIndex].slice(0, letterCount)}</span>
+      <span className="typewriter-prefix">Especializado en</span>{" "}
+      <span className="typewriter-word">{safeWords[wordIndex].slice(0, letterCount)}</span>
       <b aria-hidden="true" />
     </p>
   );
