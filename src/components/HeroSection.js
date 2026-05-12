@@ -27,7 +27,7 @@ export default function HeroSection() {
           <p>{profile.summary}</p>
           <TypewriterLine words={typewriterSpecialties} />
           <div className="hero-actions">
-            <a className="primary-button" href="#proyectos">
+            <a className="primary-button" href="/proyectos">
               Ver proyectos <ArrowRight size={18} />
             </a>
             <a className="ghost-button" href="#contacto">
