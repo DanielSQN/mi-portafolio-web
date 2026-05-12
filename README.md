@@ -41,3 +41,5 @@ NEXT_PUBLIC_SITE_URL=https://tu-dominio.vercel.app
 ## Contenido editable
 
 El contenido principal vive en `src/data/portfolio.js`. Para agregar el PDF real del CV, colocalo en `public/` y cambia `profile.cvUrl` por la ruta del archivo, por ejemplo `/Daniel-Quintero-CV.pdf`.
+
+Los proyectos viven en `src/data/projects.json`; cada item puede tener `name`, `tags`, `description`, `accent` y `url`.

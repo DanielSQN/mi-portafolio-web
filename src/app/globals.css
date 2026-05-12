@@ -179,7 +179,7 @@ body::before {
 .hero-copy,
 .section-copy,
 .contact-copy {
-  max-width: 480px;
+  max-width: 560px;
 }
 
 .eyebrow,
@@ -215,7 +215,7 @@ h2 {
 }
 
 h1 {
-  font-size: clamp(2.35rem, 4.2vw, 3.85rem);
+  font-size: clamp(2.55rem, 5.2vw, 4.85rem);
   margin-bottom: 22px;
 }
 
@@ -239,6 +239,35 @@ h3,
 p {
   color: var(--muted);
   line-height: 1.75;
+}
+
+.typewriter-line {
+  color: var(--text);
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono",
+    monospace;
+  font-size: clamp(0.98rem, 1.45vw, 1.28rem);
+  margin: 26px 0 30px;
+}
+
+.typewriter-line span {
+  color: var(--red);
+  font-weight: 700;
+}
+
+.typewriter-line b {
+  animation: cursor-blink 900ms steps(2, start) infinite;
+  background: var(--red);
+  display: inline-block;
+  height: 1.35em;
+  margin-left: 6px;
+  transform: translateY(4px);
+  width: 2px;
+}
+
+@keyframes cursor-blink {
+  50% {
+    opacity: 0;
+  }
 }
 
 .hero-actions,
@@ -365,9 +394,14 @@ p {
   right: 112px;
 }
 
+.orbit-chip-6 {
+  bottom: 34px;
+  left: 44%;
+}
+
 .laptop {
   position: relative;
-  transform: perspective(900px) rotateX(58deg) rotateZ(-7deg);
+  transform: perspective(900px) rotateX(12deg) rotateY(-10deg) rotateZ(-3deg);
   z-index: 1;
 }
 
@@ -380,9 +414,11 @@ p {
   box-shadow:
     0 32px 80px rgba(255, 45, 45, 0.18),
     inset 0 0 0 1px rgba(255, 255, 255, 0.04);
-  min-height: 210px;
-  padding: 14px;
-  width: min(460px, 70vw);
+  min-height: 310px;
+  overflow: hidden;
+  padding: 16px;
+  position: relative;
+  width: min(540px, 74vw);
 }
 
 .window-dot-row {
@@ -401,12 +437,22 @@ p {
 code {
   color: #f3f4f6;
   display: grid;
-  font-size: 0.82rem;
-  gap: 10px;
+  font-size: 0.66rem;
+  gap: 6px;
+  line-height: 1.28;
+  position: relative;
+  z-index: 1;
 }
 
 code span:nth-child(2n) {
   color: #ff7a7a;
+}
+
+.screen-braces {
+  bottom: 16px;
+  color: rgba(255, 45, 45, 0.3);
+  position: absolute;
+  right: 18px;
 }
 
 .laptop-base {
@@ -1008,13 +1054,18 @@ form .primary-button {
     right: 46px;
   }
 
+  .orbit-chip-6 {
+    bottom: 34px;
+    left: 45%;
+  }
+
   .laptop-screen {
-    min-height: 180px;
+    min-height: 260px;
     width: 280px;
   }
 
   code {
-    font-size: 0.68rem;
+    font-size: 0.48rem;
   }
 
   .stats-grid {

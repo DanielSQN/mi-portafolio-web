@@ -2,9 +2,9 @@ export const profile = {
   name: "Daniel Quintero",
   role: "Software Engineer",
   eyebrow: "Software Engineer",
-  headline: "Ingenieria que conecta negocio, automatizacion y experiencias digitales.",
+  headline: "Construyo soluciones que generan impacto.",
   summary:
-    "Especializado en integraciones enterprise, desarrollo web moderno e inteligencia artificial aplicada para crear soluciones que generan impacto.",
+    "Software Engineer especializado en desarrollo full stack, automatizacion y soluciones digitales de alto impacto.",
   location: "Bogota, Colombia",
   email: "dtqsn.dna@gmail.com",
   phone: "+57 302 386 6761",
@@ -15,6 +15,26 @@ export const profile = {
   cvUrl:
     "mailto:dtqsn.dna@gmail.com?subject=Solicitud%20de%20CV%20-%20Daniel%20Quintero"
 };
+
+export const heroJson = {
+  ingeniero: "Daniel Quintero",
+  sobre_mi: ["Software Engineer", "Motos", "Gaming", "Tecnología"],
+  habilidades: [
+    "Trabajo en equipo",
+    "Innovación",
+    "Resolución de problemas",
+    "Aprendizaje continuo"
+  ],
+  objetivo: "Construir soluciones que generen impacto"
+};
+
+export const typewriterSpecialties = [
+  "Desarrollo web",
+  "Python y automatizaciones",
+  "integraciones y APIs escalables",
+  "soluciones full stack",
+  "experiencias digitales"
+];
 
 export const stats = [
   { value: "7+", label: "Anos de experiencia" },
@@ -64,30 +84,6 @@ export const experience = [
     location: "Remoto",
     description:
       "Desarrollo de eCommerce con IA y modulos empresariales con Python y JavaScript."
-  }
-];
-
-export const projects = [
-  {
-    name: "Plataforma de Integraciones",
-    tags: ["Next.js", "OIC", "Oracle Cloud"],
-    description:
-      "Plataforma para orquestar integraciones empresariales con monitoreo en tiempo real.",
-    accent: "integrations"
-  },
-  {
-    name: "Extension IA para Productividad",
-    tags: ["JavaScript", "Python", "OpenAI"],
-    description:
-      "Extension de Chrome que utiliza IA para automatizar flujos y extraer informacion.",
-    accent: "ai"
-  },
-  {
-    name: "Dashboard Financiero",
-    tags: ["React", "OTBI", "Oracle Cloud"],
-    description:
-      "Dashboards interactivos para analisis de datos y toma de decisiones.",
-    accent: "dashboard"
   }
 ];
 

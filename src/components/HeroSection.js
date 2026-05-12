@@ -1,13 +1,25 @@
-import { ArrowRight, Bot, Cloud, Code2, Database, MessageCircle } from "lucide-react";
-import { profile, stats } from "@/data/portfolio";
+import {
+  ArrowRight,
+  Bot,
+  Braces,
+  Cloud,
+  Code2,
+  Database,
+  MessageCircle,
+  Network,
+  Workflow
+} from "lucide-react";
+import { heroJson, profile, stats, typewriterSpecialties } from "@/data/portfolio";
 import Reveal from "./Reveal";
+import TypewriterLine from "./TypewriterLine";
 
 const orbitItems = [
   { label: "Next.js", icon: Code2 },
-  { label: "React", icon: Bot },
-  { label: "Node.js", icon: Database },
+  { label: "React", icon: Workflow },
+  { label: "Node.js", icon: Network },
   { label: "OIC", icon: Cloud },
-  { label: "AI", icon: Bot }
+  { label: "Python", icon: Bot },
+  { label: "PostgreSQL", icon: Database }
 ];
 
 export default function HeroSection() {
@@ -16,11 +28,9 @@ export default function HeroSection() {
       <div className="hero-grid">
         <Reveal className="hero-copy">
           <p className="eyebrow">+ {profile.eyebrow}</p>
-          <h1>
-            Ingenieria que conecta negocio, <span>automatizacion</span> y
-            experiencias digitales.
-          </h1>
+          <h1>{profile.headline.replace("generan impacto.", "")}<span>generan impacto.</span></h1>
           <p>{profile.summary}</p>
+          <TypewriterLine words={typewriterSpecialties} />
           <div className="hero-actions">
             <a className="primary-button" href="#proyectos">
               Ver proyectos <ArrowRight size={18} />
@@ -49,12 +59,22 @@ export default function HeroSection() {
                   <span />
                 </div>
                 <code>
-                  <span>const portfolio = {"{"}</span>
-                  <span>  engineer: &quot;Daniel&quot;,</span>
-                  <span>  focus: &quot;Integrations&quot;,</span>
-                  <span>  impact: &quot;Automation&quot;</span>
+                  <span>{"{"}</span>
+                  <span>  &quot;ingeniero&quot;: &quot;{heroJson.ingeniero}&quot;,</span>
+                  <span>  &quot;sobre_mi&quot;: [</span>
+                  <span>    &quot;{heroJson.sobre_mi[0]}&quot;, &quot;{heroJson.sobre_mi[1]}&quot;,</span>
+                  <span>    &quot;{heroJson.sobre_mi[2]}&quot;, &quot;{heroJson.sobre_mi[3]}&quot;</span>
+                  <span>  ],</span>
+                  <span>  &quot;habilidades&quot;: [</span>
+                  <span>    &quot;{heroJson.habilidades[0]}&quot;,</span>
+                  <span>    &quot;{heroJson.habilidades[1]}&quot;,</span>
+                  <span>    &quot;{heroJson.habilidades[2]}&quot;,</span>
+                  <span>    &quot;{heroJson.habilidades[3]}&quot;</span>
+                  <span>  ],</span>
+                  <span>  &quot;objetivo&quot;: &quot;{heroJson.objetivo}&quot;</span>
                   <span>{"}"}</span>
                 </code>
+                <Braces className="screen-braces" size={24} />
               </div>
               <div className="laptop-base" />
             </div>

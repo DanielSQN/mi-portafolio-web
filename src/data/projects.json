@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Plataforma de Integraciones",
+    "tags": ["Next.js", "OIC", "Oracle Cloud"],
+    "description": "Plataforma para orquestar integraciones empresariales con monitoreo en tiempo real.",
+    "accent": "integrations",
+    "url": "#"
+  },
+  {
+    "name": "Extension IA para Productividad",
+    "tags": ["JavaScript", "Python", "OpenAI"],
+    "description": "Extension de Chrome que utiliza IA para automatizar flujos y extraer informacion.",
+    "accent": "ai",
+    "url": "#"
+  },
+  {
+    "name": "Dashboard Financiero",
+    "tags": ["React", "OTBI", "Oracle Cloud"],
+    "description": "Dashboards interactivos para analisis de datos y toma de decisiones.",
+    "accent": "dashboard",
+    "url": "#"
+  }
+]
