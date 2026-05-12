@@ -41,9 +41,8 @@ export default function HeroSection() {
             <div className="orbit-ring orbit-ring-one" />
             <div className="orbit-ring orbit-ring-two" />
             {orbitItems.map(({ label, icon }, index) => (
-              <span className={`orbit-chip orbit-chip-${index + 1}`} key={label}>
-                <Image alt="" height={20} src={icon} width={20} />
-                {label}
+              <span className={`orbit-chip orbit-chip-${index + 1}`} key={label} title={label}>
+                <Image alt={label} height={28} src={icon} width={28} />
               </span>
             ))}
             <HeroJsonCard data={heroJson} />

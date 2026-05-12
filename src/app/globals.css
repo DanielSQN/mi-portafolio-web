@@ -353,14 +353,7 @@ p {
 }
 
 .orbit-scene::after {
-  background: radial-gradient(circle, rgba(255, 45, 45, 0.24), transparent 62%);
-  border-radius: 50%;
-  bottom: 56px;
-  content: "";
-  filter: blur(8px);
-  height: 90px;
-  position: absolute;
-  width: 78%;
+  display: none;
 }
 
 .orbit-ring {
@@ -387,10 +380,11 @@ p {
   border-radius: 999px;
   color: var(--muted);
   display: inline-flex;
-  font-size: 0.82rem;
-  gap: 10px;
-  padding: 11px 15px;
+  height: 62px;
+  justify-content: center;
+  padding: 0;
   position: absolute;
+  width: 62px;
   z-index: 2;
 }
 
@@ -400,37 +394,37 @@ p {
 
 .orbit-chip img {
   filter: drop-shadow(0 0 8px rgba(255, 45, 45, 0.34));
-  height: 24px;
+  height: 30px;
   object-fit: contain;
-  width: 24px;
+  width: 30px;
 }
 
 .orbit-chip-1 {
-  top: 42px;
+  top: 38px;
 }
 
 .orbit-chip-2 {
-  left: -18px;
-  top: 122px;
+  left: 8px;
+  top: 120px;
 }
 
 .orbit-chip-3 {
-  right: -20px;
-  top: 156px;
+  right: 8px;
+  top: 148px;
 }
 
 .orbit-chip-4 {
-  bottom: 70px;
-  left: -6px;
+  bottom: 68px;
+  left: 18px;
 }
 
 .orbit-chip-5 {
-  bottom: 64px;
-  right: 130px;
+  bottom: 58px;
+  right: 132px;
 }
 
 .orbit-chip-6 {
-  bottom: 2px;
+  bottom: 0;
   left: 42%;
 }
 
@@ -445,7 +439,7 @@ p {
 }
 
 .laptop:hover {
-  filter: drop-shadow(0 24px 70px rgba(255, 45, 45, 0.22));
+  filter: none;
 }
 
 .laptop-screen {
@@ -455,7 +449,6 @@ p {
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 8px;
   box-shadow:
-    0 32px 80px rgba(255, 45, 45, 0.18),
     inset 0 0 0 1px rgba(255, 255, 255, 0.04);
   min-height: 310px;
   overflow: hidden;
@@ -519,12 +512,7 @@ code {
 }
 
 .laptop-base {
-  background: linear-gradient(90deg, #090a0d, #272a32, #08090c);
-  border-radius: 0 0 18px 18px;
-  height: 26px;
-  margin: 0 auto;
-  width: 88%;
-  transform: translateZ(4px);
+  display: none;
 }
 
 .stats-grid {
@@ -814,19 +802,21 @@ code {
 }
 
 .projects-page {
-  padding-top: 46px;
+  padding-top: 28px;
   padding-bottom: 90px;
 }
 
 .back-link {
   backdrop-filter: blur(14px);
   margin-bottom: 28px;
-  position: sticky;
+  position: fixed;
+  left: max(18px, calc((100vw - var(--max-width)) / 2 + 18px));
   top: 18px;
   z-index: 10;
 }
 
 .projects-page-header {
+  padding-top: 74px;
   max-width: 760px;
 }
 
@@ -1245,51 +1235,53 @@ form .primary-button {
   }
 
   .orbit-chip {
-    font-size: 0;
-    padding: 10px;
+    height: 54px;
+    padding: 0;
+    width: 54px;
   }
 
   .orbit-chip img {
-    height: 20px;
-    width: 20px;
+    height: 28px;
+    width: 28px;
   }
 
   .orbit-chip-1 {
-    top: 56px;
+    top: 8px;
+    left: calc(50% - 27px);
   }
 
   .orbit-chip-2 {
-    left: 0;
-    top: 126px;
+    left: 16px;
+    top: 118px;
   }
 
   .orbit-chip-3 {
-    right: 0;
-    top: 138px;
+    right: 16px;
+    top: 118px;
   }
 
   .orbit-chip-4 {
-    bottom: 72px;
-    left: 22px;
+    bottom: 28px;
+    left: 30px;
   }
 
   .orbit-chip-5 {
-    bottom: 68px;
-    right: 44px;
+    bottom: 28px;
+    right: 30px;
   }
 
   .orbit-chip-6 {
-    bottom: 12px;
-    left: 45%;
+    bottom: -10px;
+    left: calc(50% - 27px);
   }
 
   .laptop-screen {
-    min-height: 260px;
-    width: 280px;
+    min-height: 318px;
+    width: min(390px, 92vw);
   }
 
   code {
-    font-size: 0.48rem;
+    font-size: 0.6rem;
   }
 
   .stats-grid {

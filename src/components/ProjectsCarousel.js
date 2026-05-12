@@ -9,12 +9,12 @@ export default function ProjectsCarousel({ projects }) {
   const trackRef = useRef(null);
   const intervalRef = useRef(null);
 
-  const visibleProjects = useMemo(() => projects.slice(0, 5), [projects]);
+  const visibleProjects = useMemo(() => projects.slice(0, 6), [projects]);
   const dotCount = Math.min(2, visibleProjects.length);
+  const groupSize = Math.ceil(visibleProjects.length / dotCount);
 
   function scrollToProject(index) {
-    const targetIndex =
-      dotCount > 1 ? Math.round((index * (visibleProjects.length - 1)) / (dotCount - 1)) : 0;
+    const targetIndex = index * groupSize;
     const nextIndex = (targetIndex + visibleProjects.length) % visibleProjects.length;
     const track = trackRef.current;
     const card = track?.children[nextIndex];
@@ -33,7 +33,9 @@ export default function ProjectsCarousel({ projects }) {
 
     intervalRef.current = window.setInterval(() => {
       setActiveIndex((current) => {
-        const next = (current + 1) % visibleProjects.length;
+        const currentGroup = Math.floor(current / groupSize);
+        const nextGroup = (currentGroup + 1) % dotCount;
+        const next = nextGroup * groupSize;
         const track = trackRef.current;
         const card = track?.children[next];
 
@@ -49,7 +51,29 @@ export default function ProjectsCarousel({ projects }) {
     }, 4200);
 
     return () => window.clearInterval(intervalRef.current);
-  }, [visibleProjects.length]);
+  }, [dotCount, groupSize, visibleProjects.length]);
+
+  useEffect(() => {
+    const track = trackRef.current;
+    if (!track) return undefined;
+
+    const syncActiveDot = () => {
+      const cards = Array.from(track.children);
+      const nearestIndex = cards.reduce((nearest, card, index) => {
+        const distance = Math.abs(card.offsetLeft - track.scrollLeft - track.offsetLeft);
+        const nearestDistance = Math.abs(
+          cards[nearest].offsetLeft - track.scrollLeft - track.offsetLeft
+        );
+
+        return distance < nearestDistance ? index : nearest;
+      }, 0);
+
+      setActiveIndex(nearestIndex);
+    };
+
+    track.addEventListener("scroll", syncActiveDot, { passive: true });
+    return () => track.removeEventListener("scroll", syncActiveDot);
+  }, []);
 
   return (
     <div className="project-carousel" aria-label="Proyectos destacados">
@@ -62,10 +86,7 @@ export default function ProjectsCarousel({ projects }) {
       </div>
       <div className="project-dots" aria-label="Navegacion de proyectos">
         {Array.from({ length: dotCount }).map((_, index) => {
-          const targetIndex =
-            dotCount > 1 ? Math.round((index * (visibleProjects.length - 1)) / (dotCount - 1)) : 0;
-
-          const isActive = index === 0 ? activeIndex < targetIndex : activeIndex >= targetIndex;
+          const isActive = Math.floor(activeIndex / groupSize) === index;
 
           return (
             <button
