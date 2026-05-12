@@ -4,6 +4,7 @@
     "tags": ["Next.js", "OIC", "Oracle Cloud"],
     "description": "Plataforma para orquestar integraciones empresariales con monitoreo en tiempo real.",
     "accent": "integrations",
+    "img": "/projects/plataforma-integraciones.png",
     "url": "#"
   },
   {
@@ -11,6 +12,7 @@
     "tags": ["JavaScript", "Python", "OpenAI"],
     "description": "Extension de Chrome que utiliza IA para automatizar flujos y extraer informacion.",
     "accent": "ai",
+    "img": "/projects/extension-ia-productividad.png",
     "url": "#"
   },
   {
@@ -18,6 +20,7 @@
     "tags": ["React", "OTBI", "Oracle Cloud"],
     "description": "Dashboards interactivos para analisis de datos y toma de decisiones.",
     "accent": "dashboard",
+    "img": "/projects/dashboard-financiero.png",
     "url": "#"
   }
 ]

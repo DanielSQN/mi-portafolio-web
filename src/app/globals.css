@@ -138,8 +138,25 @@ body::before {
 }
 
 .nav-links a:hover,
-.nav-links a:focus-visible {
+.nav-links a:focus-visible,
+.nav-links a.is-active {
   color: var(--red);
+}
+
+.nav-links a.is-active {
+  position: relative;
+}
+
+.nav-links a.is-active::after {
+  background: var(--red);
+  border-radius: 999px;
+  bottom: -14px;
+  content: "";
+  height: 5px;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  width: 5px;
 }
 
 .menu-toggle {
@@ -243,15 +260,26 @@ p {
 
 .typewriter-line {
   color: var(--text);
+  display: block;
   font-family: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono",
     monospace;
   font-size: clamp(0.98rem, 1.45vw, 1.28rem);
   margin: 26px 0 30px;
+  max-width: 100%;
+  overflow-wrap: anywhere;
 }
 
-.typewriter-line span {
+.typewriter-prefix {
+  color: var(--text);
+}
+
+.typewriter-word {
   color: var(--red);
+  display: inline;
   font-weight: 700;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .typewriter-line b {
@@ -444,8 +472,27 @@ code {
   z-index: 1;
 }
 
-code span:nth-child(2n) {
-  color: #ff7a7a;
+.json-code {
+  border-left: 1px solid rgba(255, 255, 255, 0.16);
+  padding-left: 18px;
+  white-space: pre-wrap;
+}
+
+.json-key {
+  color: #7df09b;
+  font-weight: 700;
+}
+
+.json-value {
+  color: #9fd2ff;
+}
+
+.json-bracket {
+  color: #ffd400;
+}
+
+.json-indent {
+  padding-left: 26px;
 }
 
 .screen-braces {
@@ -570,11 +617,21 @@ code span:nth-child(2n) {
   position: relative;
 }
 
+.project-shot img {
+  object-fit: cover;
+  transition: transform 240ms ease;
+}
+
+.project-card:hover .project-shot img {
+  transform: scale(1.04);
+}
+
 .project-shot::before {
   content: "";
   inset: 0;
   opacity: 0.7;
   position: absolute;
+  z-index: 1;
 }
 
 .project-shot span {
@@ -941,6 +998,13 @@ form .primary-button {
     display: none;
     grid-column: 1 / -1;
     padding: 14px;
+  }
+
+  .nav-links a.is-active::after {
+    bottom: 50%;
+    left: auto;
+    right: 0;
+    transform: translateY(50%);
   }
 
   .nav-links.is-open {

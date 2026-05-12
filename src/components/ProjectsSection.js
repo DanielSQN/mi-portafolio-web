@@ -1,4 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 import projects from "@/data/projects.json";
 import Reveal from "./Reveal";
 import SectionHeader from "./SectionHeader";
@@ -17,9 +18,20 @@ export default function ProjectsSection() {
         {projects.map((project, index) => (
           <Reveal className="project-card glass-card" delay={index * 100} key={project.name}>
             <div className={`project-shot ${project.accent}`}>
-              <span />
-              <span />
-              <span />
+              {project.img ? (
+                <Image
+                  src={project.img}
+                  alt={`Vista previa de ${project.name}`}
+                  fill
+                  sizes="(max-width: 980px) 100vw, 33vw"
+                />
+              ) : (
+                <>
+                  <span />
+                  <span />
+                  <span />
+                </>
+              )}
             </div>
             <div className="card-heading">
               <h3>{project.name}</h3>

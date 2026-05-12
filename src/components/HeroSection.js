@@ -13,6 +13,14 @@ import { heroJson, profile, stats, typewriterSpecialties } from "@/data/portfoli
 import Reveal from "./Reveal";
 import TypewriterLine from "./TypewriterLine";
 
+function JsonKey({ children }) {
+  return <span className="json-key">&quot;{children}&quot;</span>;
+}
+
+function JsonValue({ children }) {
+  return <span className="json-value">&quot;{children}&quot;</span>;
+}
+
 const orbitItems = [
   { label: "Next.js", icon: Code2 },
   { label: "React", icon: Workflow },
@@ -58,21 +66,41 @@ export default function HeroSection() {
                   <span />
                   <span />
                 </div>
-                <code>
-                  <span>{"{"}</span>
-                  <span>  &quot;ingeniero&quot;: &quot;{heroJson.ingeniero}&quot;,</span>
-                  <span>  &quot;sobre_mi&quot;: [</span>
-                  <span>    &quot;{heroJson.sobre_mi[0]}&quot;, &quot;{heroJson.sobre_mi[1]}&quot;,</span>
-                  <span>    &quot;{heroJson.sobre_mi[2]}&quot;, &quot;{heroJson.sobre_mi[3]}&quot;</span>
-                  <span>  ],</span>
-                  <span>  &quot;habilidades&quot;: [</span>
-                  <span>    &quot;{heroJson.habilidades[0]}&quot;,</span>
-                  <span>    &quot;{heroJson.habilidades[1]}&quot;,</span>
-                  <span>    &quot;{heroJson.habilidades[2]}&quot;,</span>
-                  <span>    &quot;{heroJson.habilidades[3]}&quot;</span>
-                  <span>  ],</span>
-                  <span>  &quot;objetivo&quot;: &quot;{heroJson.objetivo}&quot;</span>
-                  <span>{"}"}</span>
+                <code className="json-code">
+                  <span className="json-bracket">{"{"}</span>
+                  <span>
+                    <JsonKey>ingeniero</JsonKey>: <JsonValue>{heroJson.ingeniero}</JsonValue>,
+                  </span>
+                  <span>
+                    <JsonKey>sobre_mi</JsonKey>: <span className="json-bracket">[</span>
+                  </span>
+                  <span className="json-indent">
+                    <JsonValue>{heroJson.sobre_mi[0]}</JsonValue>,{" "}
+                    <JsonValue>{heroJson.sobre_mi[1]}</JsonValue>,
+                  </span>
+                  <span className="json-indent">
+                    <JsonValue>{heroJson.sobre_mi[2]}</JsonValue>,{" "}
+                    <JsonValue>{heroJson.sobre_mi[3]}</JsonValue>
+                  </span>
+                  <span>
+                    <span className="json-bracket">]</span>,
+                  </span>
+                  <span>
+                    <JsonKey>habilidades</JsonKey>: <span className="json-bracket">[</span>
+                  </span>
+                  {heroJson.habilidades.map((skill, index) => (
+                    <span className="json-indent" key={skill}>
+                      <JsonValue>{skill}</JsonValue>
+                      {index < heroJson.habilidades.length - 1 ? "," : ""}
+                    </span>
+                  ))}
+                  <span>
+                    <span className="json-bracket">]</span>,
+                  </span>
+                  <span>
+                    <JsonKey>objetivo</JsonKey>: <JsonValue>{heroJson.objetivo}</JsonValue>
+                  </span>
+                  <span className="json-bracket">{"}"}</span>
                 </code>
                 <Braces className="screen-braces" size={24} />
               </div>

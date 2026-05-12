@@ -1,12 +1,35 @@
 "use client";
 
 import { Download, Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { navItems, profile } from "@/data/portfolio";
 import Logo from "./Logo";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [activeHref, setActiveHref] = useState(navItems[0]?.href || "#inicio");
+
+  useEffect(() => {
+    const updateActiveSection = () => {
+      const marker = window.scrollY + window.innerHeight * 0.64;
+      const current = navItems.reduce((active, item) => {
+        const section = document.querySelector(item.href);
+        if (!section) return active;
+        return section.offsetTop <= marker ? item.href : active;
+      }, navItems[0]?.href || "#inicio");
+
+      setActiveHref(current);
+    };
+
+    updateActiveSection();
+    window.addEventListener("scroll", updateActiveSection, { passive: true });
+    window.addEventListener("resize", updateActiveSection);
+
+    return () => {
+      window.removeEventListener("scroll", updateActiveSection);
+      window.removeEventListener("resize", updateActiveSection);
+    };
+  }, []);
 
   return (
     <header className="site-header">
@@ -25,7 +48,15 @@ export default function Navbar() {
 
         <div className={`nav-links ${open ? "is-open" : ""}`}>
           {navItems.map((item) => (
-            <a key={item.href} href={item.href} onClick={() => setOpen(false)}>
+            <a
+              className={activeHref === item.href ? "is-active" : ""}
+              key={item.href}
+              href={item.href}
+              onClick={() => {
+                setActiveHref(item.href);
+                setOpen(false);
+              }}
+            >
               {item.label}
             </a>
           ))}
