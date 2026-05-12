@@ -32,7 +32,7 @@ export default function Navbar() {
         </div>
 
         <a className="ghost-button nav-cv" href={profile.cvUrl}>
-          Descargar CV <Download size={15} />
+          {profile.cvLabel} <Download size={15} />
         </a>
       </nav>
     </header>

@@ -10,7 +10,10 @@ export const profile = {
   phone: "+57 302 386 6761",
   linkedin: "linkedin.com/in/danielquinteon",
   github: "github.com/DanielSQN",
-  cvUrl: "#"
+  siteUrl: "https://mi-portafolio-web.vercel.app",
+  cvLabel: "Solicitar CV",
+  cvUrl:
+    "mailto:dtqsn.dna@gmail.com?subject=Solicitud%20de%20CV%20-%20Daniel%20Quintero"
 };
 
 export const stats = [
@@ -131,6 +134,6 @@ export const interests = [
 
 export const socialLinks = [
   { label: "GitHub", href: "https://github.com/DanielSQN" },
-  { label: "LinkedIn", href: "https://linkedin.com" },
+  { label: "LinkedIn", href: "https://linkedin.com/in/danielquinteon" },
   { label: "Email", href: "mailto:dtqsn.dna@gmail.com" }
 ];

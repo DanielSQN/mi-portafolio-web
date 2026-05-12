@@ -20,3 +20,24 @@ npm run build
 ## Etapas
 
 La primera etapa entrega una home completa responsive con animaciones de aparición en scroll. Las siguientes etapas sugeridas son formulario real, detalle de proyectos, SEO avanzado y deploy.
+
+## Deploy en Vercel
+
+1. Importa `DanielSQN/mi-portafolio-web` en Vercel.
+2. Usa `main` como production branch.
+3. Mantén los comandos por defecto:
+
+```bash
+npm install
+npm run build
+```
+
+4. Cuando tengas la URL final, configura esta variable para SEO:
+
+```bash
+NEXT_PUBLIC_SITE_URL=https://tu-dominio.vercel.app
+```
+
+## Contenido editable
+
+El contenido principal vive en `src/data/portfolio.js`. Para agregar el PDF real del CV, colocalo en `public/` y cambia `profile.cvUrl` por la ruta del archivo, por ejemplo `/Daniel-Quintero-CV.pdf`.
