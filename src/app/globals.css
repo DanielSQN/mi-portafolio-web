@@ -264,8 +264,10 @@ p {
   font-family: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono",
     monospace;
   font-size: clamp(0.98rem, 1.45vw, 1.28rem);
+  line-height: 1.55;
   margin: 26px 0 30px;
   max-width: 100%;
+  min-height: calc(1.55em * 2);
   overflow-wrap: anywhere;
 }
 
@@ -1213,6 +1215,10 @@ form .primary-button {
 
   h2 {
     font-size: 2rem;
+  }
+
+  .typewriter-line {
+    min-height: calc(1.55em * 3);
   }
 
   .hero-actions {
