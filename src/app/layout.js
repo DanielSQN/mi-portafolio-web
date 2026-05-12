@@ -10,7 +10,7 @@ export const metadata = {
     template: "%s | Daniel Quintero"
   },
   description:
-    "Portafolio de Daniel Quintero, Software Engineer especializado en integraciones empresariales, automatizacion e inteligencia artificial.",
+    "Software Engineer especializado en desarrollo full stack, automatizacion y soluciones digitales de alto impacto.",
   applicationName: "Daniel Quintero Portfolio",
   authors: [{ name: "Daniel Quintero", url: siteUrl }],
   creator: "Daniel Quintero",
@@ -32,7 +32,7 @@ export const metadata = {
   openGraph: {
     title: "Daniel Quintero | Software Engineer",
     description:
-      "Ingenieria que conecta negocio, automatizacion y experiencias digitales.",
+      "Construyo soluciones que generan impacto.",
     url: "/",
     siteName: "Daniel Quintero Portfolio",
     locale: "es_CO",
@@ -50,7 +50,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Daniel Quintero | Software Engineer",
     description:
-      "Ingenieria que conecta negocio, automatizacion y experiencias digitales.",
+      "Construyo soluciones que generan impacto.",
     images: ["/opengraph-image"]
   },
   robots: {

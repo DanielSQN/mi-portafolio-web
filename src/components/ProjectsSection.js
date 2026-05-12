@@ -1,5 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
-import { projects } from "@/data/portfolio";
+import projects from "@/data/projects.json";
 import Reveal from "./Reveal";
 import SectionHeader from "./SectionHeader";
 
@@ -23,7 +23,7 @@ export default function ProjectsSection() {
             </div>
             <div className="card-heading">
               <h3>{project.name}</h3>
-              <a href="#contacto" aria-label={`Consultar sobre ${project.name}`}>
+              <a href={project.url || "#contacto"} aria-label={`Consultar sobre ${project.name}`}>
                 <ArrowUpRight size={18} />
               </a>
             </div>

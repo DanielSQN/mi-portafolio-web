@@ -61,14 +61,13 @@ export default function Image() {
               margin: 0
             }}
           >
-            Ingenieria que conecta negocio,{" "}
-            <span style={{ color: "#ff2d2d" }}>automatizacion</span> y experiencias
-            digitales.
+            Construyo soluciones que{" "}
+            <span style={{ color: "#ff2d2d" }}>generan impacto.</span>
           </h1>
 
           <p style={{ color: "#c7c7d1", fontSize: 25, lineHeight: 1.45, margin: 0 }}>
-            Integraciones enterprise, desarrollo web moderno e inteligencia artificial
-            aplicada.
+            Software Engineer especializado en desarrollo full stack, automatizacion y
+            soluciones digitales de alto impacto.
           </p>
         </div>
 
