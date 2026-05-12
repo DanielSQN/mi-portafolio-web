@@ -4,6 +4,9 @@ import Reveal from "./Reveal";
 import SectionHeader from "./SectionHeader";
 
 export default function CertificationsSection() {
+  const visibleCertifications = certifications.slice(0, 7);
+  const hasMoreCertifications = certifications.length > visibleCertifications.length;
+
   return (
     <section className="section-shell content-grid" id="certificaciones">
       <SectionHeader
@@ -14,7 +17,7 @@ export default function CertificationsSection() {
       />
 
       <div className="cert-grid">
-        {certifications.map((certification, index) => (
+        {visibleCertifications.map((certification, index) => (
           <Reveal className="cert-card glass-card" delay={index * 70} key={certification}>
             <span className="cert-icon">
               <Award size={20} />
@@ -22,11 +25,13 @@ export default function CertificationsSection() {
             <strong>{certification}</strong>
           </Reveal>
         ))}
-        <Reveal className="cert-action" delay={certifications.length * 70}>
-          <a className="ghost-button" href="#contacto">
-            Ver todas las certificaciones <ArrowRight size={16} />
-          </a>
-        </Reveal>
+        {hasMoreCertifications ? (
+          <Reveal className="cert-action" delay={visibleCertifications.length * 70}>
+            <a className="ghost-button" href="/certificaciones">
+              Ver todas las certificaciones <ArrowRight size={16} />
+            </a>
+          </Reveal>
+        ) : null}
       </div>
     </section>
   );

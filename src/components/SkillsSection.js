@@ -1,4 +1,4 @@
-import { ChevronRight, Code2, Cloud, DatabaseZap, GitBranch, Sparkles } from "lucide-react";
+import { Code2, Cloud, DatabaseZap, GitBranch, Sparkles } from "lucide-react";
 import { skillGroups } from "@/data/portfolio";
 import Reveal from "./Reveal";
 import SectionHeader from "./SectionHeader";
@@ -29,7 +29,6 @@ export default function SkillsSection() {
                   <span key={skill}>{skill}</span>
                 ))}
               </div>
-              <ChevronRight className="skill-arrow" size={18} />
             </Reveal>
           );
         })}

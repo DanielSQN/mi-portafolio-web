@@ -23,6 +23,9 @@ export default function HeroSection() {
       <div className="hero-grid">
         <Reveal className="hero-copy">
           <p className="eyebrow">+ {profile.eyebrow}</p>
+          <p className="hero-intro">
+            Hola, soy <span>{profile.name}</span>.
+          </p>
           <h1>{profile.headline.replace("generan impacto.", "")}<span>generan impacto.</span></h1>
           <p>{profile.summary}</p>
           <TypewriterLine words={typewriterSpecialties} />
