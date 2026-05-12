@@ -602,6 +602,49 @@ code {
   position: relative;
 }
 
+.timeline-roles {
+  display: grid;
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.timeline-role {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 14px;
+}
+
+.timeline-role-heading {
+  align-items: baseline;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+.timeline-role-heading strong {
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.timeline-role-heading span {
+  color: var(--red);
+  flex: 0 0 auto;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.timeline-role ul {
+  color: var(--muted);
+  display: grid;
+  gap: 7px;
+  line-height: 1.55;
+  margin: 12px 0 0;
+  padding-left: 18px;
+}
+
+.timeline-role li::marker {
+  color: var(--red);
+}
+
 .pill {
   align-items: center;
   background: rgba(255, 255, 255, 0.06);
@@ -1298,6 +1341,12 @@ form .primary-button {
 
   .timeline-item::before {
     left: -25px;
+  }
+
+  .timeline-role-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
   }
 
   .skill-row {

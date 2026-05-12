@@ -19,7 +19,7 @@ export const profile = {
 
 export const heroJson = {
   ingeniero: "Daniel Quintero",
-  sobre_mi: ["Cristiano", "Software Engineer", "Motos", "Gaming", "Tecnología"],
+  sobre_mi: ["Hijo de Dios", "Software Engineer", "Motos", "Gaming", "Tecnología"],
   habilidades: [
     "Trabajo en equipo",
     "Innovación",
@@ -55,23 +55,59 @@ export const navItems = [
 
 export const experience = [
   {
-    period: "2023 - Actualidad",
+    period: "Dic 2023 - Actualidad",
     company: "COLFONDOS S.A.",
-    role: "Software Engineer / Front-end & Integrations Specialist",
     location: "Bogota, Colombia",
-    description:
-      "Lider en implementaciones CRM e integraciones regulatorias. Desarrollo de interfaces, APIs y automatizacion de procesos."
+    roles: [
+      {
+        period: "Abr 2024 - Actualidad",
+        title: "Software Engineer / Front-end & Integrations Specialist",
+        details: [
+          "Lideré implementaciones CRM e integraciones regulatorias con la Superfinanciera para flujos PQRS.",
+          "Construí interfaces web conectadas a microservicios internos y sistemas core.",
+          "Diseñé integraciones entre plataformas empresariales mediante APIs y middleware cloud.",
+          "Personalicé soluciones CRM usando SQL, Groovy y analítica OTBI.",
+          "Mejoré procesos operativos y experiencia digital del cliente."
+        ]
+      },
+      {
+        period: "Dic 2023 - Abr 2024",
+        title: "Ingeniero Jr de Proyectos Agiles",
+        details: [
+          "Gestioné backlog evolutivo y requerimientos tecnológicos.",
+          "Brindé soporte funcional y técnico sobre ecosistema Oracle.",
+          "Participé en iniciativas de mejora continua."
+        ]
+      }
+    ]
   },
   {
-    period: "2018 - 2023",
+    period: "Sep 2018 - Ago 2023",
     company: "TIMESTAMP (Aion Innovation)",
-    role: "Integration Developer / Oracle Consultant",
     location: "Bogota, Colombia",
-    description:
-      "Implementacion de integraciones empresariales para clientes del sector financiero con OIC, Visual Builder y OTB."
+    roles: [
+      {
+        period: "Feb 2023 - Ago 2023",
+        title: "Architecture & Innovation Specialist",
+        details: [
+          "Lideré iniciativas de innovación tecnológica y mejora de procesos internos.",
+          "Investigación y adopción de nuevas soluciones para eficiencia operativa."
+        ]
+      },
+      {
+        period: "Sep 2018 - Mar 2023",
+        title: "Consultor Técnico Oracle / Integration Developer",
+        details: [
+          "Implementé integraciones empresariales para clientes del sector financiero.",
+          "Desarrollé soluciones cloud con Oracle Integration Cloud, Visual Builder y OTBI.",
+          "Automaticé procesos mediante APIs REST/SOAP.",
+          "Realicé soporte técnico especializado y diseño funcional."
+        ]
+      }
+    ]
   },
   {
-    period: "2023",
+    period: "Sep 2023 - Dic 2023",
     company: "ITIS",
     role: "Consultor Tecnico Oracle",
     location: "Bogota, Colombia",
@@ -79,12 +115,12 @@ export const experience = [
       "Diseno tecnico funcional para integraciones entre ERP, OIC y plataformas empresariales."
   },
   {
-    period: "2023",
-    company: "PICURT",
+    period: "Jul 2023 - Sep 2023",
+    company: "PICURIT",
     role: "Full Stack Developer Freelance",
-    location: "Remoto",
+    location: "Bogota, Colombia",
     description:
-      "Desarrollo de eCommerce con IA y modulos empresariales con Python y JavaScript."
+      "Desarrollo de extensión Chrome integrada con APIs de IA y construcción de módulos empresariales con Python y JavaScript."
   }
 ];
 
