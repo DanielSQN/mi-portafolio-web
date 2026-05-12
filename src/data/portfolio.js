@@ -56,11 +56,13 @@ export const navItems = [
 export const experience = [
   {
     period: "Dic 2023 - Actualidad",
+    duration: "2 años 5 meses",
     company: "COLFONDOS S.A.",
     location: "Bogota, Colombia",
     roles: [
       {
         period: "Abr 2024 - Actualidad",
+        duration: "2 años 1 mes",
         title: "Software Engineer / Front-end & Integrations Specialist",
         details: [
           "Lideré implementaciones CRM e integraciones regulatorias con la Superfinanciera para flujos PQRS.",
@@ -72,6 +74,7 @@ export const experience = [
       },
       {
         period: "Dic 2023 - Abr 2024",
+        duration: "4 meses",
         title: "Ingeniero Jr de Proyectos Agiles",
         details: [
           "Gestioné backlog evolutivo y requerimientos tecnológicos.",
@@ -83,11 +86,13 @@ export const experience = [
   },
   {
     period: "Sep 2018 - Ago 2023",
-    company: "TIMESTAMP (Aion Innovation)",
+    duration: "4 años 11 meses",
+    company: "TIMESTAMP (Arin Innovation)",
     location: "Bogota, Colombia",
     roles: [
       {
         period: "Feb 2023 - Ago 2023",
+        duration: "6 meses",
         title: "Architecture & Innovation Specialist",
         details: [
           "Lideré iniciativas de innovación tecnológica y mejora de procesos internos.",
@@ -96,6 +101,7 @@ export const experience = [
       },
       {
         period: "Sep 2018 - Mar 2023",
+        duration: "4 años 6 meses",
         title: "Consultor Técnico Oracle / Integration Developer",
         details: [
           "Implementé integraciones empresariales para clientes del sector financiero.",
@@ -108,19 +114,36 @@ export const experience = [
   },
   {
     period: "Sep 2023 - Dic 2023",
+    duration: "3 meses",
     company: "ITIS",
-    role: "Consultor Tecnico Oracle",
     location: "Bogota, Colombia",
-    description:
-      "Diseno tecnico funcional para integraciones entre ERP, OIC y plataformas empresariales."
+    roles: [
+      {
+        period: "Sep 2023 - Dic 2023",
+        duration: "3 meses",
+        title: "Consultor Técnico Oracle",
+        details: [
+          "Diseño técnico funcional para integraciones entre ERP, OIC y plataformas empresariales."
+        ]
+      }
+    ]
   },
   {
     period: "Jul 2023 - Sep 2023",
+    duration: "2 meses",
     company: "PICURIT",
-    role: "Full Stack Developer Freelance",
     location: "Bogota, Colombia",
-    description:
-      "Desarrollo de extensión Chrome integrada con APIs de IA y construcción de módulos empresariales con Python y JavaScript."
+    roles: [
+      {
+        period: "Jul 2023 - Sep 2023",
+        duration: "2 meses",
+        title: "Full Stack Developer Freelance",
+        details: [
+          "Desarrollé una extensión Chrome integrada con APIs de IA.",
+          "Construí módulos empresariales con Python y JavaScript."
+        ]
+      }
+    ]
   }
 ];
 

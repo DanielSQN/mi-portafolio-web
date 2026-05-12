@@ -16,7 +16,10 @@ export default function ExperienceSection() {
       <div className="timeline">
         {experience.map((item, index) => (
           <Reveal className="timeline-item" delay={index * 90} key={item.company}>
-            <div className="timeline-period">{item.period}</div>
+            <div className="timeline-period">
+              <span>{item.period}</span>
+              {item.duration ? <strong>{item.duration}</strong> : null}
+            </div>
             <article className="glass-card">
               <div>
                 <h3>{item.company}</h3>
@@ -29,7 +32,10 @@ export default function ExperienceSection() {
                     <div className="timeline-role" key={`${item.company}-${role.title}`}>
                       <div className="timeline-role-heading">
                         <strong>{role.title}</strong>
-                        <span>{role.period}</span>
+                        <span>
+                          {role.period}
+                          {role.duration ? ` · ${role.duration}` : ""}
+                        </span>
                       </div>
                       <ul>
                         {role.details.map((detail) => (
