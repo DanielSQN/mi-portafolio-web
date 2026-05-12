@@ -10,9 +10,12 @@ export default function ProjectsCarousel({ projects }) {
   const intervalRef = useRef(null);
 
   const visibleProjects = useMemo(() => projects.slice(0, 5), [projects]);
+  const dotCount = Math.min(2, visibleProjects.length);
 
   function scrollToProject(index) {
-    const nextIndex = (index + visibleProjects.length) % visibleProjects.length;
+    const targetIndex =
+      dotCount > 1 ? Math.round((index * (visibleProjects.length - 1)) / (dotCount - 1)) : 0;
+    const nextIndex = (targetIndex + visibleProjects.length) % visibleProjects.length;
     const track = trackRef.current;
     const card = track?.children[nextIndex];
 
@@ -58,15 +61,22 @@ export default function ProjectsCarousel({ projects }) {
         ))}
       </div>
       <div className="project-dots" aria-label="Navegacion de proyectos">
-        {visibleProjects.map((project, index) => (
-          <button
-            className={activeIndex === index ? "is-active" : ""}
-            key={`${project.name}-${index}`}
-            type="button"
-            aria-label={`Ver proyecto ${index + 1}: ${project.name}`}
-            onClick={() => scrollToProject(index)}
-          />
-        ))}
+        {Array.from({ length: dotCount }).map((_, index) => {
+          const targetIndex =
+            dotCount > 1 ? Math.round((index * (visibleProjects.length - 1)) / (dotCount - 1)) : 0;
+
+          const isActive = index === 0 ? activeIndex < targetIndex : activeIndex >= targetIndex;
+
+          return (
+            <button
+              className={isActive ? "is-active" : ""}
+              key={`dot-${index}`}
+              type="button"
+              aria-label={`Ver grupo de proyectos ${index + 1}`}
+              onClick={() => scrollToProject(index)}
+            />
+          );
+        })}
       </div>
     </div>
   );
