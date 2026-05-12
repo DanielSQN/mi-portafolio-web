@@ -1,6 +1,6 @@
 export const profile = {
   name: "Daniel Quintero",
-  preferredName: "Santiago (Santi)",
+  preferredName: "Santi",
   role: "Software Engineer",
   eyebrow: "Software Engineer",
   headline: "Construyo soluciones que generan impacto.",
