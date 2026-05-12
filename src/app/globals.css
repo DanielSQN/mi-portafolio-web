@@ -217,6 +217,18 @@ body::before {
   margin-right: 8px;
 }
 
+.hero-intro {
+  color: var(--text);
+  font-size: clamp(1.05rem, 1.6vw, 1.35rem);
+  font-weight: 700;
+  line-height: 1.35;
+  margin-bottom: 16px;
+}
+
+.hero-intro span {
+  color: var(--red);
+}
+
 h1,
 h2,
 h3,
@@ -264,8 +276,10 @@ p {
   font-family: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono",
     monospace;
   font-size: clamp(0.98rem, 1.45vw, 1.28rem);
+  line-height: 1.55;
   margin: 26px 0 30px;
   max-width: 100%;
+  min-height: calc(1.55em * 2);
   overflow-wrap: anywhere;
 }
 
@@ -526,6 +540,7 @@ code {
 
 .stats-grid article {
   min-width: 0;
+  text-align: center;
 }
 
 .stats-grid strong {
@@ -585,6 +600,49 @@ code {
 .timeline article {
   padding: 22px;
   position: relative;
+}
+
+.timeline-roles {
+  display: grid;
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.timeline-role {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 14px;
+}
+
+.timeline-role-heading {
+  align-items: baseline;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+.timeline-role-heading strong {
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.timeline-role-heading span {
+  color: var(--red);
+  flex: 0 0 auto;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.timeline-role ul {
+  color: var(--muted);
+  display: grid;
+  gap: 7px;
+  line-height: 1.55;
+  margin: 12px 0 0;
+  padding-left: 18px;
+}
+
+.timeline-role li::marker {
+  color: var(--red);
 }
 
 .pill {
@@ -796,7 +854,7 @@ code {
   align-items: center;
   display: grid;
   gap: 18px;
-  grid-template-columns: 180px 1fr auto;
+  grid-template-columns: 180px 1fr;
   min-height: 74px;
   padding: 16px;
 }
@@ -850,10 +908,6 @@ code {
   gap: 8px;
 }
 
-.skill-arrow {
-  color: var(--muted);
-}
-
 .about-section {
   align-items: stretch;
   grid-template-columns: minmax(280px, 0.8fr) minmax(0, 1fr);
@@ -861,8 +915,8 @@ code {
 
 .portrait-card {
   background:
-    radial-gradient(circle at 50% 28%, rgba(255, 45, 45, 0.35), transparent 42%),
-    linear-gradient(180deg, rgba(255, 45, 45, 0.12), rgba(255, 255, 255, 0.02));
+    radial-gradient(circle at 50% 30%, rgba(255, 45, 45, 0.38), transparent 38%),
+    linear-gradient(180deg, rgba(255, 45, 45, 0.13), rgba(255, 255, 255, 0.02));
   border: 1px solid var(--line);
   border-radius: var(--radius);
   min-height: 510px;
@@ -873,56 +927,25 @@ code {
 .portrait-glow {
   border: 1px solid rgba(255, 45, 45, 0.32);
   border-radius: 50%;
-  height: 250px;
+  height: 310px;
   left: 50%;
   position: absolute;
-  top: 56px;
+  top: 46px;
   transform: translateX(-50%);
-  width: 250px;
+  width: 310px;
 }
 
-.portrait {
+.portrait-photo {
+  background:
+    linear-gradient(180deg, transparent 62%, rgba(0, 0, 0, 0.35)),
+    url("/profile/daniel-quintero.png") center bottom / contain no-repeat,
+    linear-gradient(155deg, rgba(255, 45, 45, 0.18), rgba(255, 255, 255, 0.03));
   bottom: 0;
-  height: 440px;
+  height: 96%;
   left: 50%;
   position: absolute;
   transform: translateX(-50%);
-  width: 270px;
-}
-
-.portrait-face {
-  background:
-    linear-gradient(130deg, rgba(255, 255, 255, 0.7), transparent 48%),
-    #d7b19b;
-  border-radius: 48% 48% 42% 42%;
-  height: 118px;
-  left: 76px;
-  position: absolute;
-  top: 54px;
-  width: 112px;
-}
-
-.portrait-face::before {
-  background: #18100d;
-  border-radius: 52% 52% 36% 36%;
-  content: "";
-  height: 45px;
-  left: -4px;
-  position: absolute;
-  top: -22px;
-  width: 120px;
-}
-
-.portrait-suit {
-  background:
-    linear-gradient(90deg, transparent 48%, rgba(255, 45, 45, 0.9) 49%, rgba(255, 45, 45, 0.9) 51%, transparent 52%),
-    linear-gradient(135deg, #151515, #360d0d);
-  border-radius: 46% 46% 0 0;
-  bottom: 0;
-  height: 280px;
-  left: 25px;
-  position: absolute;
-  width: 220px;
+  width: min(78%, 410px);
 }
 
 .about-copy {
@@ -959,6 +982,13 @@ code {
 
 .cert-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.all-certifications-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 42px;
 }
 
 .cert-card {
@@ -1178,6 +1208,10 @@ form .primary-button {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  .all-certifications-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .interest-grid {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -1213,6 +1247,10 @@ form .primary-button {
 
   h2 {
     font-size: 2rem;
+  }
+
+  .typewriter-line {
+    min-height: calc(1.55em * 3);
   }
 
   .hero-actions {
@@ -1288,7 +1326,8 @@ form .primary-button {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .all-projects-grid {
+  .all-projects-grid,
+  .all-certifications-grid {
     grid-template-columns: 1fr;
   }
 
@@ -1304,8 +1343,14 @@ form .primary-button {
     left: -25px;
   }
 
+  .timeline-role-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+
   .skill-row {
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 1fr;
   }
 
   .skill-list {
@@ -1319,7 +1364,20 @@ form .primary-button {
   }
 
   .portrait-card {
-    min-height: 430px;
+    min-height: 320px;
+    width: min(100%, 360px);
+    justify-self: center;
+  }
+
+  .portrait-glow {
+    height: 220px;
+    top: 36px;
+    width: 220px;
+  }
+
+  .portrait-photo {
+    height: 92%;
+    width: min(76%, 250px);
   }
 
   .interest-grid,

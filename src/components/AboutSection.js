@@ -9,10 +9,7 @@ export default function AboutSection() {
     <section className="section-shell about-section" id="sobre-mi">
       <Reveal className="portrait-card">
         <div className="portrait-glow" />
-        <div className="portrait">
-          <div className="portrait-face" />
-          <div className="portrait-suit" />
-        </div>
+        <div className="portrait-photo" aria-label="Foto de Daniel Quintero" />
       </Reveal>
 
       <Reveal className="about-copy glass-card" delay={120}>

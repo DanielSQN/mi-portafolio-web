@@ -23,11 +23,14 @@ export default function HeroSection() {
       <div className="hero-grid">
         <Reveal className="hero-copy">
           <p className="eyebrow">+ {profile.eyebrow}</p>
+          <p className="hero-intro">
+            Hola, soy <span>{profile.preferredName || profile.name}</span>!
+          </p>
           <h1>{profile.headline.replace("generan impacto.", "")}<span>generan impacto.</span></h1>
           <p>{profile.summary}</p>
           <TypewriterLine words={typewriterSpecialties} />
           <div className="hero-actions">
-            <a className="primary-button" href="#proyectos">
+            <a className="primary-button" href="/proyectos">
               Ver proyectos <ArrowRight size={18} />
             </a>
             <a className="ghost-button" href="#contacto">

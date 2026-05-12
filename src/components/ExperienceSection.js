@@ -20,9 +20,26 @@ export default function ExperienceSection() {
             <article className="glass-card">
               <div>
                 <h3>{item.company}</h3>
-                <p className="role">{item.role}</p>
+                {item.role ? <p className="role">{item.role}</p> : null}
               </div>
-              <p>{item.description}</p>
+              {item.description ? <p>{item.description}</p> : null}
+              {item.roles ? (
+                <div className="timeline-roles">
+                  {item.roles.map((role) => (
+                    <div className="timeline-role" key={`${item.company}-${role.title}`}>
+                      <div className="timeline-role-heading">
+                        <strong>{role.title}</strong>
+                        <span>{role.period}</span>
+                      </div>
+                      <ul>
+                        {role.details.map((detail) => (
+                          <li key={detail}>{detail}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              ) : null}
               <span className="pill">
                 <MapPin size={13} /> {item.location}
               </span>
