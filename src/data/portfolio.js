@@ -1,5 +1,6 @@
 export const profile = {
   name: "Daniel Quintero",
+  preferredName: "Santiago (Santi)",
   role: "Software Engineer",
   eyebrow: "Software Engineer",
   headline: "Construyo soluciones que generan impacto.",
@@ -18,7 +19,7 @@ export const profile = {
 
 export const heroJson = {
   ingeniero: "Daniel Quintero",
-  sobre_mi: ["Software Engineer", "Motos", "Gaming", "Tecnología"],
+  sobre_mi: ["Cristiano", "Software Engineer", "Motos", "Gaming", "Tecnología"],
   habilidades: [
     "Trabajo en equipo",
     "Innovación",

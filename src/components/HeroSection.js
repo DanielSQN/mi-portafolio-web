@@ -24,7 +24,7 @@ export default function HeroSection() {
         <Reveal className="hero-copy">
           <p className="eyebrow">+ {profile.eyebrow}</p>
           <p className="hero-intro">
-            Hola, soy <span>{profile.name}</span>.
+            Hola, soy <span>{profile.preferredName || profile.name}</span>.
           </p>
           <h1>{profile.headline.replace("generan impacto.", "")}<span>generan impacto.</span></h1>
           <p>{profile.summary}</p>
