@@ -32,10 +32,7 @@ export default function ExperienceSection() {
                     <div className="timeline-role" key={`${item.company}-${role.title}`}>
                       <div className="timeline-role-heading">
                         <strong>{role.title}</strong>
-                        <span>
-                          {role.period}
-                          {role.duration ? ` · ${role.duration}` : ""}
-                        </span>
+                        <span>{role.period}</span>
                       </div>
                       <ul>
                         {role.details.map((detail) => (

@@ -62,7 +62,6 @@ export const experience = [
     roles: [
       {
         period: "Abr 2024 - Actualidad",
-        duration: "2 años 1 mes",
         title: "Software Engineer / Front-end & Integrations Specialist",
         details: [
           "Lideré implementaciones CRM e integraciones regulatorias con la Superfinanciera para flujos PQRS.",
@@ -74,7 +73,6 @@ export const experience = [
       },
       {
         period: "Dic 2023 - Abr 2024",
-        duration: "4 meses",
         title: "Ingeniero Jr de Proyectos Agiles",
         details: [
           "Gestioné backlog evolutivo y requerimientos tecnológicos.",
@@ -92,7 +90,6 @@ export const experience = [
     roles: [
       {
         period: "Feb 2023 - Ago 2023",
-        duration: "6 meses",
         title: "Architecture & Innovation Specialist",
         details: [
           "Lideré iniciativas de innovación tecnológica y mejora de procesos internos.",
@@ -101,7 +98,6 @@ export const experience = [
       },
       {
         period: "Sep 2018 - Mar 2023",
-        duration: "4 años 6 meses",
         title: "Consultor Técnico Oracle / Integration Developer",
         details: [
           "Implementé integraciones empresariales para clientes del sector financiero.",
@@ -120,7 +116,6 @@ export const experience = [
     roles: [
       {
         period: "Sep 2023 - Dic 2023",
-        duration: "3 meses",
         title: "Consultor Técnico Oracle",
         details: [
           "Diseño técnico funcional para integraciones entre ERP, OIC y plataformas empresariales."
@@ -136,7 +131,6 @@ export const experience = [
     roles: [
       {
         period: "Jul 2023 - Sep 2023",
-        duration: "2 meses",
         title: "Full Stack Developer Freelance",
         details: [
           "Desarrollé una extensión Chrome integrada con APIs de IA.",
