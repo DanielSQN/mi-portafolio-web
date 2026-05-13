@@ -1,5 +1,6 @@
 export const profile = {
   name: "Daniel Quintero",
+  navName: "Santiago Quintero",
   preferredName: "Santi",
   role: "Software Engineer | Full Stack Developer | Integrations & Automation",
   eyebrow: "Software Engineer",
@@ -27,7 +28,8 @@ export const heroJson = {
     "Aprendizaje continuo"
   ],
   objetivo: "Construir soluciones que generen impacto",
-  versiculo: "Proverbios 16:9"
+  versiculo:
+    "Prov 16:9: El corazón del hombre piensa su camino; mas Jehová endereza sus pasos."
 };
 
 export const typewriterSpecialties = [

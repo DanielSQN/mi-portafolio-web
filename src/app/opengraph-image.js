@@ -42,7 +42,7 @@ export default function Image() {
                 width: 78
               }}
             >
-              DQ
+              SQ
             </div>
             <div style={{ display: "flex", flexDirection: "column" }}>
               <span style={{ fontSize: 28, fontWeight: 800, letterSpacing: 1 }}>
