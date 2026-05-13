@@ -593,8 +593,18 @@ code {
 }
 
 .timeline-period {
+  align-content: start;
   color: var(--text);
+  display: grid;
   font-size: 0.82rem;
+  gap: 6px;
+  line-height: 1.35;
+}
+
+.timeline-period strong {
+  color: var(--red);
+  font-size: 0.72rem;
+  font-weight: 800;
 }
 
 .timeline article {
@@ -910,13 +920,13 @@ code {
 
 .about-section {
   align-items: stretch;
-  grid-template-columns: minmax(280px, 0.8fr) minmax(0, 1fr);
+  grid-template-columns: minmax(340px, 0.82fr) minmax(0, 1fr);
 }
 
 .portrait-card {
   background:
-    radial-gradient(circle at 50% 30%, rgba(255, 45, 45, 0.38), transparent 38%),
-    linear-gradient(180deg, rgba(255, 45, 45, 0.13), rgba(255, 255, 255, 0.02));
+    radial-gradient(circle at 50% 54%, rgba(255, 45, 45, 0.12), transparent 42%),
+    rgba(5, 6, 8, 0.9);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   min-height: 510px;
@@ -924,28 +934,38 @@ code {
   position: relative;
 }
 
-.portrait-glow {
-  border: 1px solid rgba(255, 45, 45, 0.32);
-  border-radius: 50%;
-  height: 310px;
+.portrait-card::before {
+  background: radial-gradient(circle, rgba(255, 45, 45, 0.14), transparent 62%);
+  content: "";
+  height: 280px;
   left: 50%;
   position: absolute;
-  top: 46px;
+  top: 122px;
   transform: translateX(-50%);
-  width: 310px;
+  width: 280px;
+}
+
+.portrait-glow {
+  border: 1px solid rgba(255, 45, 45, 0.22);
+  border-radius: 50%;
+  height: 330px;
+  left: 50%;
+  position: absolute;
+  top: 82px;
+  transform: translateX(-50%);
+  width: 330px;
 }
 
 .portrait-photo {
   background:
-    linear-gradient(180deg, transparent 62%, rgba(0, 0, 0, 0.35)),
     url("/profile/daniel-quintero.png") center bottom / contain no-repeat,
-    linear-gradient(155deg, rgba(255, 45, 45, 0.18), rgba(255, 255, 255, 0.03));
+    transparent;
   bottom: 0;
-  height: 96%;
+  height: 94%;
   left: 50%;
   position: absolute;
   transform: translateX(-50%);
-  width: min(78%, 410px);
+  width: min(86%, 430px);
 }
 
 .about-copy {
@@ -1364,20 +1384,26 @@ form .primary-button {
   }
 
   .portrait-card {
-    min-height: 320px;
+    min-height: 330px;
     width: min(100%, 360px);
     justify-self: center;
   }
 
+.portrait-card::before {
+    height: 180px;
+    top: 96px;
+    width: 180px;
+  }
+
   .portrait-glow {
-    height: 220px;
-    top: 36px;
-    width: 220px;
+    height: 210px;
+    top: 52px;
+    width: 210px;
   }
 
   .portrait-photo {
-    height: 92%;
-    width: min(76%, 250px);
+    height: 90%;
+    width: min(82%, 280px);
   }
 
   .interest-grid,
