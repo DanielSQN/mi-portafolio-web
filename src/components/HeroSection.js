@@ -1,5 +1,6 @@
 import {
   ArrowRight,
+  ChevronDown,
   MessageCircle
 } from "lucide-react";
 import Image from "next/image";
@@ -40,6 +41,10 @@ export default function HeroSection() {
               Hablemos <MessageCircle size={17} />
             </a>
           </div>
+          <a className="scroll-cue" href="#experiencia">
+            <span>Hacer scroll</span>
+            <ChevronDown size={18} />
+          </a>
         </Reveal>
 
         <Reveal className="hero-visual" delay={120}>

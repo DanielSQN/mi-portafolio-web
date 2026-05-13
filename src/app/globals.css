@@ -403,6 +403,40 @@ p {
   transform: translateY(-2px);
 }
 
+.scroll-cue {
+  align-items: center;
+  color: var(--muted);
+  display: inline-flex;
+  font-size: 0.78rem;
+  gap: 8px;
+  margin-top: 22px;
+  transition:
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.scroll-cue svg {
+  animation: scroll-cue-bounce 1.4s ease-in-out infinite;
+  color: var(--red);
+}
+
+.scroll-cue:hover,
+.scroll-cue:focus-visible {
+  color: var(--text);
+  transform: translateY(2px);
+}
+
+@keyframes scroll-cue-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(5px);
+  }
+}
+
 .hero-visual {
   min-height: 520px;
 }
