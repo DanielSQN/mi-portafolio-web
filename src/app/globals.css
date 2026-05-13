@@ -1399,7 +1399,12 @@ form .primary-button {
 
   .hero-visual,
   .orbit-scene {
-    min-height: 500px;
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    justify-items: center;
+    min-height: auto;
+    row-gap: 16px;
   }
 
   .orbit-ring-one {
@@ -1413,6 +1418,7 @@ form .primary-button {
   }
 
   .orbit-chip {
+    position: static;
     height: 54px;
     padding: 0;
     width: 54px;
@@ -1423,39 +1429,25 @@ form .primary-button {
     width: 28px;
   }
 
-  .orbit-chip-1 {
-    top: 14px;
-    left: calc(50% - 27px);
-  }
-
-  .orbit-chip-2 {
-    left: 22px;
-    top: 82px;
-  }
-
-  .orbit-chip-3 {
-    right: 22px;
-    top: 82px;
-  }
-
-  .orbit-chip-4 {
-    bottom: 58px;
-    left: 22px;
-  }
-
-  .orbit-chip-5 {
-    bottom: 58px;
-    right: 22px;
-  }
-
+  .orbit-chip-1,
+  .orbit-chip-2,
+  .orbit-chip-3,
+  .orbit-chip-4,
+  .orbit-chip-5,
   .orbit-chip-6 {
-    bottom: 18px;
-    left: calc(50% - 27px);
+    grid-column: auto;
+    grid-row: 1;
+  }
+
+  .laptop {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    width: 100%;
   }
 
   .laptop-screen {
     min-height: 318px;
-    margin-top: 36px;
+    margin-top: 0;
     width: min(390px, 92vw);
   }
 
