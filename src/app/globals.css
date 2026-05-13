@@ -1149,6 +1149,22 @@ code {
   color: var(--red);
 }
 
+.brand-icon {
+  color: currentColor;
+  display: inline-block;
+  flex: 0 0 auto;
+  height: 17px;
+  width: 17px;
+}
+
+.github-brand {
+  color: #f0f6fc;
+}
+
+.linkedin-brand {
+  color: #0a66c2;
+}
+
 .contact-panel {
   background:
     linear-gradient(90deg, rgba(7, 8, 10, 0.96), rgba(7, 8, 10, 0.74)),
@@ -1215,6 +1231,11 @@ form .primary-button {
   height: 38px;
   justify-content: center;
   width: 38px;
+}
+
+.social-row .brand-icon {
+  height: 18px;
+  width: 18px;
 }
 
 .reveal {

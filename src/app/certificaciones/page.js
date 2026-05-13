@@ -12,7 +12,7 @@ export const metadata = {
 export default function CertificationsPage() {
   return (
     <main className="projects-page section-shell">
-      <Link className="ghost-button back-link" href="/#certificaciones">
+      <Link className="ghost-button back-link" href="/">
         <ArrowLeft size={16} /> Volver
       </Link>
       <header className="projects-page-header">

@@ -16,7 +16,7 @@ export default function ProjectsPage() {
 
   return (
     <main className="projects-page section-shell">
-      <Link className="ghost-button back-link" href="/#proyectos">
+      <Link className="ghost-button back-link" href="/">
         <ArrowLeft size={16} /> Volver
       </Link>
       <header className="projects-page-header">

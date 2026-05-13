@@ -18,7 +18,7 @@ export const profile = {
 };
 
 export const heroJson = {
-  ingeniero: "Daniel Quintero",
+  ingeniero: "Daniel Santiago Quintero Niño",
   sobre_mi: ["Hijo de Dios", "Software Engineer", "Motos", "Gaming", "Tecnología"],
   habilidades: [
     "Trabajo en equipo",
