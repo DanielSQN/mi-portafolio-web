@@ -35,7 +35,7 @@ export default function ContactSection() {
           <span>
             <MapPin size={17} /> {profile.location}
           </span>
-          <a href={`https://${profile.github}`}>
+          <a href={`https://${profile.github}`} target="_blank" rel="noreferrer">
             <Github size={17} /> {profile.github}
           </a>
         </div>
@@ -68,8 +68,15 @@ export default function ContactSection() {
         <div className="social-row">
           {socialLinks.map((link) => {
             const Icon = link.label === "LinkedIn" ? Linkedin : link.label === "GitHub" ? Github : Mail;
+            const isExternal = link.href.startsWith("http");
             return (
-              <a href={link.href} key={link.label} aria-label={link.label}>
+              <a
+                href={link.href}
+                key={link.label}
+                aria-label={link.label}
+                target={isExternal ? "_blank" : undefined}
+                rel={isExternal ? "noreferrer" : undefined}
+              >
                 <Icon size={17} />
               </a>
             );
