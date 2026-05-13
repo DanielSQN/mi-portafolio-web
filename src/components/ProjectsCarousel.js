@@ -7,7 +7,6 @@ import Reveal from "./Reveal";
 export default function ProjectsCarousel({ projects }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const trackRef = useRef(null);
-  const intervalRef = useRef(null);
 
   const visibleProjects = useMemo(() => projects.slice(0, 6), [projects]);
   const dotCount = Math.min(2, visibleProjects.length);
@@ -27,31 +26,6 @@ export default function ProjectsCarousel({ projects }) {
     });
     setActiveIndex(nextIndex);
   }
-
-  useEffect(() => {
-    if (visibleProjects.length <= 1) return undefined;
-
-    intervalRef.current = window.setInterval(() => {
-      setActiveIndex((current) => {
-        const currentGroup = Math.floor(current / groupSize);
-        const nextGroup = (currentGroup + 1) % dotCount;
-        const next = nextGroup * groupSize;
-        const track = trackRef.current;
-        const card = track?.children[next];
-
-        if (track && card) {
-          track.scrollTo({
-            left: card.offsetLeft - track.offsetLeft,
-            behavior: "smooth"
-          });
-        }
-
-        return next;
-      });
-    }, 4200);
-
-    return () => window.clearInterval(intervalRef.current);
-  }, [dotCount, groupSize, visibleProjects.length]);
 
   useEffect(() => {
     const track = trackRef.current;

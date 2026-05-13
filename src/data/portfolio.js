@@ -163,7 +163,7 @@ export const skillGroups = [
   },
   {
     name: "IA & Automatizacion",
-    skills: ["OpenAI", "LangChain", "n8n", "Python", "AI APIs"]
+    skills: ["OpenAI", "GitHub Copilot", "Codex", "Claude Code", "AI APIs"]
   }
 ];
 
