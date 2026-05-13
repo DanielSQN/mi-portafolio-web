@@ -36,12 +36,22 @@ export default function ProjectCard({ project }) {
       {hasActions ? (
         <div className="project-actions">
           {viewUrl ? (
-            <a href={viewUrl} aria-label={`Ver demo de ${project.name}`}>
+            <a
+              href={viewUrl}
+              aria-label={`Ver demo de ${project.name}`}
+              target="_blank"
+              rel="noreferrer"
+            >
               <ExternalLink size={17} />
             </a>
           ) : null}
           {githubUrl ? (
-            <a href={githubUrl} aria-label={`Ver GitHub de ${project.name}`}>
+            <a
+              href={githubUrl}
+              aria-label={`Ver GitHub de ${project.name}`}
+              target="_blank"
+              rel="noreferrer"
+            >
               <Github size={17} />
             </a>
           ) : null}
