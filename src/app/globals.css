@@ -178,6 +178,7 @@ body::before {
 .hero {
   min-height: 100vh;
   padding-top: 112px;
+  position: relative;
 }
 
 .hero-grid,
@@ -197,14 +198,6 @@ body::before {
 .section-copy,
 .contact-copy {
   max-width: 560px;
-}
-
-.hero-topline {
-  align-items: center;
-  display: flex;
-  gap: 14px;
-  justify-content: flex-end;
-  margin-bottom: 18px;
 }
 
 .eyebrow,
@@ -233,6 +226,13 @@ body::before {
   font-weight: 700;
   gap: 8px;
   padding: 8px 12px;
+}
+
+.hero-availability {
+  position: absolute;
+  right: 24px;
+  top: 88px;
+  z-index: 3;
 }
 
 .availability-pill span {
@@ -1344,6 +1344,15 @@ form .primary-button {
 
   .hero {
     padding-top: 104px;
+  }
+
+  .hero-availability {
+    margin-bottom: 26px;
+    margin-left: auto;
+    position: relative;
+    right: auto;
+    top: auto;
+    width: fit-content;
   }
 
   h1 {

@@ -20,14 +20,12 @@ const orbitItems = [
 export default function HeroSection() {
   return (
     <section className="hero section-shell" id="inicio">
+      <a className="availability-pill hero-availability" href="#contacto">
+        <span aria-hidden="true" />
+        Disponible para proyectos
+      </a>
       <div className="hero-grid">
         <Reveal className="hero-copy">
-          <div className="hero-topline">
-            <a className="availability-pill" href="#contacto">
-              <span aria-hidden="true" />
-              Disponible para proyectos
-            </a>
-          </div>
           <p className="hero-intro">
             Hola, soy <span>{profile.preferredName || profile.name}</span>!
           </p>
