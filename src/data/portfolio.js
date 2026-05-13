@@ -1,20 +1,20 @@
 export const profile = {
   name: "Daniel Quintero",
   preferredName: "Santi",
-  role: "Software Engineer",
+  role: "Software Engineer | Full Stack Developer | Integrations & Automation",
   eyebrow: "Software Engineer",
   headline: "Construyo soluciones que generan impacto.",
   summary:
     "Software Engineer especializado en desarrollo full stack, automatizacion y soluciones digitales de alto impacto.",
   location: "Bogota, Colombia",
-  email: "dtqsn.dna@gmail.com",
-  phone: "+57 302 386 6761",
-  linkedin: "linkedin.com/in/danielquinteon",
+  email: "dsqn.dna@gmail.com",
+  phone: "+57 302 384 6761",
+  linkedin: "linkedin.com/in/danielsantiagoqn",
   github: "github.com/DanielSQN",
   siteUrl: "https://mi-portafolio-web.vercel.app",
   cvLabel: "Solicitar CV",
   cvUrl:
-    "mailto:dtqsn.dna@gmail.com?subject=Solicitud%20de%20CV%20-%20Daniel%20Quintero"
+    "mailto:dsqn.dna@gmail.com?subject=Solicitud%20de%20CV%20-%20Daniel%20Quintero"
 };
 
 export const heroJson = {
@@ -184,6 +184,6 @@ export const interests = [
 
 export const socialLinks = [
   { label: "GitHub", href: "https://github.com/DanielSQN" },
-  { label: "LinkedIn", href: "https://linkedin.com/in/danielquinteon" },
-  { label: "Email", href: "mailto:dtqsn.dna@gmail.com" }
+  { label: "LinkedIn", href: "https://linkedin.com/in/danielsantiagoqn" },
+  { label: "Email", href: "mailto:dsqn.dna@gmail.com" }
 ];
