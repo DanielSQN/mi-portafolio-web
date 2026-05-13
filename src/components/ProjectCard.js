@@ -2,8 +2,9 @@ import { ExternalLink, Github } from "lucide-react";
 import Image from "next/image";
 
 export default function ProjectCard({ project }) {
-  const viewUrl = project.viewUrl || project.url || "#contacto";
-  const githubUrl = project.githubUrl || "https://github.com/DanielSQN";
+  const viewUrl = project.viewUrl || project.url || "";
+  const githubUrl = project.githubUrl || "";
+  const hasActions = Boolean(viewUrl || githubUrl);
 
   return (
     <article className="project-card glass-card">
@@ -32,14 +33,20 @@ export default function ProjectCard({ project }) {
         ))}
       </div>
       <p>{project.description}</p>
-      <div className="project-actions">
-        <a href={viewUrl} aria-label={`Ver demo de ${project.name}`}>
-          <ExternalLink size={16} /> Ver
-        </a>
-        <a href={githubUrl} aria-label={`Ver GitHub de ${project.name}`}>
-          <Github size={16} /> GitHub
-        </a>
-      </div>
+      {hasActions ? (
+        <div className="project-actions">
+          {viewUrl ? (
+            <a href={viewUrl} aria-label={`Ver demo de ${project.name}`}>
+              <ExternalLink size={17} />
+            </a>
+          ) : null}
+          {githubUrl ? (
+            <a href={githubUrl} aria-label={`Ver GitHub de ${project.name}`}>
+              <Github size={17} />
+            </a>
+          ) : null}
+        </div>
+      ) : null}
     </article>
   );
 }

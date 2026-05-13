@@ -1,4 +1,4 @@
-import { Award, ArrowRight } from "lucide-react";
+import { Award, ArrowRight, ExternalLink } from "lucide-react";
 import Image from "next/image";
 import certifications from "@/data/certifications.json";
 import Reveal from "./Reveal";
@@ -38,7 +38,7 @@ export default function CertificationsSection() {
             </span>
             {certification.url ? (
               <a className="cert-link" href={certification.url} aria-label={`Ver certificado ${certification.name}`}>
-                Ver
+                <ExternalLink size={16} />
               </a>
             ) : null}
           </Reveal>

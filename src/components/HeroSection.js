@@ -23,7 +23,6 @@ export default function HeroSection() {
       <div className="hero-grid">
         <Reveal className="hero-copy">
           <div className="hero-topline">
-            <p className="eyebrow">+ {profile.eyebrow}</p>
             <a className="availability-pill" href="#contacto">
               <span aria-hidden="true" />
               Disponible para proyectos

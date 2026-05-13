@@ -6,8 +6,8 @@
     "accent": "integrations",
     "img": "/projects/plataforma-integraciones.png",
     "priority": 1,
-    "viewUrl": "#contacto",
-    "githubUrl": "https://github.com/DanielSQN"
+    "viewUrl": "",
+    "githubUrl": ""
   },
   {
     "name": "Extension IA para Productividad",
@@ -16,8 +16,8 @@
     "accent": "ai",
     "img": "/projects/extension-ia-productividad.png",
     "priority": 2,
-    "viewUrl": "#contacto",
-    "githubUrl": "https://github.com/DanielSQN"
+    "viewUrl": "",
+    "githubUrl": ""
   },
   {
     "name": "Dashboard Financiero",
@@ -26,8 +26,8 @@
     "accent": "dashboard",
     "img": "/projects/dashboard-financiero.png",
     "priority": 3,
-    "viewUrl": "#contacto",
-    "githubUrl": "https://github.com/DanielSQN"
+    "viewUrl": "",
+    "githubUrl": ""
   },
   {
     "name": "Dashboard Financiero",
@@ -36,8 +36,8 @@
     "accent": "dashboard",
     "img": "/projects/dashboard-financiero.png",
     "priority": 4,
-    "viewUrl": "#contacto",
-    "githubUrl": "https://github.com/DanielSQN"
+    "viewUrl": "",
+    "githubUrl": ""
   },
   {
     "name": "Dashboard Financiero",
@@ -46,7 +46,7 @@
     "accent": "dashboard",
     "img": "/projects/dashboard-financiero.png",
     "priority": 5,
-    "viewUrl": "#contacto",
-    "githubUrl": "https://github.com/DanielSQN"
+    "viewUrl": "",
+    "githubUrl": ""
   }
 ]
