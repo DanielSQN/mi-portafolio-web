@@ -946,7 +946,6 @@ code {
 }
 
 .portrait-glow {
-  border: 1px solid rgba(255, 45, 45, 0.22);
   border-radius: 50%;
   height: 330px;
   left: 50%;
