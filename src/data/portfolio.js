@@ -164,16 +164,6 @@ export const skillGroups = [
   }
 ];
 
-export const certifications = [
-  "Oracle Cloud Application Integration Certified Specialist",
-  "Oracle Cloud Digital Assistant Certified",
-  "Oracle Cloud Infrastructure Foundations Associate",
-  "Oracle Fusion AI Agent Studio Foundations Associate",
-  "Oracle Engagement Cloud Solution Engineer Specialist",
-  "IBM Applied Data Science with Python",
-  "Scrum Fundamentals"
-];
-
 export const interests = [
   "Motos",
   "Gaming",

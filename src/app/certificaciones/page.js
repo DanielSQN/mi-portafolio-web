@@ -1,6 +1,7 @@
 import { ArrowLeft, Award } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
-import { certifications } from "@/data/portfolio";
+import certifications from "@/data/certifications.json";
 
 export const metadata = {
   title: "Certificaciones",
@@ -28,11 +29,23 @@ export default function CertificationsPage() {
       </header>
       <section className="all-certifications-grid" aria-label="Todas las certificaciones">
         {certifications.map((certification) => (
-          <article className="cert-card glass-card" key={certification}>
+          <article className="cert-card glass-card" key={certification.name}>
             <span className="cert-icon">
-              <Award size={20} />
+              {certification.img ? (
+                <Image alt="" height={28} src={certification.img} width={28} />
+              ) : (
+                <Award size={20} />
+              )}
             </span>
-            <strong>{certification}</strong>
+            <span className="cert-content">
+              <strong>{certification.name}</strong>
+              <small>{certification.date}</small>
+            </span>
+            {certification.url ? (
+              <a className="cert-link" href={certification.url} aria-label={`Ver certificado ${certification.name}`}>
+                Ver
+              </a>
+            ) : null}
           </article>
         ))}
       </section>

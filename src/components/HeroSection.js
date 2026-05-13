@@ -22,7 +22,13 @@ export default function HeroSection() {
     <section className="hero section-shell" id="inicio">
       <div className="hero-grid">
         <Reveal className="hero-copy">
-          <p className="eyebrow">+ {profile.eyebrow}</p>
+          <div className="hero-topline">
+            <p className="eyebrow">+ {profile.eyebrow}</p>
+            <a className="availability-pill" href="#contacto">
+              <span aria-hidden="true" />
+              Disponible para proyectos
+            </a>
+          </div>
           <p className="hero-intro">
             Hola, soy <span>{profile.preferredName || profile.name}</span>!
           </p>

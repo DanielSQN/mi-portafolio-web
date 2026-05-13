@@ -1,7 +1,10 @@
-import { ArrowUpRight } from "lucide-react";
+import { ExternalLink, Github } from "lucide-react";
 import Image from "next/image";
 
 export default function ProjectCard({ project }) {
+  const viewUrl = project.viewUrl || project.url || "#contacto";
+  const githubUrl = project.githubUrl || "https://github.com/DanielSQN";
+
   return (
     <article className="project-card glass-card">
       <div className={`project-shot ${project.accent}`}>
@@ -22,9 +25,6 @@ export default function ProjectCard({ project }) {
       </div>
       <div className="card-heading">
         <h3>{project.name}</h3>
-        <a href={project.url || "#contacto"} aria-label={`Consultar sobre ${project.name}`}>
-          <ArrowUpRight size={18} />
-        </a>
       </div>
       <div className="tag-row">
         {project.tags.map((tag) => (
@@ -32,6 +32,14 @@ export default function ProjectCard({ project }) {
         ))}
       </div>
       <p>{project.description}</p>
+      <div className="project-actions">
+        <a href={viewUrl} aria-label={`Ver demo de ${project.name}`}>
+          <ExternalLink size={16} /> Ver
+        </a>
+        <a href={githubUrl} aria-label={`Ver GitHub de ${project.name}`}>
+          <Github size={16} /> GitHub
+        </a>
+      </div>
     </article>
   );
 }

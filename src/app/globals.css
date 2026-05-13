@@ -199,14 +199,62 @@ body::before {
   max-width: 560px;
 }
 
+.hero-topline {
+  align-items: center;
+  display: flex;
+  gap: 14px;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
 .eyebrow,
 .section-kicker {
   color: var(--red);
   font-size: 0.75rem;
   font-weight: 800;
   letter-spacing: 0.12em;
-  margin: 0 0 18px;
+  margin: 0;
   text-transform: uppercase;
+}
+
+.section-kicker {
+  margin-bottom: 18px;
+}
+
+.availability-pill {
+  align-items: center;
+  background: rgba(9, 12, 10, 0.84);
+  border: 1px solid rgba(53, 214, 114, 0.32);
+  border-radius: 999px;
+  color: #d9ffe5;
+  display: inline-flex;
+  flex: 0 0 auto;
+  font-size: 0.72rem;
+  font-weight: 700;
+  gap: 8px;
+  padding: 8px 12px;
+}
+
+.availability-pill span {
+  animation: availability-pulse 1.4s ease-in-out infinite;
+  background: #35d66f;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 rgba(53, 214, 111, 0.42);
+  height: 9px;
+  width: 9px;
+}
+
+@keyframes availability-pulse {
+  0%,
+  100% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 rgba(53, 214, 111, 0.42);
+  }
+
+  50% {
+    opacity: 0.55;
+    box-shadow: 0 0 0 7px rgba(53, 214, 111, 0);
+  }
 }
 
 .section-kicker span {
@@ -795,18 +843,34 @@ code {
 }
 
 .card-heading h3 {
-  max-width: 82%;
+  max-width: 100%;
 }
 
-.card-heading a {
+.project-actions {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: auto;
+}
+
+.project-actions a,
+.cert-link {
   align-items: center;
   border: 1px solid var(--line-red);
   border-radius: 5px;
   color: var(--red);
   display: inline-flex;
-  height: 32px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  gap: 7px;
+  min-height: 36px;
   justify-content: center;
-  width: 32px;
+  padding: 8px 10px;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
 }
 
 .tag-row {
@@ -1012,8 +1076,9 @@ code {
 
 .cert-card {
   align-items: center;
-  display: flex;
+  display: grid;
   gap: 14px;
+  grid-template-columns: auto 1fr auto;
   min-height: 84px;
   padding: 18px;
 }
@@ -1026,11 +1091,32 @@ code {
   height: 42px;
   justify-content: center;
   min-width: 42px;
+  overflow: hidden;
+}
+
+.cert-icon img {
+  height: 28px;
+  object-fit: contain;
+  width: 28px;
+}
+
+.cert-content {
+  display: grid;
+  gap: 4px;
 }
 
 .cert-card strong {
   font-size: 0.9rem;
   line-height: 1.35;
+}
+
+.cert-card small {
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+
+.cert-link {
+  min-height: 32px;
 }
 
 .cert-action {

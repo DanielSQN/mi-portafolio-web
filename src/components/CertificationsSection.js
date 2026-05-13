@@ -1,5 +1,6 @@
 import { Award, ArrowRight } from "lucide-react";
-import { certifications } from "@/data/portfolio";
+import Image from "next/image";
+import certifications from "@/data/certifications.json";
 import Reveal from "./Reveal";
 import SectionHeader from "./SectionHeader";
 
@@ -18,11 +19,28 @@ export default function CertificationsSection() {
 
       <div className="cert-grid">
         {visibleCertifications.map((certification, index) => (
-          <Reveal className="cert-card glass-card" delay={index * 70} key={certification}>
+          <Reveal className="cert-card glass-card" delay={index * 70} key={certification.name}>
             <span className="cert-icon">
-              <Award size={20} />
+              {certification.img ? (
+                <Image
+                  alt=""
+                  height={28}
+                  src={certification.img}
+                  width={28}
+                />
+              ) : (
+                <Award size={20} />
+              )}
             </span>
-            <strong>{certification}</strong>
+            <span className="cert-content">
+              <strong>{certification.name}</strong>
+              <small>{certification.date}</small>
+            </span>
+            {certification.url ? (
+              <a className="cert-link" href={certification.url} aria-label={`Ver certificado ${certification.name}`}>
+                Ver
+              </a>
+            ) : null}
           </Reveal>
         ))}
         {hasMoreCertifications ? (
