@@ -6,7 +6,8 @@
     "accent": "integrations",
     "img": "/projects/plataforma-integraciones.png",
     "priority": 1,
-    "url": "#"
+    "viewUrl": "https://carta-invitacion-boda-lt.vercel.app",
+    "githubUrl": "https://github.com/DanielSQN/mi-portafolio-web"
   },
   {
     "name": "Extension IA para Productividad",
@@ -15,7 +16,8 @@
     "accent": "ai",
     "img": "/projects/extension-ia-productividad.png",
     "priority": 2,
-    "url": "#"
+    "viewUrl": "",
+    "githubUrl": ""
   },
   {
     "name": "Dashboard Financiero",
@@ -24,24 +26,27 @@
     "accent": "dashboard",
     "img": "/projects/dashboard-financiero.png",
     "priority": 3,
-    "url": "#"
-  }
-  ,{
+    "viewUrl": "",
+    "githubUrl": ""
+  },
+  {
     "name": "Dashboard Financiero",
     "tags": ["React", "OTBI", "Oracle Cloud"],
     "description": "Dashboards interactivos para analisis de datos y toma de decisiones.",
     "accent": "dashboard",
     "img": "/projects/dashboard-financiero.png",
     "priority": 4,
-    "url": "#"
-  }
-  ,{
+    "viewUrl": "",
+    "githubUrl": ""
+  },
+  {
     "name": "Dashboard Financiero",
     "tags": ["React", "OTBI", "Oracle Cloud"],
     "description": "Dashboards interactivos para analisis de datos y toma de decisiones.",
     "accent": "dashboard",
     "img": "/projects/dashboard-financiero.png",
     "priority": 5,
-    "url": "#"
+    "viewUrl": "",
+    "githubUrl": ""
   }
 ]

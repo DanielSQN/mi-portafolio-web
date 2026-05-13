@@ -1,7 +1,11 @@
-import { ArrowUpRight } from "lucide-react";
+import { ExternalLink, Github } from "lucide-react";
 import Image from "next/image";
 
 export default function ProjectCard({ project }) {
+  const viewUrl = project.viewUrl || project.url || "";
+  const githubUrl = project.githubUrl || "";
+  const hasActions = Boolean(viewUrl || githubUrl);
+
   return (
     <article className="project-card glass-card">
       <div className={`project-shot ${project.accent}`}>
@@ -22,9 +26,6 @@ export default function ProjectCard({ project }) {
       </div>
       <div className="card-heading">
         <h3>{project.name}</h3>
-        <a href={project.url || "#contacto"} aria-label={`Consultar sobre ${project.name}`}>
-          <ArrowUpRight size={18} />
-        </a>
       </div>
       <div className="tag-row">
         {project.tags.map((tag) => (
@@ -32,6 +33,30 @@ export default function ProjectCard({ project }) {
         ))}
       </div>
       <p>{project.description}</p>
+      {hasActions ? (
+        <div className="project-actions">
+          {viewUrl ? (
+            <a
+              href={viewUrl}
+              aria-label={`Ver demo de ${project.name}`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <ExternalLink size={17} />
+            </a>
+          ) : null}
+          {githubUrl ? (
+            <a
+              href={githubUrl}
+              aria-label={`Ver GitHub de ${project.name}`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Github size={17} />
+            </a>
+          ) : null}
+        </div>
+      ) : null}
     </article>
   );
 }
