@@ -26,7 +26,8 @@ export const heroJson = {
     "Resolución de problemas",
     "Aprendizaje continuo"
   ],
-  objetivo: "Construir soluciones que generen impacto"
+  objetivo: "Construir soluciones que generen impacto",
+  versiculo: "Proverbios 16:9"
 };
 
 export const typewriterSpecialties = [

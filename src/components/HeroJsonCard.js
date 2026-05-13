@@ -65,7 +65,10 @@ export default function HeroJsonCard({ data }) {
             <span className="json-bracket">]</span>,
           </span>
           <span>
-            <JsonKey>objetivo</JsonKey>: <JsonValue>{data.objetivo}</JsonValue>
+            <JsonKey>objetivo</JsonKey>: <JsonValue>{data.objetivo}</JsonValue>,
+          </span>
+          <span>
+            <JsonKey>versiculo</JsonKey>: <JsonValue>{data.versiculo}</JsonValue>
           </span>
           <span className="json-bracket">{"}"}</span>
         </code>
