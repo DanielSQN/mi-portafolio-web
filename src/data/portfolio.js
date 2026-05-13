@@ -41,7 +41,7 @@ export const typewriterSpecialties = [
 ];
 
 export const stats = [
-  { value: "7+", label: "Anos de experiencia" },
+  { value: "7+", label: "Años de experiencia" },
   { value: "20+", label: "Integraciones enterprise" },
   { value: "15+", label: "Proyectos completados" },
   { value: "100%", label: "Comprometido con la calidad" }
@@ -163,7 +163,7 @@ export const skillGroups = [
   },
   {
     name: "IA & Automatizacion",
-    skills: ["OpenAI", "LangChain", "n8n", "Python", "AI APIs"]
+    skills: ["OpenAI", "GitHub Copilot", "Codex", "Claude Code", "AI APIs"]
   }
 ];
 
