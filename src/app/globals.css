@@ -1373,7 +1373,7 @@ form .primary-button {
 
   .hero-visual,
   .orbit-scene {
-    min-height: 410px;
+    min-height: 480px;
   }
 
   .orbit-ring-one {
@@ -1398,37 +1398,38 @@ form .primary-button {
   }
 
   .orbit-chip-1 {
-    top: 8px;
+    top: -4px;
     left: calc(50% - 27px);
   }
 
   .orbit-chip-2 {
-    left: 16px;
-    top: 118px;
+    left: 20px;
+    top: 74px;
   }
 
   .orbit-chip-3 {
-    right: 16px;
-    top: 118px;
+    right: 20px;
+    top: 74px;
   }
 
   .orbit-chip-4 {
-    bottom: 28px;
-    left: 30px;
+    bottom: 44px;
+    left: 18px;
   }
 
   .orbit-chip-5 {
-    bottom: 28px;
-    right: 30px;
+    bottom: 44px;
+    right: 18px;
   }
 
   .orbit-chip-6 {
-    bottom: -10px;
+    bottom: 8px;
     left: calc(50% - 27px);
   }
 
   .laptop-screen {
     min-height: 318px;
+    margin-top: 54px;
     width: min(390px, 92vw);
   }
 
@@ -1479,11 +1480,11 @@ form .primary-button {
 
   .portrait-card {
     min-height: 330px;
-    width: min(100%, 360px);
+    width: 100%;
     justify-self: center;
   }
 
-.portrait-card::before {
+  .portrait-card::before {
     height: 180px;
     top: 96px;
     width: 180px;
@@ -1500,7 +1501,22 @@ form .primary-button {
     width: min(82%, 280px);
   }
 
-  .interest-grid,
+  .interest-grid {
+    grid-template-columns: repeat(5, minmax(52px, 1fr));
+  }
+
+  .interest-grid span {
+    font-size: 0.62rem;
+    gap: 6px;
+    min-height: 58px;
+    padding: 8px 4px;
+  }
+
+  .interest-grid svg {
+    height: 18px;
+    width: 18px;
+  }
+
   .form-row {
     grid-template-columns: 1fr;
   }
