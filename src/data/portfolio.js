@@ -49,10 +49,10 @@ export const stats = [
 
 export const navItems = [
   { label: "Inicio", href: "#inicio" },
+  { label: "Sobre mi", href: "#sobre-mi" },
   { label: "Experiencia", href: "#experiencia" },
   { label: "Proyectos", href: "#proyectos" },
   { label: "Stack", href: "#stack" },
-  { label: "Sobre mi", href: "#sobre-mi" },
   { label: "Contacto", href: "#contacto" }
 ];
 
@@ -147,23 +147,23 @@ export const experience = [
 export const skillGroups = [
   {
     name: "Frontend",
-    skills: ["Next.js", "React", "TypeScript", "HTML5", "CSS3"]
+    skills: ["Next.js", "React", "TypeScript", "JavaScript", "HTML5", "CSS3"]
   },
   {
-    name: "Backend & Integraciones",
-    skills: ["Node.js", "Python", "REST API", "SOAP", "Oracle OIC"]
+    name: "Backend & APIs",
+    skills: ["Python", "Node.js", "Flask", "REST API", "SOAP", "Microservicios"]
   },
   {
-    name: "Cloud & Data",
-    skills: ["Oracle Cloud", "Oracle Fusion", "SQL", "Visual Builder", "OTBI"]
-  },
-  {
-    name: "Herramientas",
-    skills: ["GitHub", "Docker", "Postman", "VS Code", "Linux"]
+    name: "Cloud & Enterprise",
+    skills: ["Oracle Cloud", "Oracle OIC", "Oracle Fusion", "GCP", "Visual Builder"]
   },
   {
     name: "IA & Automatizacion",
-    skills: ["OpenAI", "GitHub Copilot", "Codex", "Claude Code", "AI APIs"]
+    skills: ["AI APIs", "Copilot Studio", "OpenAI", "GitHub Copilot", "Codex", "Claude Code"]
+  },
+  {
+    name: "Data & Herramientas",
+    skills: ["SQL", "Oracle SQL", "OTBI", "GitHub", "Docker", "Postman", "Linux"]
   }
 ];
 

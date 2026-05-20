@@ -1,5 +1,6 @@
-import { ExternalLink, Github, Youtube } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import Image from "next/image";
+import { FaGithub, FaYoutube } from "react-icons/fa";
 
 export default function ProjectCard({ project }) {
   const viewUrl = project.viewUrl || project.url || "";
@@ -25,6 +26,11 @@ export default function ProjectCard({ project }) {
           </>
         )}
       </div>
+      {project.categoryLabel ? (
+        <span className={`project-category ${project.category || ""}`}>
+          {project.categoryLabel}
+        </span>
+      ) : null}
       <div className="card-heading">
         <h3>{project.name}</h3>
       </div>
@@ -36,16 +42,6 @@ export default function ProjectCard({ project }) {
       <p>{project.description}</p>
       {hasActions ? (
         <div className="project-actions">
-          {viewUrl ? (
-            <a
-              href={viewUrl}
-              aria-label={`Ver demo de ${project.name}`}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <ExternalLink size={17} />
-            </a>
-          ) : null}
           {githubUrl ? (
             <a
               href={githubUrl}
@@ -53,7 +49,7 @@ export default function ProjectCard({ project }) {
               target="_blank"
               rel="noreferrer"
             >
-              <Github size={17} />
+              <FaGithub aria-hidden="true" size={18} />
             </a>
           ) : null}
           {youtubeUrl ? (
@@ -64,7 +60,18 @@ export default function ProjectCard({ project }) {
               target="_blank"
               rel="noreferrer"
             >
-              <Youtube size={18} />
+              <FaYoutube aria-hidden="true" size={19} />
+            </a>
+          ) : null}
+          {viewUrl ? (
+            <a
+              className="demo-action"
+              href={viewUrl}
+              aria-label={`Ver demo de ${project.name}`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <ExternalLink size={17} />
             </a>
           ) : null}
         </div>

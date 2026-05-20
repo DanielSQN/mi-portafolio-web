@@ -13,10 +13,10 @@ export default function Home() {
       <Navbar />
       <main>
         <HeroSection />
+        <AboutSection />
         <ExperienceSection />
         <ProjectsSection />
         <SkillsSection />
-        <AboutSection />
         <CertificationsSection />
         <ContactSection />
       </main>

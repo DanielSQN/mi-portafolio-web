@@ -23,8 +23,8 @@ export default function CertificationsPage() {
           Aprendizaje validado para construir con <span>criterio.</span>
         </h1>
         <p>
-          Una vista completa de certificaciones. Edita esta lista desde{" "}
-          <code>src/data/portfolio.js</code>.
+          Certificaciones y formacion continua en cloud, integraciones,
+          datos, inteligencia artificial y metodologias de entrega.
         </p>
       </header>
       <section className="all-certifications-grid" aria-label="Todas las certificaciones">

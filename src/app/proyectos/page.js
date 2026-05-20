@@ -27,14 +27,15 @@ export default function ProjectsPage() {
           Soluciones construidas para generar <span>impacto.</span>
         </h1>
         <p>
-          Una vista completa de proyectos personales y profesionales. Edita esta
-          lista desde <code>src/data/projects.json</code>.
+          Proyectos personales, freelance, academicos y laborales que reflejan
+          mi experiencia construyendo software, integraciones, automatizaciones
+          y soluciones con IA.
         </p>
         <aside className="projects-note projects-page-note">
           <strong>En construccion</strong>
           <span>
-            Estos son algunos proyectos personales. Faltan mas proyectos
-            personales y laborales por agregar.
+            Esta es una seleccion de proyectos personales, laborales y de
+            investigacion. Aun faltan mas casos por documentar.
           </span>
         </aside>
       </header>

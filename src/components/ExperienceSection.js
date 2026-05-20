@@ -7,7 +7,7 @@ export default function ExperienceSection() {
   return (
     <section className="section-shell content-grid" id="experiencia">
       <SectionHeader
-        index="02"
+        index="03"
         label="Experiencia"
         title={"Experiencia que genera <span>resultados.</span>"}
         copy="He trabajado en proyectos desafiantes para empresas lideres del sector financiero, desarrollando soluciones escalables, seguras y de alto impacto."

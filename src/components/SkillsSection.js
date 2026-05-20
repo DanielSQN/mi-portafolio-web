@@ -9,7 +9,7 @@ export default function SkillsSection() {
   return (
     <section className="section-shell content-grid" id="stack">
       <SectionHeader
-        index="04"
+        index="05"
         label="Stack / Skills"
         title={"Tecnologias que convierten ideas en <span>soluciones.</span>"}
         copy="Stack moderno, herramientas confiables y tecnologias que uso para construir soluciones escalables y de calidad."
