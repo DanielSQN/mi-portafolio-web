@@ -1226,31 +1226,33 @@ code {
 
 .interest-grid {
   border-top: 1px solid var(--line);
-  display: grid;
-  gap: 12px;
-  grid-template-columns: repeat(auto-fit, minmax(86px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
   margin-top: 30px;
   padding-top: 22px;
 }
 
 .interest-grid span {
   align-items: center;
-  border: 1px solid var(--line);
-  border-radius: 7px;
-  color: var(--muted);
-  display: grid;
-  font-size: 0.72rem;
-  gap: 8px;
-  justify-items: center;
-  min-height: 72px;
-  min-width: 0;
-  overflow-wrap: anywhere;
-  padding: 10px;
-  text-align: center;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  color: var(--text);
+  display: inline-flex;
+  flex: 1 1 132px;
+  font-size: 0.82rem;
+  gap: 9px;
+  justify-content: center;
+  min-height: 46px;
+  min-width: 132px;
+  padding: 0 16px;
+  white-space: nowrap;
 }
 
 .interest-grid svg {
-  color: var(--text);
+  color: var(--red);
+  flex: 0 0 auto;
 }
 
 .cert-grid {
@@ -1574,8 +1576,9 @@ form .primary-button {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .interest-grid {
-    grid-template-columns: repeat(3, 1fr);
+  .interest-grid span {
+    flex-basis: 128px;
+    min-width: 128px;
   }
 }
 
@@ -1789,15 +1792,13 @@ form .primary-button {
     width: min(82%, 280px);
   }
 
-  .interest-grid {
-    grid-template-columns: repeat(auto-fit, minmax(76px, 1fr));
-  }
-
   .interest-grid span {
-    font-size: 0.62rem;
+    font-size: 0.76rem;
+    flex-basis: 118px;
     gap: 6px;
-    min-height: 58px;
-    padding: 8px 4px;
+    min-height: 42px;
+    min-width: 118px;
+    padding: 0 12px;
   }
 
   .interest-grid svg {
