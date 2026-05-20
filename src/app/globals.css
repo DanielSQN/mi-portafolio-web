@@ -776,7 +776,7 @@ code {
 }
 
 .projects-cta {
-  margin-top: auto;
+  margin-top: 18px;
   width: fit-content;
 }
 
@@ -786,16 +786,54 @@ code {
   margin-top: 12px;
 }
 
+.projects-note {
+  background:
+    linear-gradient(90deg, rgba(255, 45, 45, 0.12), rgba(255, 45, 45, 0.035)),
+    rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-left: 3px solid var(--red);
+  border-radius: 7px;
+  color: var(--muted);
+  display: grid;
+  gap: 7px;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  margin-top: auto;
+  padding: 16px 16px 16px 18px;
+}
+
+.projects-note strong {
+  color: var(--text);
+  font-size: 0.76rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.projects-note span {
+  max-width: 30ch;
+}
+
+.projects-page-note {
+  margin-top: 24px;
+  max-width: 720px;
+}
+
+.projects-page-note span {
+  max-width: none;
+}
+
 .project-carousel {
   min-width: 0;
   overflow: hidden;
 }
 
 .project-track {
+  align-items: stretch;
   display: grid;
   gap: 18px;
   grid-auto-columns: minmax(240px, 1fr);
   grid-auto-flow: column;
+  grid-auto-rows: 1fr;
   overflow-x: auto;
   padding: 0 2px 18px;
   scroll-snap-type: x mandatory;
@@ -807,6 +845,7 @@ code {
 }
 
 .project-card {
+  height: 100%;
   min-height: 430px;
   min-width: 0;
   padding: 16px;
@@ -881,11 +920,30 @@ code {
     linear-gradient(135deg, rgba(0, 151, 156, 0.76), rgba(9, 22, 28, 0.72));
 }
 
+.project-shot.finance::before {
+  background:
+    radial-gradient(circle at 75% 35%, rgba(103, 232, 249, 0.52), transparent 56px),
+    linear-gradient(135deg, rgba(13, 148, 136, 0.74), rgba(8, 18, 33, 0.78));
+}
+
+.project-shot.wedding::before {
+  background:
+    radial-gradient(circle at 78% 30%, rgba(255, 255, 255, 0.55), transparent 58px),
+    linear-gradient(135deg, rgba(176, 76, 106, 0.68), rgba(28, 16, 24, 0.72));
+}
+
+.project-shot.health::before {
+  background:
+    radial-gradient(circle at 74% 34%, rgba(186, 230, 253, 0.48), transparent 56px),
+    linear-gradient(135deg, rgba(14, 165, 233, 0.68), rgba(9, 43, 56, 0.78));
+}
+
 .card-heading {
-  align-items: center;
+  align-items: flex-start;
   display: flex;
   justify-content: space-between;
   margin-top: 18px;
+  min-height: 50px;
 }
 
 .card-heading h3 {
@@ -924,7 +982,12 @@ code {
 }
 
 .tag-row {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
   margin: 12px 0 16px;
+  min-height: 31px;
 }
 
 .project-dots {

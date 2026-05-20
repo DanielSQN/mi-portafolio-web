@@ -23,6 +23,13 @@ export default function ProjectsSection() {
             Algunos proyectos personales y profesionales que reflejan mi enfoque
             en innovacion, escalabilidad y experiencia de usuario.
           </p>
+          <aside className="projects-note">
+            <strong>En construccion</strong>
+            <span>
+              Estos son algunos proyectos personales. Faltan mas proyectos
+              personales y laborales por agregar.
+            </span>
+          </aside>
           <a className="ghost-button projects-cta" href="/proyectos">
             Ver todos los proyectos <ArrowRight size={16} />
           </a>

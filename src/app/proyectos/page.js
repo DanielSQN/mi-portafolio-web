@@ -30,6 +30,13 @@ export default function ProjectsPage() {
           Una vista completa de proyectos personales y profesionales. Edita esta
           lista desde <code>src/data/projects.json</code>.
         </p>
+        <aside className="projects-note projects-page-note">
+          <strong>En construccion</strong>
+          <span>
+            Estos son algunos proyectos personales. Faltan mas proyectos
+            personales y laborales por agregar.
+          </span>
+        </aside>
       </header>
       <section className="all-projects-grid" aria-label="Todos los proyectos">
         {sortedProjects.map((project, index) => (
