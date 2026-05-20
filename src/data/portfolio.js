@@ -29,7 +29,7 @@ export const heroJson = {
   ],
   objetivo: "Construir soluciones que generen impacto",
   versiculo:
-    "Prov 16:9: El corazón del hombre piensa su camino; mas Jehová endereza sus pasos."
+    "Prov 16:9: El corazón del hombre piensa su camino; mas Dios endereza sus pasos."
 };
 
 export const typewriterSpecialties = [
