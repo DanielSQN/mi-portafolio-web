@@ -875,6 +875,12 @@ code {
     linear-gradient(135deg, rgba(245, 245, 245, 0.85), rgba(150, 150, 160, 0.38));
 }
 
+.project-shot.arduino::before {
+  background:
+    radial-gradient(circle at 78% 34%, rgba(255, 255, 255, 0.58), transparent 54px),
+    linear-gradient(135deg, rgba(0, 151, 156, 0.76), rgba(9, 22, 28, 0.72));
+}
+
 .card-heading {
   align-items: center;
   display: flex;
@@ -905,6 +911,11 @@ code {
   justify-content: center;
   padding: 0;
   width: 38px;
+}
+
+.project-actions a.youtube-action {
+  border-color: rgba(255, 0, 0, 0.42);
+  color: #ff0000;
 }
 
 .project-card {

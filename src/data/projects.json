@@ -5,9 +5,10 @@
     "description": "Plataforma para orquestar integraciones empresariales con monitoreo en tiempo real.",
     "accent": "integrations",
     "img": "/projects/plataforma-integraciones.png",
-    "priority": 1,
+    "priority": 3,
     "viewUrl": "https://carta-invitacion-boda-lt.vercel.app",
-    "githubUrl": "https://github.com/DanielSQN/mi-portafolio-web"
+    "githubUrl": "https://github.com/DanielSQN/mi-portafolio-web",
+    "youtubeUrl": ""
   },
   {
     "name": "Extension IA para Productividad",
@@ -15,29 +16,10 @@
     "description": "Extension de Chrome que utiliza IA para automatizar flujos y extraer informacion.",
     "accent": "ai",
     "img": "/projects/extension-ia-productividad.png",
-    "priority": 2,
-    "viewUrl": "",
-    "githubUrl": ""
-  },
-  {
-    "name": "Dashboard Financiero",
-    "tags": ["React", "OTBI", "Oracle Cloud"],
-    "description": "Dashboards interactivos para analisis de datos y toma de decisiones.",
-    "accent": "dashboard",
-    "img": "/projects/dashboard-financiero.png",
-    "priority": 3,
-    "viewUrl": "",
-    "githubUrl": ""
-  },
-  {
-    "name": "Dashboard Financiero",
-    "tags": ["React", "OTBI", "Oracle Cloud"],
-    "description": "Dashboards interactivos para analisis de datos y toma de decisiones.",
-    "accent": "dashboard",
-    "img": "/projects/dashboard-financiero.png",
     "priority": 4,
     "viewUrl": "",
-    "githubUrl": ""
+    "githubUrl": "",
+    "youtubeUrl": ""
   },
   {
     "name": "Dashboard Financiero",
@@ -47,6 +29,51 @@
     "img": "/projects/dashboard-financiero.png",
     "priority": 5,
     "viewUrl": "",
-    "githubUrl": ""
+    "githubUrl": "",
+    "youtubeUrl": ""
+  },
+  {
+    "name": "Dashboard Financiero",
+    "tags": ["React", "OTBI", "Oracle Cloud"],
+    "description": "Dashboards interactivos para analisis de datos y toma de decisiones.",
+    "accent": "dashboard",
+    "img": "/projects/dashboard-financiero.png",
+    "priority": 6,
+    "viewUrl": "",
+    "githubUrl": "",
+    "youtubeUrl": ""
+  },
+  {
+    "name": "Dashboard Financiero",
+    "tags": ["React", "OTBI", "Oracle Cloud"],
+    "description": "Dashboards interactivos para analisis de datos y toma de decisiones.",
+    "accent": "dashboard",
+    "img": "/projects/dashboard-financiero.png",
+    "priority": 7,
+    "viewUrl": "",
+    "githubUrl": "",
+    "youtubeUrl": ""
+  },
+  {
+    "name": "Botones de Versiculo con Arduino",
+    "tags": ["Arduino", "C++", "Electronica"],
+    "description": "Proyecto con botones fisicos en Arduino para activar y mostrar versiculos.",
+    "accent": "arduino",
+    "img": "/projects/arduino-botones-versiculo.png",
+    "priority": 1,
+    "viewUrl": "",
+    "githubUrl": "https://github.com/DanielSQN/arduino-botones-versiculo",
+    "youtubeUrl": "https://youtu.be/lc15a3Xth6w"
+  },
+  {
+    "name": "Reloj de Versiculos con Matriz Arduino",
+    "tags": ["Arduino", "Matriz LED", "C++"],
+    "description": "Reloj con matriz LED en Arduino que muestra versiculos y contenido programado.",
+    "accent": "arduino",
+    "img": "/projects/arduino-matriz-reloj-versiculos.png",
+    "priority": 2,
+    "viewUrl": "",
+    "githubUrl": "https://github.com/DanielSQN/arduino-matriz-reloj-versiculos",
+    "youtubeUrl": "https://youtu.be/lc15a3Xth6w"
   }
 ]

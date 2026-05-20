@@ -1,10 +1,11 @@
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Github, Youtube } from "lucide-react";
 import Image from "next/image";
 
 export default function ProjectCard({ project }) {
   const viewUrl = project.viewUrl || project.url || "";
   const githubUrl = project.githubUrl || "";
-  const hasActions = Boolean(viewUrl || githubUrl);
+  const youtubeUrl = project.youtubeUrl || "";
+  const hasActions = Boolean(viewUrl || githubUrl || youtubeUrl);
 
   return (
     <article className="project-card glass-card">
@@ -53,6 +54,17 @@ export default function ProjectCard({ project }) {
               rel="noreferrer"
             >
               <Github size={17} />
+            </a>
+          ) : null}
+          {youtubeUrl ? (
+            <a
+              className="youtube-action"
+              href={youtubeUrl}
+              aria-label={`Ver video de YouTube de ${project.name}`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Youtube size={18} />
             </a>
           ) : null}
         </div>
