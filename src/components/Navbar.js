@@ -42,12 +42,17 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
     if (!open) return undefined;
+
     const closeOnEscape = (event) => {
       if (event.key === "Escape") setOpen(false);
     };
     window.addEventListener("keydown", closeOnEscape);
-    return () => window.removeEventListener("keydown", closeOnEscape);
+    return () => {
+      window.removeEventListener("keydown", closeOnEscape);
+      document.body.style.overflow = "";
+    };
   }, [open]);
 
   return (
@@ -63,7 +68,7 @@ export default function Navbar() {
           aria-expanded={open}
           onClick={() => setOpen((current) => !current)}
         >
-          {open ? <X size={20} /> : <Menu size={20} />}
+          {open ? <X size={22} /> : <Menu size={22} />}
         </button>
 
         <div className={`nav-links ${open ? "is-open" : ""}`}>
@@ -78,9 +83,20 @@ export default function Navbar() {
                 setOpen(false);
               }}
             >
+              <span className="nav-link-index" aria-hidden="true">
+                {String(index + 1).padStart(2, "0")}
+              </span>
               {item.label}
             </a>
           ))}
+          <a
+            className="primary-button nav-cv-mobile"
+            href={profile.cvUrl}
+            style={{ "--nav-index": navItems.length }}
+            onClick={() => setOpen(false)}
+          >
+            {profile.cvLabel} <Download size={15} />
+          </a>
         </div>
 
         <a className="ghost-button nav-cv" href={profile.cvUrl}>
