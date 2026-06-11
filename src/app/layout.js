@@ -1,5 +1,18 @@
 import "./globals.css";
+import { Inter, Space_Grotesk } from "next/font/google";
 import { profile } from "@/data/portfolio";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap"
+});
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  variable: "--font-display",
+  display: "swap"
+});
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || profile.siteUrl;
 
@@ -73,7 +86,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="es">
+    <html lang="es" className={`${inter.variable} ${spaceGrotesk.variable}`}>
       <body>{children}</body>
     </html>
   );

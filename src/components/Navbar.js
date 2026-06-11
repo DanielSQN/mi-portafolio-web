@@ -1,16 +1,18 @@
 "use client";
 
 import { Download, Menu, X } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { navItems, profile } from "@/data/portfolio";
 import Logo from "./Logo";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const [activeHref, setActiveHref] = useState(navItems[0]?.href || "#inicio");
+  const progressRef = useRef(null);
 
   useEffect(() => {
-    const updateActiveSection = () => {
+    const updateOnScroll = () => {
       const marker = window.scrollY + window.innerHeight * 0.64;
       const current = navItems.reduce((active, item) => {
         const section = document.querySelector(item.href);
@@ -19,20 +21,43 @@ export default function Navbar() {
       }, navItems[0]?.href || "#inicio");
 
       setActiveHref(current);
+      setScrolled(window.scrollY > 24);
+
+      if (progressRef.current) {
+        const max =
+          document.documentElement.scrollHeight - window.innerHeight;
+        const progress = max > 0 ? Math.min(window.scrollY / max, 1) : 0;
+        progressRef.current.style.transform = `scaleX(${progress})`;
+      }
     };
 
-    updateActiveSection();
-    window.addEventListener("scroll", updateActiveSection, { passive: true });
-    window.addEventListener("resize", updateActiveSection);
+    updateOnScroll();
+    window.addEventListener("scroll", updateOnScroll, { passive: true });
+    window.addEventListener("resize", updateOnScroll);
 
     return () => {
-      window.removeEventListener("scroll", updateActiveSection);
-      window.removeEventListener("resize", updateActiveSection);
+      window.removeEventListener("scroll", updateOnScroll);
+      window.removeEventListener("resize", updateOnScroll);
     };
   }, []);
 
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    if (!open) return undefined;
+
+    const closeOnEscape = (event) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", closeOnEscape);
+    return () => {
+      window.removeEventListener("keydown", closeOnEscape);
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
   return (
-    <header className="site-header">
+    <header className={`site-header ${scrolled ? "is-scrolled" : ""}`}>
+      <span className="scroll-progress" ref={progressRef} aria-hidden="true" />
       <nav className="nav-shell" aria-label="Navegacion principal">
         <Logo />
 
@@ -43,23 +68,35 @@ export default function Navbar() {
           aria-expanded={open}
           onClick={() => setOpen((current) => !current)}
         >
-          {open ? <X size={20} /> : <Menu size={20} />}
+          {open ? <X size={22} /> : <Menu size={22} />}
         </button>
 
         <div className={`nav-links ${open ? "is-open" : ""}`}>
-          {navItems.map((item) => (
+          {navItems.map((item, index) => (
             <a
               className={activeHref === item.href ? "is-active" : ""}
               key={item.href}
               href={item.href}
+              style={{ "--nav-index": index }}
               onClick={() => {
                 setActiveHref(item.href);
                 setOpen(false);
               }}
             >
+              <span className="nav-link-index" aria-hidden="true">
+                {String(index + 1).padStart(2, "0")}
+              </span>
               {item.label}
             </a>
           ))}
+          <a
+            className="primary-button nav-cv-mobile"
+            href={profile.cvUrl}
+            style={{ "--nav-index": navItems.length }}
+            onClick={() => setOpen(false)}
+          >
+            {profile.cvLabel} <Download size={15} />
+          </a>
         </div>
 
         <a className="ghost-button nav-cv" href={profile.cvUrl}>

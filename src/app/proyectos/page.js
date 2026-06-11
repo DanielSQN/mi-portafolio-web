@@ -1,5 +1,6 @@
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
+import Footer from "@/components/Footer";
 import ProjectCard from "@/components/ProjectCard";
 import projects from "@/data/projects.json";
 
@@ -15,35 +16,38 @@ export default function ProjectsPage() {
   );
 
   return (
-    <main className="projects-page section-shell">
-      <Link className="ghost-button back-link" href="/">
-        <ArrowLeft size={16} /> Volver
-      </Link>
-      <header className="projects-page-header">
-        <p className="section-kicker">
-          <span>03</span> Todos los proyectos
-        </p>
-        <h1>
-          Soluciones construidas para generar <span>impacto.</span>
-        </h1>
-        <p>
-          Proyectos personales, freelance, academicos y laborales que reflejan
-          mi experiencia construyendo software, integraciones, automatizaciones
-          y soluciones con IA.
-        </p>
-        <aside className="projects-note projects-page-note">
-          <strong>En construccion</strong>
-          <span>
-            Esta es una seleccion de proyectos personales, laborales y de
-            investigacion. Aun faltan mas casos por documentar.
-          </span>
-        </aside>
-      </header>
-      <section className="all-projects-grid" aria-label="Todos los proyectos">
-        {sortedProjects.map((project, index) => (
-          <ProjectCard project={project} key={`${project.name}-${index}`} />
-        ))}
-      </section>
-    </main>
+    <>
+      <main className="projects-page section-shell">
+        <Link className="ghost-button back-link" href="/">
+          <ArrowLeft size={16} /> Volver
+        </Link>
+        <header className="projects-page-header">
+          <p className="section-kicker">
+            <span>03</span> Todos los proyectos
+          </p>
+          <h1>
+            Soluciones construidas para generar <span>impacto.</span>
+          </h1>
+          <p>
+            Proyectos personales, freelance, academicos y laborales que reflejan
+            mi experiencia construyendo software, integraciones, automatizaciones
+            y soluciones con IA.
+          </p>
+          <aside className="projects-note projects-page-note">
+            <strong>En construccion</strong>
+            <span>
+              Esta es una seleccion de proyectos personales, laborales y de
+              investigacion. Aun faltan mas casos por documentar.
+            </span>
+          </aside>
+        </header>
+        <section className="all-projects-grid" aria-label="Todos los proyectos">
+          {sortedProjects.map((project, index) => (
+            <ProjectCard project={project} key={`${project.name}-${index}`} />
+          ))}
+        </section>
+      </main>
+      <Footer />
+    </>
   );
 }

@@ -2,6 +2,7 @@ import AboutSection from "@/components/AboutSection";
 import CertificationsSection from "@/components/CertificationsSection";
 import ContactSection from "@/components/ContactSection";
 import ExperienceSection from "@/components/ExperienceSection";
+import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import Navbar from "@/components/Navbar";
 import ProjectsSection from "@/components/ProjectsSection";
@@ -20,6 +21,7 @@ export default function Home() {
         <CertificationsSection />
         <ContactSection />
       </main>
+      <Footer />
     </>
   );
 }
