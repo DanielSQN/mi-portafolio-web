@@ -1,8 +1,8 @@
-import { Bike, Dumbbell, Gamepad2, Home, Laptop } from "lucide-react";
+import { Bike, BookOpen, Dumbbell, Gamepad2, Laptop } from "lucide-react";
 import { interests } from "@/data/portfolio";
 import Reveal from "./Reveal";
 
-const interestIcons = [Bike, Gamepad2, Home, Dumbbell, Laptop];
+const interestIcons = [Bike, Gamepad2, BookOpen, Dumbbell, Laptop];
 
 export default function AboutSection() {
   return (
