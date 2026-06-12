@@ -12,10 +12,12 @@ export default function Template({ children }) {
     ).matches;
     if (prefersReducedMotion || !ref.current) return;
 
+    // solo opacidad: un translate aquí convertiría este contenedor en
+    // containing block del navbar fixed y desplazaría la página al recargar
     gsap.fromTo(
       ref.current,
-      { autoAlpha: 0, y: 26 },
-      { autoAlpha: 1, y: 0, duration: 0.65, ease: "power2.out", clearProps: "all" }
+      { autoAlpha: 0 },
+      { autoAlpha: 1, duration: 0.6, ease: "power2.out", clearProps: "all" }
     );
   }, []);
 
