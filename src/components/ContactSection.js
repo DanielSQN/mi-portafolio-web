@@ -1,6 +1,7 @@
 "use client";
 
-import { Mail, MapPin, Phone, Send } from "lucide-react";
+import { Loader2, Mail, MapPin, Phone, Send } from "lucide-react";
+import { useState } from "react";
 import { profile, socialLinks } from "@/data/portfolio";
 import Reveal from "./Reveal";
 
@@ -33,14 +34,50 @@ function SocialIcon({ label }) {
 }
 
 export default function ContactSection() {
-  function handleSubmit(event) {
+  const [status, setStatus] = useState("idle");
+
+  async function handleSubmit(event) {
     event.preventDefault();
-    const formData = new FormData(event.currentTarget);
-    const subject = encodeURIComponent(formData.get("subject") || "Contacto desde portafolio");
-    const body = encodeURIComponent(
-      `Nombre: ${formData.get("name")}\nCorreo: ${formData.get("email")}\n\n${formData.get("message")}`
-    );
-    window.location.href = `mailto:${profile.email}?subject=${subject}&body=${body}`;
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    setStatus("sending");
+
+    try {
+      const response = await fetch(`https://formsubmit.co/ajax/${profile.email}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json"
+        },
+        body: JSON.stringify({
+          name: formData.get("name"),
+          email: formData.get("email"),
+          subject: formData.get("subject"),
+          message: formData.get("message"),
+          _subject: `Portafolio · ${formData.get("subject")}`,
+          _template: "table",
+          _captcha: "false"
+        })
+      });
+
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok || String(data.success) !== "true") {
+        throw new Error("send failed");
+      }
+
+      setStatus("success");
+      form.reset();
+    } catch {
+      // plan B: abrir el cliente de correo con el mensaje ya armado
+      setStatus("error");
+      const subject = encodeURIComponent(
+        formData.get("subject") || "Contacto desde portafolio"
+      );
+      const body = encodeURIComponent(
+        `Nombre: ${formData.get("name")}\nCorreo: ${formData.get("email")}\n\n${formData.get("message")}`
+      );
+      window.location.href = `mailto:${profile.email}?subject=${subject}&body=${body}`;
+    }
   }
 
   return (
@@ -92,9 +129,33 @@ export default function ContactSection() {
             <span>Mensaje</span>
             <textarea name="message" placeholder="Mensaje" rows="6" required />
           </label>
-          <button className="primary-button" type="submit">
-            Enviar mensaje <Send size={17} />
+          <button
+            className="primary-button"
+            disabled={status === "sending"}
+            type="submit"
+          >
+            {status === "sending" ? (
+              <>
+                Enviando… <Loader2 className="spin" size={17} />
+              </>
+            ) : (
+              <>
+                Enviar mensaje <Send size={17} />
+              </>
+            )}
           </button>
+          {status === "success" ? (
+            <p className="form-status form-status-success" role="status">
+              ✓ Mensaje enviado. Te responderé pronto — más rápido que un
+              webhook.
+            </p>
+          ) : null}
+          {status === "error" ? (
+            <p className="form-status form-status-error" role="status">
+              No se pudo enviar directo, así que abrí tu app de correo como
+              plan B. También puedes escribirme a {profile.email}.
+            </p>
+          ) : null}
         </form>
         <div className="social-row">
           {socialLinks.map((link) => {
