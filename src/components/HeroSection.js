@@ -18,13 +18,45 @@ import TypewriterLine from "./TypewriterLine";
 gsap.registerPlugin(ScrollTrigger);
 
 const orbitItems = [
-  { label: "Next.js", icon: "/skills/nextjs.svg" },
-  { label: "React", icon: "/skills/react.svg" },
   { label: "Node.js", icon: "/skills/nodejs.svg" },
-  { label: "Oracle", icon: "/skills/oracle.svg" },
+  { label: "JavaScript", icon: "/skills/javascript.svg" },
   { label: "Python", icon: "/skills/python.svg" },
-  { label: "PostgreSQL", icon: "/skills/postgresql.svg" }
+  { label: "Codex", icon: "/skills/codex.svg" },
+  { label: "Claude", icon: "/skills/claude.svg" },
+  { label: "Next.js", icon: "/skills/nextjs.svg" }
 ];
+
+function MagneticLink({ children, className = "", href }) {
+  const ref = useRef(null);
+
+  function handleMove(event) {
+    const element = ref.current;
+    if (!element) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const bounds = element.getBoundingClientRect();
+    const x = (event.clientX - bounds.left - bounds.width / 2) * 0.32;
+    const y = (event.clientY - bounds.top - bounds.height / 2) * 0.42;
+    gsap.to(element, { x, y, duration: 0.3, ease: "power2.out" });
+  }
+
+  function handleLeave() {
+    const element = ref.current;
+    if (!element) return;
+    gsap.to(element, { x: 0, y: 0, duration: 0.6, ease: "elastic.out(1, 0.4)" });
+  }
+
+  return (
+    <a
+      className={className}
+      href={href}
+      onMouseLeave={handleLeave}
+      onMouseMove={handleMove}
+      ref={ref}
+    >
+      {children}
+    </a>
+  );
+}
 
 function TitleWords({ text, accent = false }) {
   return text.split(" ").map((word, index) => (
@@ -72,21 +104,18 @@ export default function HeroSection() {
         .from(".scroll-cue", { autoAlpha: 0, duration: 0.7 }, "-=0.3")
         .from(
           ".orbit-ring",
-          {
-            scale: 0.55,
-            autoAlpha: 0,
-            duration: 1.4,
-            stagger: 0.12,
-            ease: "expo.out",
-            clearProps: "transform"
-          },
+          { autoAlpha: 0, duration: 1.4, stagger: 0.12, ease: "expo.out" },
           0.35
         )
         .from(
           ".orbit-chip",
+          { autoAlpha: 0, duration: 0.7, stagger: 0.07 },
+          0.6
+        )
+        .from(
+          ".orbit-chip img",
           {
             scale: 0,
-            autoAlpha: 0,
             duration: 0.8,
             stagger: 0.07,
             ease: "back.out(2.2)",
@@ -112,6 +141,18 @@ export default function HeroSection() {
           { autoAlpha: 0, y: 34, duration: 0.7, stagger: 0.08 },
           "-=0.7"
         );
+
+      // flotación continua de los chips, propiedad de GSAP para no
+      // pelear con la caché de transforms (antes era un keyframe CSS)
+      gsap.to(".orbit-chip", {
+        y: -9,
+        duration: 2.3,
+        ease: "sine.inOut",
+        yoyo: true,
+        repeat: -1,
+        delay: 1.8,
+        stagger: { each: 0.4, from: "random" }
+      });
 
       gsap.to(".orbit-scene", {
         y: -70,
@@ -157,9 +198,13 @@ export default function HeroSection() {
           <p className="hero-summary">{profile.summary}</p>
           <TypewriterLine prefix="Construyo" words={typewriterSpecialties} />
           <div className="hero-actions">
-            <a className="primary-button" href="#proyectos">
-              Explorar mi trabajo <ArrowRight size={18} />
-            </a>
+            <MagneticLink className="primary-button hero-cta" href="/proyectos">
+              Explorar mi trabajo
+              <span className="cta-arrow" aria-hidden="true">
+                <ArrowRight size={18} />
+                <ArrowRight size={18} />
+              </span>
+            </MagneticLink>
             <a className="ghost-button" href="#contacto">
               Hablemos de tu idea <MessageCircle size={17} />
             </a>
