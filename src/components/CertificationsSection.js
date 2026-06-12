@@ -13,8 +13,8 @@ export default function CertificationsSection() {
       <SectionHeader
         index="06"
         label="Certificaciones"
-        title={"Aprendizaje validado para construir con <span>criterio.</span>"}
-        copy="Certificaciones enfocadas en cloud, integraciones, datos, IA y metodologias de entrega."
+        title={"Curiosidad <span>con certificado.</span>"}
+        copy="Papeles que validan lo que el insomnio ya sabía: cloud, integraciones, datos, IA y mejores formas de entregar software."
       />
 
       <div className="cert-grid">

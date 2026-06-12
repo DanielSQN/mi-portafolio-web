@@ -11,8 +11,8 @@ export default function SkillsSection() {
       <SectionHeader
         index="05"
         label="Stack / Skills"
-        title={"Tecnologias que convierten ideas en <span>soluciones.</span>"}
-        copy="Stack moderno, herramientas confiables y tecnologias que uso para construir soluciones escalables y de calidad."
+        title={"Las herramientas cambian, <span>el criterio se queda.</span>"}
+        copy="Este es mi arsenal actual, elegido a punta de deploys, errores y aprendizajes. Mañana puede ser otro — y esa es la mejor parte de este oficio."
       />
 
       <div className="skills-board">

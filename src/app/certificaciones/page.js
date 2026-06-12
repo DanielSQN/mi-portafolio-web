@@ -14,19 +14,22 @@ export default function CertificationsPage() {
   return (
     <>
       <main className="projects-page section-shell">
-        <Link className="ghost-button back-link" href="/">
-          <ArrowLeft size={16} /> Volver
+        <Link className="back-link" href="/">
+          <span className="back-link-icon" aria-hidden="true">
+            <ArrowLeft size={15} />
+          </span>
+          <span className="back-link-path">cd ~/inicio</span>
         </Link>
         <header className="projects-page-header">
           <p className="section-kicker">
-            <span>06</span> Todas las certificaciones
+            <span>~/</span> Todas las certificaciones
           </p>
           <h1>
-            Aprendizaje validado para construir con <span>criterio.</span>
+            Curiosidad <span>con certificado.</span>
           </h1>
           <p>
-            Certificaciones y formacion continua en cloud, integraciones,
-            datos, inteligencia artificial y metodologias de entrega.
+            Papeles que validan lo que el insomnio ya sabía: cloud,
+            integraciones, datos, IA y mejores formas de entregar software.
           </p>
         </header>
         <section className="all-certifications-grid" aria-label="Todas las certificaciones">

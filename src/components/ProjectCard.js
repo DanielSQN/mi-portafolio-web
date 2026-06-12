@@ -2,21 +2,27 @@ import { ExternalLink } from "lucide-react";
 import Image from "next/image";
 import { FaGithub, FaYoutube } from "react-icons/fa";
 
-export default function ProjectCard({ project }) {
+export default function ProjectCard({ project, featured = false }) {
   const viewUrl = project.viewUrl || project.url || "";
   const githubUrl = project.githubUrl || "";
   const youtubeUrl = project.youtubeUrl || "";
   const hasActions = Boolean(viewUrl || githubUrl || youtubeUrl);
 
   return (
-    <article className="project-card glass-card">
+    <article
+      className={`project-card glass-card ${featured ? "project-card-featured" : ""}`}
+    >
       <div className={`project-shot ${project.accent}`}>
         {project.img ? (
           <Image
             src={project.img}
             alt={`Vista previa de ${project.name}`}
             fill
-            sizes="(max-width: 980px) 78vw, 260px"
+            sizes={
+              featured
+                ? "(max-width: 980px) 92vw, 720px"
+                : "(max-width: 980px) 92vw, 380px"
+            }
           />
         ) : (
           <>
