@@ -81,7 +81,20 @@ export default function HeroJsonCard({ data }) {
             <JsonKey>estado</JsonKey>: <span className="json-status">&quot;{data.estado}&quot;</span>,
           </span>
           <span>
-            <JsonKey>versiculo</JsonKey>: <JsonValue>{data.versiculo}</JsonValue>
+            <JsonKey>fe</JsonKey>: <span className="json-bracket">{"{"}</span>
+          </span>
+          <span className="json-indent">
+            <JsonKey>mi_roca</JsonKey>: <JsonValue>{data.fe.mi_roca}</JsonValue>,
+          </span>
+          <span className="json-indent">
+            <JsonKey>promesa</JsonKey>: <JsonValue>{data.fe.promesa}</JsonValue>,
+          </span>
+          <span className="json-indent">
+            <JsonKey>en_progreso</JsonKey>:{" "}
+            <span className="json-wip">&quot;{data.fe.en_progreso}&quot;</span>
+          </span>
+          <span>
+            <span className="json-bracket">{"}"}</span>
           </span>
           <span className="json-bracket">{"}"}</span>
         </code>

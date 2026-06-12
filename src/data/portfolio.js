@@ -36,8 +36,13 @@ export const heroJson = {
   ],
   mision: "Construir soluciones que generen impacto real",
   estado: "compilando_nuevas_ideas",
-  versiculo:
-    "Prov 16:9 — El corazón del hombre piensa su camino; mas Dios endereza sus pasos."
+  fe: {
+    mi_roca:
+      "Prov 16:9 — El corazón del hombre piensa su camino; mas Dios endereza sus pasos.",
+    promesa:
+      "Jer 29:11 — Planes de bienestar y no de mal, para darte un futuro y una esperanza.",
+    en_progreso: "Dios sigue trabajando en mí…"
+  }
 };
 
 export const typewriterSpecialties = [
