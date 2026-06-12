@@ -28,7 +28,7 @@ export default function CertificationsPage() {
             Curiosidad <span>con certificado.</span>
           </h1>
           <p>
-            Papeles que validan lo que el insomnio ya sabía: cloud,
+            Credenciales que respaldan lo que la práctica ya me enseñó: cloud,
             integraciones, datos, IA y mejores formas de entregar software.
           </p>
         </header>

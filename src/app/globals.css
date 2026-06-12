@@ -572,7 +572,7 @@ p {
   display: inline-flex;
   font-size: 0.78rem;
   gap: 8px;
-  margin-top: 22px;
+  margin-top: 46px;
   transition:
     color 180ms ease,
     transform 180ms ease;
@@ -1857,6 +1857,41 @@ textarea:focus {
 form .primary-button {
   cursor: pointer;
   width: 100%;
+}
+
+form .primary-button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.spin {
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.form-status {
+  border-radius: 8px;
+  font-size: 0.82rem;
+  line-height: 1.5;
+  margin: 0;
+  padding: 12px 14px;
+}
+
+.form-status-success {
+  background: rgba(53, 214, 111, 0.1);
+  border: 1px solid rgba(53, 214, 111, 0.35);
+  color: #b8f5cd;
+}
+
+.form-status-error {
+  background: rgba(255, 45, 45, 0.08);
+  border: 1px solid rgba(255, 45, 45, 0.32);
+  color: #ffc9c9;
 }
 
 .social-row {

@@ -14,7 +14,7 @@ export default function CertificationsSection() {
         index="06"
         label="Certificaciones"
         title={"Curiosidad <span>con certificado.</span>"}
-        copy="Papeles que validan lo que el insomnio ya sabía: cloud, integraciones, datos, IA y mejores formas de entregar software."
+        copy="Credenciales que respaldan lo que la práctica ya me enseñó: cloud, integraciones, datos, IA y mejores formas de entregar software."
       />
 
       <div className="cert-grid">
