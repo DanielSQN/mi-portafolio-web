@@ -24,17 +24,20 @@ export const heroTitle = {
 };
 
 export const heroJson = {
-  ingeniero: "Daniel Santiago Quintero Niño",
+  nombre: "Daniel Santiago Quintero Niño",
+  alias: "Santi",
+  base: "Bogotá, Colombia",
   sobre_mi: ["Hijo de Dios", "Software Engineer", "Motos", "Gaming", "Tecnología"],
-  habilidades: [
+  superpoderes: [
     "Trabajo en equipo",
     "Innovación",
     "Resolución de problemas",
     "Aprendizaje continuo"
   ],
-  objetivo: "Construir soluciones que generen impacto",
+  mision: "Construir soluciones que generen impacto real",
+  estado: "compilando_nuevas_ideas",
   versiculo:
-    "Prov 16:9: El corazón del hombre piensa su camino; mas Dios endereza sus pasos."
+    "Prov 16:9 — El corazón del hombre piensa su camino; mas Dios endereza sus pasos."
 };
 
 export const typewriterSpecialties = [
