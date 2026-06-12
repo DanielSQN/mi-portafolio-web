@@ -6,7 +6,7 @@ export const profile = {
   eyebrow: "Software Engineer",
   headline: "Construyo soluciones que generan impacto.",
   summary:
-    "Software Engineer especializado en desarrollo full stack, automatizacion y soluciones digitales de alto impacto.",
+    "Ingeniero de software full stack con 7+ años llevando ideas del localhost a produccion: integraciones enterprise que no pueden fallar, automatizaciones que devuelven horas de vida e interfaces que la gente disfruta usar.",
   location: "Bogota, Colombia",
   email: "dsqn.dna@gmail.com",
   phone: "+57 302 384 6761",
@@ -16,6 +16,11 @@ export const profile = {
   cvLabel: "Solicitar CV",
   cvUrl:
     "mailto:dsqn.dna@gmail.com?subject=Solicitud%20de%20CV%20-%20Daniel%20Quintero"
+};
+
+export const heroTitle = {
+  lead: "Convierto ideas en código,",
+  accent: "y código en impacto."
 };
 
 export const heroJson = {
@@ -33,18 +38,18 @@ export const heroJson = {
 };
 
 export const typewriterSpecialties = [
-  "Desarrollo web",
-  "Python y automatizaciones",
-  "integraciones y APIs escalables",
-  "soluciones full stack",
-  "experiencias digitales"
+  "experiencias web memorables",
+  "automatizaciones con Python",
+  "integraciones a prueba de fallos",
+  "productos full stack de punta a punta",
+  "soluciones con IA que sí se usan"
 ];
 
 export const stats = [
-  { value: "7+", label: "Años de experiencia" },
-  { value: "20+", label: "Integraciones enterprise" },
-  { value: "15+", label: "Proyectos completados" },
-  { value: "100%", label: "Comprometido con la calidad" }
+  { value: "7+", label: "Años convirtiendo café en código" },
+  { value: "20+", label: "Integraciones enterprise en producción" },
+  { value: "15+", label: "Proyectos enviados al mundo" },
+  { value: "100%", label: "Compromiso en cada deploy" }
 ];
 
 export const navItems = [

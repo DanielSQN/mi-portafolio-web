@@ -27,12 +27,16 @@ export default function HeroJsonCard({ data }) {
 
   return (
     <div className="laptop" onMouseLeave={handleLeave} onMouseMove={handleMove}>
+      <div className="code-window-bar">
+        <span className="window-dot-row" aria-hidden="true">
+          <span />
+          <span />
+          <span />
+        </span>
+        <span className="code-window-file">santi.config.json</span>
+        <Braces aria-hidden="true" size={14} />
+      </div>
       <div className="laptop-screen">
-        <div className="window-dot-row">
-          <span />
-          <span />
-          <span />
-        </div>
         <code className="json-code">
           <span className="json-bracket">{"{"}</span>
           <span>
@@ -72,9 +76,12 @@ export default function HeroJsonCard({ data }) {
           </span>
           <span className="json-bracket">{"}"}</span>
         </code>
-        <Braces className="screen-braces" size={24} />
       </div>
-      <div className="laptop-base" />
+      <div className="code-window-status">
+        <span className="code-window-branch">⎇ main</span>
+        <span>JSON · UTF-8</span>
+        <span className="code-window-ok">✓ 0 errores</span>
+      </div>
     </div>
   );
 }

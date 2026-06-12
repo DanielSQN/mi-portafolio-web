@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 
-export default function TypewriterLine({ words }) {
+export default function TypewriterLine({ words, prefix = "Especializado en" }) {
   const safeWords = useMemo(() => words.filter(Boolean), [words]);
   const [wordIndex, setWordIndex] = useState(0);
   const [letterCount, setLetterCount] = useState(0);
@@ -38,7 +38,7 @@ export default function TypewriterLine({ words }) {
 
   return (
     <p className="typewriter-line" aria-live="polite">
-      <span className="typewriter-prefix">Especializado en</span>{" "}
+      <span className="typewriter-prefix">{prefix}</span>{" "}
       <span className="typewriter-word">{safeWords[wordIndex].slice(0, letterCount)}</span>
       <b aria-hidden="true" />
     </p>

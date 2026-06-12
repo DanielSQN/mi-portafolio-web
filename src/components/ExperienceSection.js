@@ -9,8 +9,8 @@ export default function ExperienceSection() {
       <SectionHeader
         index="03"
         label="Experiencia"
-        title={"Experiencia que genera <span>resultados.</span>"}
-        copy="He trabajado en proyectos desafiantes para empresas lideres del sector financiero, desarrollando soluciones escalables, seguras y de alto impacto."
+        title={"Batallas libradas <span>en producción.</span>"}
+        copy="Siete años construyendo para el sector financiero, donde un bug no es un detalle: integraciones regulatorias, sistemas core y plataformas que miles de personas usan sin saberlo."
       />
 
       <div className="timeline">

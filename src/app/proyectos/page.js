@@ -2,6 +2,9 @@ import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import Footer from "@/components/Footer";
 import ProjectCard from "@/components/ProjectCard";
+import StaggerGrid from "@/components/StaggerGrid";
+import TiltCard from "@/components/TiltCard";
+import WipBanner from "@/components/WipBanner";
 import projects from "@/data/projects.json";
 
 export const metadata = {
@@ -18,34 +21,37 @@ export default function ProjectsPage() {
   return (
     <>
       <main className="projects-page section-shell">
-        <Link className="ghost-button back-link" href="/">
-          <ArrowLeft size={16} /> Volver
+        <Link className="back-link" href="/">
+          <span className="back-link-icon" aria-hidden="true">
+            <ArrowLeft size={15} />
+          </span>
+          <span className="back-link-path">cd ~/inicio</span>
         </Link>
         <header className="projects-page-header">
           <p className="section-kicker">
-            <span>03</span> Todos los proyectos
+            <span>~/</span> El archivo completo
           </p>
           <h1>
-            Soluciones construidas para generar <span>impacto.</span>
+            Doce historias de código: <span>del experimento al deploy.</span>
           </h1>
           <p>
-            Proyectos personales, freelance, academicos y laborales que reflejan
-            mi experiencia construyendo software, integraciones, automatizaciones
-            y soluciones con IA.
+            Trabajo enterprise, freelance hecho con cariño, locuras con Arduino
+            y experimentos con IA. Cada tarjeta de este mosaico es un problema
+            real que terminó resuelto en producción — o aprendido a la mala.
           </p>
-          <aside className="projects-note projects-page-note">
-            <strong>En construccion</strong>
-            <span>
-              Esta es una seleccion de proyectos personales, laborales y de
-              investigacion. Aun faltan mas casos por documentar.
-            </span>
-          </aside>
+          <WipBanner />
         </header>
-        <section className="all-projects-grid" aria-label="Todos los proyectos">
+        <StaggerGrid
+          as="section"
+          className="all-projects-grid"
+          aria-label="Todos los proyectos"
+        >
           {sortedProjects.map((project, index) => (
-            <ProjectCard project={project} key={`${project.name}-${index}`} />
+            <TiltCard key={`${project.name}-${index}`}>
+              <ProjectCard project={project} />
+            </TiltCard>
           ))}
-        </section>
+        </StaggerGrid>
       </main>
       <Footer />
     </>

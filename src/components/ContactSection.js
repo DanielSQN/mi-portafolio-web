@@ -45,14 +45,17 @@ export default function ContactSection() {
 
   return (
     <section className="section-shell contact-section" id="contacto">
-      <Reveal className="contact-copy">
+      <Reveal className="contact-copy" variant="left">
         <p className="section-kicker">
           <span>07</span> Contacto
         </p>
         <h2>
-          Hablemos de tu proximo <span>proyecto.</span>
+          Tu idea merece <span>un gran código.</span>
         </h2>
-        <p>Estoy abierto a nuevas oportunidades y colaboraciones.</p>
+        <p>
+          ¿Un proyecto, una vacante o solo ganas de hablar de tecnología? Mi
+          bandeja de entrada está abierta — respondo más rápido que un webhook.
+        </p>
         <div className="contact-list">
           <a href={`mailto:${profile.email}`}>
             <Mail size={17} /> {profile.email}
@@ -69,7 +72,7 @@ export default function ContactSection() {
         </div>
       </Reveal>
 
-      <Reveal className="contact-panel glass-card" delay={120}>
+      <Reveal className="contact-panel glass-card" delay={120} variant="right">
         <form onSubmit={handleSubmit}>
           <div className="form-row">
             <label>

@@ -1,41 +1,66 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-export default function Reveal({ children, className = "", delay = 0 }) {
+gsap.registerPlugin(ScrollTrigger);
+
+const variants = {
+  up: { from: { autoAlpha: 0, y: 60 }, to: { y: 0 } },
+  left: { from: { autoAlpha: 0, x: -70 }, to: { x: 0 } },
+  right: { from: { autoAlpha: 0, x: 70 }, to: { x: 0 } },
+  zoom: { from: { autoAlpha: 0, scale: 0.92, y: 34 }, to: { scale: 1, y: 0 } },
+  clip: {
+    from: { autoAlpha: 0, clipPath: "inset(0 0 100% 0)", y: 24 },
+    to: { clipPath: "inset(0 0 0% 0)", y: 0 }
+  }
+};
+
+export default function Reveal({
+  children,
+  className = "",
+  delay = 0,
+  variant = "up"
+}) {
   const ref = useRef(null);
-  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
+    const element = ref.current;
+    if (!element) return undefined;
+
     const prefersReducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
     ).matches;
 
     if (prefersReducedMotion) {
-      setVisible(true);
+      gsap.set(element, { autoAlpha: 1 });
       return undefined;
     }
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.18, rootMargin: "0px 0px -80px" }
-    );
+    const { from, to } = variants[variant] || variants.up;
+    const tween = gsap.fromTo(element, from, {
+      autoAlpha: 1,
+      ...to,
+      duration: 1.15,
+      delay: delay / 1000,
+      ease: "power3.out",
+      clearProps: "transform,clipPath",
+      scrollTrigger: {
+        trigger: element,
+        start: "top 87%",
+        once: true
+      }
+    });
 
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, []);
+    return () => {
+      tween.scrollTrigger?.kill();
+      tween.kill();
+    };
+  }, [delay, variant]);
 
   return (
-    <div
-      ref={ref}
-      className={`reveal ${visible ? "is-visible" : ""} ${className}`}
-      style={{ transitionDelay: `${delay}ms` }}
-    >
+    <div ref={ref} className={`reveal ${className}`}>
       {children}
     </div>
   );
