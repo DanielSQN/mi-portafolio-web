@@ -183,7 +183,7 @@ export const skillGroups = [
 export const interests = [
   "Motos",
   "Gaming",
-  "Iglesia",
+  "Dios • Salmo 23",
   "Entrenamiento",
   "Tecnologia"
 ];
