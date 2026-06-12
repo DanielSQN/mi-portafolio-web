@@ -16,6 +16,10 @@ const spaceGrotesk = Space_Grotesk({
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || profile.siteUrl;
 
+export const viewport = {
+  themeColor: "#030304"
+};
+
 export const metadata = {
   metadataBase: new URL(siteUrl),
   title: {
