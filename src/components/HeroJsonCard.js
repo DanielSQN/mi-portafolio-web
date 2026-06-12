@@ -40,7 +40,13 @@ export default function HeroJsonCard({ data }) {
         <code className="json-code">
           <span className="json-bracket">{"{"}</span>
           <span>
-            <JsonKey>ingeniero</JsonKey>: <JsonValue>{data.ingeniero}</JsonValue>,
+            <JsonKey>nombre</JsonKey>: <JsonValue>{data.nombre}</JsonValue>,
+          </span>
+          <span>
+            <JsonKey>alias</JsonKey>: <JsonValue>{data.alias}</JsonValue>,
+          </span>
+          <span>
+            <JsonKey>base</JsonKey>: <JsonValue>{data.base}</JsonValue>,
           </span>
           <span>
             <JsonKey>sobre_mi</JsonKey>: <span className="json-bracket">[</span>
@@ -57,19 +63,22 @@ export default function HeroJsonCard({ data }) {
             <span className="json-bracket">]</span>,
           </span>
           <span>
-            <JsonKey>habilidades</JsonKey>: <span className="json-bracket">[</span>
+            <JsonKey>superpoderes</JsonKey>: <span className="json-bracket">[</span>
           </span>
-          {data.habilidades.map((skill, index) => (
+          {data.superpoderes.map((skill, index) => (
             <span className="json-indent" key={skill}>
               <JsonValue>{skill}</JsonValue>
-              {index < data.habilidades.length - 1 ? "," : ""}
+              {index < data.superpoderes.length - 1 ? "," : ""}
             </span>
           ))}
           <span>
             <span className="json-bracket">]</span>,
           </span>
           <span>
-            <JsonKey>objetivo</JsonKey>: <JsonValue>{data.objetivo}</JsonValue>,
+            <JsonKey>mision</JsonKey>: <JsonValue>{data.mision}</JsonValue>,
+          </span>
+          <span>
+            <JsonKey>estado</JsonKey>: <span className="json-status">&quot;{data.estado}&quot;</span>,
           </span>
           <span>
             <JsonKey>versiculo</JsonKey>: <JsonValue>{data.versiculo}</JsonValue>
