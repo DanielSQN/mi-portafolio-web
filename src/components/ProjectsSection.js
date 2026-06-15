@@ -41,10 +41,12 @@ export default function ProjectsSection() {
             </TiltCard>
           ))}
           <a className="bento-cta glass-card" href="/proyectos">
-            <span className="bento-cta-count">
-              +{remaining} casos más esperan en el archivo
+            <span className="bento-cta-text">
+              <span className="bento-cta-count">
+                +{remaining} casos más esperan en el archivo
+              </span>
+              <strong>Conocer a profundidad todos los proyectos</strong>
             </span>
-            <strong>Conocer a profundidad todos los proyectos</strong>
             <span className="bento-cta-arrow" aria-hidden="true">
               <ArrowRight size={22} />
             </span>

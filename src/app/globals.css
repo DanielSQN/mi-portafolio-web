@@ -40,6 +40,34 @@ html {
   scroll-behavior: smooth;
 }
 
+/* scrollbar a medida: el nativo rompe la estética oscura en desktop.
+   (pointer: fine) deja intacto el scroll nativo de touch en móvil. */
+@media (pointer: fine) {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 45, 45, 0.55) transparent;
+  }
+
+  ::-webkit-scrollbar {
+    height: 10px;
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--red), var(--red-dark));
+    border: 2px solid var(--background);
+    border-radius: 999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, var(--red-bright), var(--red));
+  }
+}
+
 body {
   margin: 0;
   background:
@@ -602,7 +630,7 @@ p {
 }
 
 .hero-visual {
-  min-height: 680px;
+  min-height: 540px;
 }
 
 .orbit-scene {
@@ -610,7 +638,7 @@ p {
   display: flex;
   height: 100%;
   justify-content: center;
-  min-height: 680px;
+  min-height: 540px;
   position: relative;
 }
 
@@ -1114,29 +1142,34 @@ code {
 
 .bento-featured {
   grid-column: span 2;
-  grid-row: span 2;
 }
 
 .project-card-featured .project-shot {
-  flex: 1;
-  height: auto;
-  min-height: 280px;
+  flex: none;
+  height: clamp(220px, 24vw, 280px);
+  min-height: 0;
 }
 
 .bento-cta {
-  align-items: flex-start;
+  align-items: center;
   background:
     radial-gradient(circle at 85% 15%, rgba(255, 45, 45, 0.2), transparent 12rem),
     linear-gradient(145deg, rgba(255, 45, 45, 0.1), transparent),
     var(--surface);
   display: flex;
-  flex-direction: column;
-  gap: 16px;
-  justify-content: center;
-  min-height: 240px;
+  flex-direction: row;
+  gap: 28px;
+  grid-column: span 3;
+  justify-content: space-between;
   overflow: hidden;
-  padding: 26px;
+  padding: 26px 30px;
   position: relative;
+}
+
+.bento-cta-text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .bento-cta-count {
@@ -1152,7 +1185,11 @@ code {
   font-weight: 600;
   letter-spacing: -0.01em;
   line-height: 1.3;
-  max-width: 17ch;
+  max-width: 32ch;
+}
+
+.bento-cta-arrow {
+  flex: 0 0 auto;
 }
 
 .bento-cta-arrow {
@@ -2411,8 +2448,15 @@ form .primary-button:disabled {
     grid-row: auto;
   }
 
+  .bento-cta {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 16px;
+  }
+
   .project-card-featured .project-shot {
-    min-height: 200px;
+    height: clamp(200px, 52vw, 240px);
+    min-height: 0;
   }
 
   .all-projects-grid,

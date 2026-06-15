@@ -6,7 +6,7 @@ export const profile = {
   eyebrow: "Software Engineer",
   headline: "Construyo soluciones que generan impacto.",
   summary:
-    "Ingeniero de software full stack con 7+ años llevando ideas del localhost a produccion: integraciones enterprise que no pueden fallar, automatizaciones que devuelven horas de vida e interfaces que la gente disfruta usar.",
+    "Ingeniero de sistemas y desarrollador full stack. Llevo ideas del localhost a producción: integraciones que no fallan, automatización que devuelve horas e interfaces que la gente disfruta.",
   location: "Bogota, Colombia",
   email: "dsqn.dna@gmail.com",
   phone: "+57 302 384 6761",

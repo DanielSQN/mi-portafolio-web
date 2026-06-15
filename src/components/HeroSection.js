@@ -126,12 +126,12 @@ export default function HeroSection() {
         .from(
           ".laptop",
           {
-            y: 90,
+            y: 64,
             autoAlpha: 0,
-            rotationX: 22,
+            rotationX: 10,
             transformPerspective: 900,
-            duration: 1.35,
-            ease: "expo.out",
+            duration: 1.2,
+            ease: "power2.out",
             clearProps: "transform"
           },
           0.55
