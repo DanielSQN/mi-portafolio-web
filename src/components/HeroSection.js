@@ -103,67 +103,27 @@ export default function HeroSection() {
         )
         .from(".scroll-cue", { autoAlpha: 0, duration: 0.7 }, "-=0.3")
         .from(
-          ".orbit-ring",
-          { autoAlpha: 0, duration: 1.4, stagger: 0.12, ease: "expo.out" },
-          0.35
-        )
-        .from(
-          ".orbit-chip",
-          { autoAlpha: 0, duration: 0.7, stagger: 0.07 },
-          0.6
-        )
-        .from(
-          ".orbit-chip img",
-          {
-            scale: 0,
-            duration: 0.8,
-            stagger: 0.07,
-            ease: "back.out(2.2)",
-            clearProps: "transform"
-          },
-          0.6
-        )
-        .from(
           ".laptop",
           {
-            y: 64,
             autoAlpha: 0,
-            rotationX: 10,
-            transformPerspective: 900,
-            duration: 1.2,
-            ease: "power2.out",
+            y: 40,
+            scale: 0.97,
+            duration: 1.1,
+            ease: "power3.out",
             clearProps: "transform"
           },
-          0.55
+          0.5
+        )
+        .from(
+          ".tool-rail",
+          { autoAlpha: 0, y: 16, duration: 0.8, stagger: 0.12 },
+          0.7
         )
         .from(
           ".stats-grid article",
           { autoAlpha: 0, y: 34, duration: 0.7, stagger: 0.08 },
           "-=0.7"
         );
-
-      // flotación continua de los chips, propiedad de GSAP para no
-      // pelear con la caché de transforms (antes era un keyframe CSS)
-      gsap.to(".orbit-chip", {
-        y: -9,
-        duration: 2.3,
-        ease: "sine.inOut",
-        yoyo: true,
-        repeat: -1,
-        delay: 1.8,
-        stagger: { each: 0.4, from: "random" }
-      });
-
-      gsap.to(".orbit-scene", {
-        y: -70,
-        ease: "none",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top top",
-          end: "bottom top",
-          scrub: 0.6
-        }
-      });
 
       gsap.to(".hero-copy", {
         y: -34,
@@ -216,19 +176,30 @@ export default function HeroSection() {
         </div>
 
         <div className="hero-visual">
-          <div className="orbit-scene" aria-label="Escena visual de tecnologia">
-            <div className="orbit-ring orbit-ring-one" />
-            <div className="orbit-ring orbit-ring-two" />
-            {orbitItems.map(({ label, icon }, index) => (
-              <span
-                className={`orbit-chip orbit-chip-${index + 1}`}
-                data-label={label}
-                key={label}
-              >
-                <Image alt={label} height={28} src={icon} width={28} />
-              </span>
-            ))}
+          <div className="code-stage">
+            <div className="tool-rail tool-rail-top" aria-hidden="true">
+              <div className="tool-track">
+                {[...orbitItems, ...orbitItems].map(({ label, icon }, index) => (
+                  <span className="tool-chip" key={`top-${label}-${index}`}>
+                    <Image alt="" height={20} src={icon} width={20} />
+                    {label}
+                  </span>
+                ))}
+              </div>
+            </div>
+
             <HeroJsonCard data={heroJson} />
+
+            <div className="tool-rail tool-rail-bottom" aria-hidden="true">
+              <div className="tool-track">
+                {[...orbitItems, ...orbitItems].map(({ label, icon }, index) => (
+                  <span className="tool-chip" key={`bottom-${label}-${index}`}>
+                    <Image alt="" height={20} src={icon} width={20} />
+                    {label}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>

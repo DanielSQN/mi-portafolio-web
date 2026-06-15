@@ -636,6 +636,7 @@ p {
 
 .hero-visual {
   min-height: 540px;
+  min-width: 0;
 }
 
 .orbit-scene {
@@ -937,6 +938,98 @@ code {
   padding-left: 26px;
 }
 
+/* ===== Hero: la "pantalla" llena la columna y el JSON va centrado, con
+   rieles tipo carrusel de herramientas arriba y abajo ===== */
+.code-stage {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 0;
+  min-width: 0;
+  width: 100%;
+}
+
+.code-stage .laptop {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-height: 0;
+  transform: none;
+  width: 100%;
+}
+
+.code-stage .laptop-screen {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  min-height: 0;
+}
+
+.tool-rail {
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 12%,
+    #000 88%,
+    transparent
+  );
+  flex: 0 0 auto;
+  mask-image: linear-gradient(
+    90deg,
+    transparent,
+    #000 12%,
+    #000 88%,
+    transparent
+  );
+  min-width: 0;
+  overflow: hidden;
+}
+
+.tool-track {
+  animation: tool-marquee 26s linear infinite;
+  display: flex;
+  width: max-content;
+}
+
+.tool-rail-bottom .tool-track {
+  animation-direction: reverse;
+}
+
+.tool-rail:hover .tool-track {
+  animation-play-state: paused;
+}
+
+@keyframes tool-marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.tool-chip {
+  align-items: center;
+  background:
+    linear-gradient(rgba(8, 10, 14, 0.96), rgba(8, 10, 14, 0.96)) padding-box,
+    linear-gradient(140deg, rgba(255, 45, 45, 0.6), rgba(255, 255, 255, 0.12) 65%)
+      border-box;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  color: var(--muted);
+  display: inline-flex;
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: 0.74rem;
+  gap: 8px;
+  margin-right: 12px;
+  padding: 8px 14px;
+  white-space: nowrap;
+}
+
+.tool-chip img {
+  filter: drop-shadow(0 0 6px rgba(255, 45, 45, 0.3));
+  height: 20px;
+  object-fit: contain;
+  width: 20px;
+}
 
 .stats-grid {
   border-top: 1px solid var(--line);
@@ -2316,6 +2409,32 @@ form .primary-button:disabled {
   body.has-sidebar section[id] {
     scroll-margin-top: 28px;
   }
+
+  /* gutter: el contenido no queda pegado a la columna fija */
+  body.has-sidebar .section-shell {
+    padding-left: clamp(32px, 3.4vw, 68px);
+    padding-right: clamp(32px, 3.4vw, 68px);
+  }
+
+  /* hero a dos columnas: la derecha (pantalla) llena alto y ancho */
+  body.has-sidebar .hero-grid {
+    align-items: stretch;
+    flex: 1;
+    min-height: 0;
+  }
+
+  body.has-sidebar .hero-copy {
+    align-self: center;
+  }
+
+  body.has-sidebar .hero-visual {
+    height: 100%;
+    min-height: 0;
+  }
+
+  body.has-sidebar .code-stage {
+    height: 100%;
+  }
 }
 
 @media (max-width: 980px) {
@@ -2431,7 +2550,7 @@ form .primary-button:disabled {
   .content-grid,
   .contact-section,
   .about-section {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .hero-copy,
@@ -2614,11 +2733,8 @@ form .primary-button:disabled {
     grid-column: 3;
   }
 
-  .laptop {
-    grid-column: 1 / -1;
-    grid-row: 2;
-    justify-self: center;
-    width: min(390px, 100%);
+  .code-stage .laptop {
+    width: 100%;
   }
 
   .laptop-screen {

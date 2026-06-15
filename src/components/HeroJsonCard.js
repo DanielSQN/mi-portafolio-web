@@ -11,22 +11,8 @@ function JsonValue({ children }) {
 }
 
 export default function HeroJsonCard({ data }) {
-  function handleMove(event) {
-    const bounds = event.currentTarget.getBoundingClientRect();
-    const x = (event.clientX - bounds.left) / bounds.width - 0.5;
-    const y = (event.clientY - bounds.top) / bounds.height - 0.5;
-
-    event.currentTarget.style.setProperty("--tilt-x", `${(-y * 10).toFixed(2)}deg`);
-    event.currentTarget.style.setProperty("--tilt-y", `${(x * 12).toFixed(2)}deg`);
-  }
-
-  function handleLeave(event) {
-    event.currentTarget.style.setProperty("--tilt-x", "0deg");
-    event.currentTarget.style.setProperty("--tilt-y", "0deg");
-  }
-
   return (
-    <div className="laptop" onMouseLeave={handleLeave} onMouseMove={handleMove}>
+    <div className="laptop">
       <div className="code-window-bar">
         <span className="window-dot-row" aria-hidden="true">
           <span />
