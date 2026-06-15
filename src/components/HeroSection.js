@@ -9,7 +9,6 @@ import {
   heroJson,
   heroTitle,
   profile,
-  stats,
   typewriterSpecialties
 } from "@/data/portfolio";
 import HeroJsonCard from "./HeroJsonCard";
@@ -118,11 +117,6 @@ export default function HeroSection() {
           ".tool-rail",
           { autoAlpha: 0, y: 16, duration: 0.8, stagger: 0.12 },
           0.7
-        )
-        .from(
-          ".stats-grid article",
-          { autoAlpha: 0, y: 34, duration: 0.7, stagger: 0.08 },
-          "-=0.7"
         );
 
       gsap.to(".hero-copy", {
@@ -202,15 +196,6 @@ export default function HeroSection() {
             </div>
           </div>
         </div>
-      </div>
-
-      <div className="stats-grid">
-        {stats.map((stat) => (
-          <article key={stat.label}>
-            <strong>{stat.value}</strong>
-            <span>{stat.label}</span>
-          </article>
-        ))}
       </div>
     </section>
   );
