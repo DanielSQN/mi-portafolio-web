@@ -2218,6 +2218,12 @@ form .primary-button:disabled {
     color: var(--red);
   }
 
+  /* el CV de móvil vive dentro de .nav-links; el selector de enlaces lo
+     reactivaba, así que lo ocultamos: en desktop el CV es .nav-cv del pie */
+  body.has-sidebar .nav-links .nav-cv-mobile {
+    display: none;
+  }
+
   body.has-sidebar .nav-cv {
     display: inline-flex;
     justify-content: center;
