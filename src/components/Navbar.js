@@ -5,23 +5,17 @@ import { useEffect, useRef, useState } from "react";
 import { navItems, profile } from "@/data/portfolio";
 import Logo from "./Logo";
 
-export default function Navbar() {
+export default function Navbar({ subpage = false }) {
   const [open, setOpen] = useState(false);
   const [collapsed, setCollapsed] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [activeHref, setActiveHref] = useState(navItems[0]?.href || "#inicio");
+  const [activeHref, setActiveHref] = useState(
+    subpage ? "" : navItems[0]?.href || "#inicio"
+  );
   const progressRef = useRef(null);
 
   useEffect(() => {
     const updateOnScroll = () => {
-      const marker = window.scrollY + window.innerHeight * 0.64;
-      const current = navItems.reduce((active, item) => {
-        const section = document.querySelector(item.href);
-        if (!section) return active;
-        return section.offsetTop <= marker ? item.href : active;
-      }, navItems[0]?.href || "#inicio");
-
-      setActiveHref(current);
       setScrolled(window.scrollY > 24);
 
       if (progressRef.current) {
@@ -30,6 +24,18 @@ export default function Navbar() {
         const progress = max > 0 ? Math.min(window.scrollY / max, 1) : 0;
         progressRef.current.style.transform = `scaleX(${progress})`;
       }
+
+      // el scroll-spy solo aplica en la home, donde existen las secciones
+      if (subpage) return;
+
+      const marker = window.scrollY + window.innerHeight * 0.64;
+      const current = navItems.reduce((active, item) => {
+        const section = document.querySelector(item.href);
+        if (!section) return active;
+        return section.offsetTop <= marker ? item.href : active;
+      }, navItems[0]?.href || "#inicio");
+
+      setActiveHref(current);
     };
 
     updateOnScroll();
@@ -40,7 +46,7 @@ export default function Navbar() {
       window.removeEventListener("scroll", updateOnScroll);
       window.removeEventListener("resize", updateOnScroll);
     };
-  }, []);
+  }, [subpage]);
 
   // marca el layout con columna lateral (solo donde se monta el Navbar)
   // y restaura el estado de colapso guardado por el usuario
@@ -77,7 +83,7 @@ export default function Navbar() {
       <header className={`site-header ${scrolled ? "is-scrolled" : ""}`}>
         <span className="scroll-progress" ref={progressRef} aria-hidden="true" />
       <nav className="nav-shell" aria-label="Navegacion principal">
-        <Logo />
+        <Logo href={subpage ? "/" : "#inicio"} />
 
         <button
           className="menu-toggle"
@@ -103,10 +109,10 @@ export default function Navbar() {
             <a
               className={activeHref === item.href ? "is-active" : ""}
               key={item.href}
-              href={item.href}
+              href={subpage ? `/${item.href}` : item.href}
               style={{ "--nav-index": index }}
               onClick={() => {
-                setActiveHref(item.href);
+                if (!subpage) setActiveHref(item.href);
                 setOpen(false);
               }}
             >

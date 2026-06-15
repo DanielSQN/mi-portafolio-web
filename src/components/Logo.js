@@ -1,9 +1,9 @@
 import Image from "next/image";
 import { profile } from "@/data/portfolio";
 
-export default function Logo() {
+export default function Logo({ href = "#inicio" }) {
   return (
-    <a className="brand" href="#inicio" aria-label="Ir al inicio">
+    <a className="brand" href={href} aria-label="Ir al inicio">
       <span className="brand-mark">
         <Image alt="" height={30} src="/brand/sq-icon.png" width={30} />
       </span>

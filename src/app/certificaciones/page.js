@@ -1,7 +1,7 @@
-import { ArrowLeft, Award, ExternalLink } from "lucide-react";
+import { Award, ExternalLink } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
 import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 import certifications from "@/data/certifications.json";
 
 export const metadata = {
@@ -13,13 +13,8 @@ export const metadata = {
 export default function CertificationsPage() {
   return (
     <>
+      <Navbar subpage />
       <main className="projects-page section-shell">
-        <Link className="back-link" href="/">
-          <span className="back-link-icon" aria-hidden="true">
-            <ArrowLeft size={15} />
-          </span>
-          <span className="back-link-path">cd ~/inicio</span>
-        </Link>
         <header className="projects-page-header">
           <p className="section-kicker">
             <span>~/</span> Todas las certificaciones

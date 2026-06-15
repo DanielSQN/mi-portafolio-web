@@ -1,6 +1,5 @@
-import { ArrowLeft } from "lucide-react";
-import Link from "next/link";
 import Footer from "@/components/Footer";
+import Navbar from "@/components/Navbar";
 import ProjectCard from "@/components/ProjectCard";
 import StaggerGrid from "@/components/StaggerGrid";
 import TiltCard from "@/components/TiltCard";
@@ -20,13 +19,8 @@ export default function ProjectsPage() {
 
   return (
     <>
+      <Navbar subpage />
       <main className="projects-page section-shell">
-        <Link className="back-link" href="/">
-          <span className="back-link-icon" aria-hidden="true">
-            <ArrowLeft size={15} />
-          </span>
-          <span className="back-link-path">cd ~/inicio</span>
-        </Link>
         <header className="projects-page-header">
           <p className="section-kicker">
             <span>~/</span> El archivo completo

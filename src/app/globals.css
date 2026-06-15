@@ -1705,8 +1705,8 @@ code {
 }
 
 .projects-page {
-  padding-top: 38px;
   padding-bottom: 90px;
+  padding-top: 96px;
 }
 
 .back-link {
@@ -2421,6 +2421,11 @@ form .primary-button:disabled {
 
   body.has-sidebar section[id] {
     scroll-margin-top: 28px;
+  }
+
+  /* subpáginas: sin barra superior, el encabezado respira menos arriba */
+  body.has-sidebar .projects-page {
+    padding-top: 56px;
   }
 
   /* gutter: el contenido no queda pegado a la columna fija */
