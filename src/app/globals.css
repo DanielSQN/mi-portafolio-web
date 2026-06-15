@@ -274,6 +274,11 @@ body::before {
   justify-content: center;
 }
 
+.sidebar-collapse,
+.sidebar-reopen {
+  display: none;
+}
+
 .section-shell {
   margin: 0 auto;
   max-width: var(--max-width);
@@ -2118,6 +2123,192 @@ form .primary-button:disabled {
 
   .laptop {
     transform: none !important;
+  }
+}
+
+/* ===== Desktop: el menú es una columna lateral fija e integrada ===== */
+@media (min-width: 981px) {
+  :root {
+    --sidebar-w: 270px;
+  }
+
+  /* la barra deja de flotar arriba: ocupa toda la columna izquierda */
+  body.has-sidebar .site-header,
+  body.has-sidebar .site-header.is-scrolled {
+    bottom: 0;
+    left: 0;
+    padding: 0;
+    right: auto;
+    top: 0;
+    transition: transform 360ms cubic-bezier(0.4, 0, 0.2, 1);
+    width: var(--sidebar-w);
+  }
+
+  body.has-sidebar .nav-shell,
+  body.has-sidebar .site-header.is-scrolled .nav-shell {
+    background: rgba(6, 7, 10, 0.86);
+    border: 0;
+    border-radius: 0;
+    border-right: 1px solid var(--line);
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    height: 100vh;
+    max-width: none;
+    min-height: 0;
+    padding: 30px 20px 24px;
+  }
+
+  body.has-sidebar .nav-shell::before {
+    border-radius: 0;
+  }
+
+  body.has-sidebar .brand {
+    padding: 0 8px;
+  }
+
+  body.has-sidebar .nav-links {
+    align-items: stretch;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 2px;
+    justify-content: flex-start;
+    margin-top: 22px;
+    overflow-y: auto;
+  }
+
+  body.has-sidebar .nav-links a {
+    align-items: center;
+    border-radius: 10px;
+    color: var(--muted);
+    display: flex;
+    font-size: 0.9rem;
+    gap: 12px;
+    justify-content: flex-start;
+    padding: 11px 12px;
+  }
+
+  body.has-sidebar .nav-links a::after {
+    display: none;
+  }
+
+  body.has-sidebar .nav-links a:hover,
+  body.has-sidebar .nav-links a:focus-visible {
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--text);
+  }
+
+  body.has-sidebar .nav-links a.is-active {
+    background: var(--red-soft);
+    color: var(--red);
+  }
+
+  body.has-sidebar .nav-link-index {
+    color: var(--soft);
+    display: inline-block;
+    font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+    font-size: 0.72rem;
+    font-weight: 700;
+    min-width: 22px;
+  }
+
+  body.has-sidebar .nav-links a.is-active .nav-link-index {
+    color: var(--red);
+  }
+
+  body.has-sidebar .nav-cv {
+    display: inline-flex;
+    justify-content: center;
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  /* asa de colapso integrada sobre el borde derecho de la columna */
+  body.has-sidebar .sidebar-collapse {
+    align-items: center;
+    background: var(--surface-strong);
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    color: var(--muted);
+    cursor: pointer;
+    display: inline-flex;
+    height: 28px;
+    justify-content: center;
+    position: absolute;
+    right: -14px;
+    top: 34px;
+    transition:
+      background 200ms ease,
+      border-color 200ms ease,
+      color 200ms ease;
+    width: 28px;
+    z-index: 22;
+  }
+
+  body.has-sidebar .sidebar-collapse:hover,
+  body.has-sidebar .sidebar-collapse:focus-visible {
+    background: var(--red-soft);
+    border-color: var(--line-red);
+    color: var(--red);
+  }
+
+  /* el contenido vive en la columna derecha y es el que scrollea */
+  body.has-sidebar main,
+  body.has-sidebar .site-footer {
+    margin-left: var(--sidebar-w);
+    transition: margin-left 360ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* estado colapsado: la columna se oculta y el contenido ocupa todo */
+  body.has-sidebar.sidebar-collapsed .site-header {
+    transform: translateX(-100%);
+  }
+
+  body.has-sidebar.sidebar-collapsed main,
+  body.has-sidebar.sidebar-collapsed .site-footer {
+    margin-left: 0;
+  }
+
+  body.has-sidebar .sidebar-reopen {
+    align-items: center;
+    backdrop-filter: blur(18px);
+    background: rgba(6, 7, 10, 0.9);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    color: var(--text);
+    cursor: pointer;
+    height: 42px;
+    justify-content: center;
+    left: 16px;
+    position: fixed;
+    top: 16px;
+    transition:
+      background 200ms ease,
+      border-color 200ms ease,
+      color 200ms ease;
+    width: 42px;
+    z-index: 25;
+  }
+
+  body.has-sidebar .sidebar-reopen:hover,
+  body.has-sidebar .sidebar-reopen:focus-visible {
+    border-color: var(--line-red);
+    color: var(--red);
+  }
+
+  body.has-sidebar.sidebar-collapsed .sidebar-reopen {
+    display: inline-flex;
+  }
+
+  /* sin barra superior, el hero respira menos arriba y cabe en el viewport */
+  body.has-sidebar .hero {
+    padding-top: 84px;
+  }
+
+  body.has-sidebar section[id] {
+    scroll-margin-top: 28px;
   }
 }
 

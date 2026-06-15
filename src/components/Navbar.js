@@ -1,12 +1,13 @@
 "use client";
 
-import { Download, Menu, X } from "lucide-react";
+import { Download, Menu, PanelLeftClose, PanelLeftOpen, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { navItems, profile } from "@/data/portfolio";
 import Logo from "./Logo";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [collapsed, setCollapsed] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeHref, setActiveHref] = useState(navItems[0]?.href || "#inicio");
   const progressRef = useRef(null);
@@ -41,6 +42,22 @@ export default function Navbar() {
     };
   }, []);
 
+  // marca el layout con columna lateral (solo donde se monta el Navbar)
+  // y restaura el estado de colapso guardado por el usuario
+  useEffect(() => {
+    document.body.classList.add("has-sidebar");
+    const saved = window.localStorage.getItem("sidebar-collapsed") === "true";
+    setCollapsed(saved);
+    return () => {
+      document.body.classList.remove("has-sidebar", "sidebar-collapsed");
+    };
+  }, []);
+
+  useEffect(() => {
+    document.body.classList.toggle("sidebar-collapsed", collapsed);
+    window.localStorage.setItem("sidebar-collapsed", String(collapsed));
+  }, [collapsed]);
+
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     if (!open) return undefined;
@@ -56,8 +73,9 @@ export default function Navbar() {
   }, [open]);
 
   return (
-    <header className={`site-header ${scrolled ? "is-scrolled" : ""}`}>
-      <span className="scroll-progress" ref={progressRef} aria-hidden="true" />
+    <>
+      <header className={`site-header ${scrolled ? "is-scrolled" : ""}`}>
+        <span className="scroll-progress" ref={progressRef} aria-hidden="true" />
       <nav className="nav-shell" aria-label="Navegacion principal">
         <Logo />
 
@@ -69,6 +87,15 @@ export default function Navbar() {
           onClick={() => setOpen((current) => !current)}
         >
           {open ? <X size={22} /> : <Menu size={22} />}
+        </button>
+
+        <button
+          className="sidebar-collapse"
+          type="button"
+          aria-label="Colapsar menu lateral"
+          onClick={() => setCollapsed(true)}
+        >
+          <PanelLeftClose size={18} />
         </button>
 
         <div className={`nav-links ${open ? "is-open" : ""}`}>
@@ -102,7 +129,17 @@ export default function Navbar() {
         <a className="ghost-button nav-cv" href={profile.cvUrl}>
           {profile.cvLabel} <Download size={15} />
         </a>
-      </nav>
-    </header>
+        </nav>
+      </header>
+
+      <button
+        className="sidebar-reopen"
+        type="button"
+        aria-label="Mostrar menu lateral"
+        onClick={() => setCollapsed(false)}
+      >
+        <PanelLeftOpen size={18} />
+      </button>
+    </>
   );
 }
