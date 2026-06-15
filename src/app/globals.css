@@ -960,10 +960,18 @@ code {
 }
 
 .code-stage .laptop-screen {
-  align-items: center;
   display: flex;
   flex: 1;
-  justify-content: center;
+  flex-direction: column;
+  gap: 14px;
+  min-height: 0;
+}
+
+/* el JSON queda centrado entre los rieles superior e inferior */
+.code-stage .laptop-screen .json-code {
+  align-content: center;
+  align-self: center;
+  flex: 1;
   min-height: 0;
 }
 
@@ -2417,8 +2425,16 @@ form .primary-button:disabled {
 
   /* gutter: el contenido no queda pegado a la columna fija */
   body.has-sidebar .section-shell {
-    padding-left: clamp(32px, 3.4vw, 68px);
-    padding-right: clamp(32px, 3.4vw, 68px);
+    padding-left: clamp(20px, 2.4vw, 44px);
+    padding-right: clamp(20px, 2.4vw, 44px);
+  }
+
+  /* el hero sangra hasta el borde derecho del navegador: la pantalla del
+     Mac queda pegada al borde, sin padding/centrado que la separe */
+  body.has-sidebar .hero {
+    max-width: none;
+    padding-right: 0;
+    padding-top: 56px;
   }
 
   /* hero a dos columnas: la derecha (pantalla) llena alto y ancho */
@@ -2439,6 +2455,13 @@ form .primary-button:disabled {
 
   body.has-sidebar .code-stage {
     height: 100%;
+  }
+
+  /* la pantalla pega al borde derecho: sin radio ni borde a la derecha */
+  body.has-sidebar .code-stage .laptop {
+    border-bottom-right-radius: 0;
+    border-right: 0;
+    border-top-right-radius: 0;
   }
 }
 

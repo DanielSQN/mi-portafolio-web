@@ -1,7 +1,6 @@
 "use client";
 
 import { ArrowRight, ChevronDown, MessageCircle } from "lucide-react";
-import Image from "next/image";
 import { Fragment, useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -171,29 +170,7 @@ export default function HeroSection() {
 
         <div className="hero-visual">
           <div className="code-stage">
-            <div className="tool-rail tool-rail-top" aria-hidden="true">
-              <div className="tool-track">
-                {[...orbitItems, ...orbitItems].map(({ label, icon }, index) => (
-                  <span className="tool-chip" key={`top-${label}-${index}`}>
-                    <Image alt="" height={20} src={icon} width={20} />
-                    {label}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            <HeroJsonCard data={heroJson} />
-
-            <div className="tool-rail tool-rail-bottom" aria-hidden="true">
-              <div className="tool-track">
-                {[...orbitItems, ...orbitItems].map(({ label, icon }, index) => (
-                  <span className="tool-chip" key={`bottom-${label}-${index}`}>
-                    <Image alt="" height={20} src={icon} width={20} />
-                    {label}
-                  </span>
-                ))}
-              </div>
-            </div>
+            <HeroJsonCard data={heroJson} tools={orbitItems} />
           </div>
         </div>
       </div>

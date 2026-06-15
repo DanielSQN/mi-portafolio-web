@@ -1,6 +1,7 @@
 "use client";
 
 import { Braces } from "lucide-react";
+import Image from "next/image";
 
 function JsonKey({ children }) {
   return <span className="json-key">&quot;{children}&quot;</span>;
@@ -10,7 +11,23 @@ function JsonValue({ children }) {
   return <span className="json-value">&quot;{children}&quot;</span>;
 }
 
-export default function HeroJsonCard({ data }) {
+function ToolRail({ side, tools }) {
+  if (!tools.length) return null;
+  return (
+    <div className={`tool-rail tool-rail-${side}`} aria-hidden="true">
+      <div className="tool-track">
+        {[...tools, ...tools].map(({ label, icon }, index) => (
+          <span className="tool-chip" key={`${side}-${label}-${index}`}>
+            <Image alt="" height={18} src={icon} width={18} />
+            {label}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default function HeroJsonCard({ data, tools = [] }) {
   return (
     <div className="laptop">
       <div className="code-window-bar">
@@ -23,6 +40,7 @@ export default function HeroJsonCard({ data }) {
         <Braces aria-hidden="true" size={14} />
       </div>
       <div className="laptop-screen">
+        <ToolRail side="top" tools={tools} />
         <code className="json-code">
           <span className="json-bracket">{"{"}</span>
           <span>
@@ -84,6 +102,7 @@ export default function HeroJsonCard({ data }) {
           </span>
           <span className="json-bracket">{"}"}</span>
         </code>
+        <ToolRail side="bottom" tools={tools} />
       </div>
       <div className="code-window-status">
         <span className="code-window-branch">⎇ main</span>
