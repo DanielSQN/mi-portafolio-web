@@ -41,7 +41,7 @@ export default function StaggerGrid({
         clearProps: "transform",
         scrollTrigger: {
           trigger: element,
-          start: "top 86%",
+          start: "top 95%",
           once: true
         }
       }

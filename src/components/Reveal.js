@@ -39,16 +39,18 @@ export default function Reveal({
     }
 
     const { from, to } = variants[variant] || variants.up;
+    // GSAP fija el estado inicial oculto (immediateRender); así, si el JS
+    // o ScrollTrigger fallan, el contenido permanece visible (failsafe)
     const tween = gsap.fromTo(element, from, {
       autoAlpha: 1,
       ...to,
-      duration: 1.15,
+      duration: 1.05,
       delay: delay / 1000,
       ease: "power3.out",
       clearProps: "transform,clipPath",
       scrollTrigger: {
         trigger: element,
-        start: "top 87%",
+        start: "top 95%",
         once: true
       }
     });

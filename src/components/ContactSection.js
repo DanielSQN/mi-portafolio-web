@@ -114,11 +114,17 @@ export default function ContactSection() {
           <div className="form-row">
             <label>
               <span>Nombre</span>
-              <input name="name" placeholder="Nombre" required />
+              <input name="name" placeholder="Nombre" autoComplete="name" required />
             </label>
             <label>
               <span>Correo electronico</span>
-              <input name="email" type="email" placeholder="Correo electronico" required />
+              <input
+                name="email"
+                type="email"
+                placeholder="Correo electronico"
+                autoComplete="email"
+                required
+              />
             </label>
           </div>
           <label>

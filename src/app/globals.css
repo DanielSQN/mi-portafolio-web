@@ -6,7 +6,7 @@
   --line-red: rgba(255, 44, 44, 0.5);
   --text: #f4f4f5;
   --muted: #a8a8b3;
-  --soft: #71717a;
+  --soft: #8b8b95;
   --red: #ff2d2d;
   --red-bright: #ff5a5a;
   --red-dark: #9f1414;
@@ -601,13 +601,43 @@ p {
   transform: translateX(0);
 }
 
+.hero-social {
+  display: flex;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.hero-social a {
+  align-items: center;
+  border: 1px solid var(--line-red);
+  border-radius: 8px;
+  color: var(--muted);
+  display: inline-flex;
+  height: 40px;
+  justify-content: center;
+  transition:
+    background 200ms ease,
+    border-color 200ms ease,
+    color 200ms ease,
+    transform 200ms ease;
+  width: 40px;
+}
+
+.hero-social a:hover,
+.hero-social a:focus-visible {
+  background: rgba(255, 45, 45, 0.1);
+  border-color: var(--red);
+  color: var(--text);
+  transform: translateY(-2px);
+}
+
 .scroll-cue {
   align-items: center;
   color: var(--muted);
   display: inline-flex;
   font-size: 0.78rem;
   gap: 8px;
-  margin-top: 46px;
+  margin-top: 30px;
   transition:
     color 180ms ease,
     transform 180ms ease;
@@ -996,7 +1026,7 @@ code {
 }
 
 .tool-track {
-  animation: tool-marquee 26s linear infinite;
+  animation: tool-marquee 34s linear infinite;
   display: flex;
   width: max-content;
 }
@@ -1709,45 +1739,6 @@ code {
   padding-top: 96px;
 }
 
-.back-link {
-  align-items: center;
-  color: var(--muted);
-  display: inline-flex;
-  gap: 12px;
-  margin-bottom: 38px;
-  transition: color 200ms ease;
-}
-
-.back-link-icon {
-  align-items: center;
-  background: rgba(255, 45, 45, 0.06);
-  border: 1px solid var(--line-red);
-  border-radius: 10px;
-  color: var(--red);
-  display: inline-flex;
-  height: 38px;
-  justify-content: center;
-  transition:
-    background 220ms ease,
-    transform 220ms ease;
-  width: 38px;
-}
-
-.back-link-path {
-  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
-  font-size: 0.8rem;
-  letter-spacing: 0.02em;
-}
-
-.back-link:hover {
-  color: var(--text);
-}
-
-.back-link:hover .back-link-icon {
-  background: rgba(255, 45, 45, 0.16);
-  transform: translateX(-4px);
-}
-
 .projects-page-header {
   max-width: 780px;
 }
@@ -2100,11 +2091,8 @@ form .primary-button:disabled {
   width: 18px;
 }
 
-/* estado inicial; GSAP (autoAlpha) se encarga de revelarlo */
-.reveal {
-  opacity: 0;
-  visibility: hidden;
-}
+/* el ocultamiento inicial lo hace GSAP (autoAlpha) en el efecto; así, si
+   el JS falla, el contenido queda visible en vez de oculto para siempre */
 
 @keyframes menu-item-in {
   from {

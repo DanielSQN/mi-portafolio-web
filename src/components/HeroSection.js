@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowRight, ChevronDown, MessageCircle } from "lucide-react";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { Fragment, useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -99,6 +100,11 @@ export default function HeroSection() {
           { autoAlpha: 0, y: 24, duration: 0.6, stagger: 0.09 },
           "-=0.5"
         )
+        .from(
+          ".hero-social > *",
+          { autoAlpha: 0, y: 16, duration: 0.5, stagger: 0.08 },
+          "-=0.45"
+        )
         .from(".scroll-cue", { autoAlpha: 0, duration: 0.7 }, "-=0.3")
         .from(
           ".laptop",
@@ -160,6 +166,24 @@ export default function HeroSection() {
             </MagneticLink>
             <a className="ghost-button" href="#contacto">
               Hablemos de tu idea <MessageCircle size={17} />
+            </a>
+          </div>
+          <div className="hero-social">
+            <a
+              href={`https://${profile.github}`}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="GitHub"
+            >
+              <FaGithub size={18} />
+            </a>
+            <a
+              href={`https://${profile.linkedin}`}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="LinkedIn"
+            >
+              <FaLinkedinIn size={18} />
             </a>
           </div>
           <a className="scroll-cue" href="#sobre-mi">
