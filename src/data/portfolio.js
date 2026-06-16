@@ -13,9 +13,8 @@ export const profile = {
   linkedin: "linkedin.com/in/danielsantiagoqn",
   github: "github.com/DanielSQN",
   siteUrl: "https://mi-portafolio-web.vercel.app",
-  cvLabel: "Solicitar CV",
-  cvUrl:
-    "mailto:dsqn.dna@gmail.com?subject=Solicitud%20de%20CV%20-%20Daniel%20Quintero"
+  cvLabel: "Descargar CV",
+  cvUrl: "/cv/Daniel-Quintero-CV.pdf"
 };
 
 export const heroTitle = {

@@ -125,6 +125,9 @@ export default function Navbar({ subpage = false }) {
           <a
             className="primary-button nav-cv-mobile"
             href={profile.cvUrl}
+            download
+            target="_blank"
+            rel="noreferrer"
             style={{ "--nav-index": navItems.length }}
             onClick={() => setOpen(false)}
           >
@@ -132,7 +135,13 @@ export default function Navbar({ subpage = false }) {
           </a>
         </div>
 
-        <a className="ghost-button nav-cv" href={profile.cvUrl}>
+        <a
+          className="ghost-button nav-cv"
+          href={profile.cvUrl}
+          download
+          target="_blank"
+          rel="noreferrer"
+        >
           {profile.cvLabel} <Download size={15} />
         </a>
         </nav>
