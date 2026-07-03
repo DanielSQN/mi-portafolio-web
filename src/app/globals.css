@@ -426,7 +426,8 @@ h3,
 }
 
 h2 span,
-.projects-page-header h1 span {
+.projects-page-header h1 span,
+.not-found h1 span {
   background: var(--accent-gradient);
   background-clip: text;
   -webkit-background-clip: text;
@@ -1739,6 +1740,20 @@ code {
   padding-top: 96px;
 }
 
+.not-found {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  padding-bottom: 60px;
+}
+
+.not-found-copy {
+  margin-bottom: 30px;
+  max-width: 46ch;
+}
+
 .projects-page-header {
   max-width: 780px;
 }
@@ -2220,6 +2235,20 @@ form .primary-button:disabled {
   }
 }
 
+/* pantallas muy anchas: el JSON escala para no perderse en la pantalla */
+@media (min-width: 1800px) {
+  code {
+    font-size: 0.82rem;
+    gap: 8px;
+    line-height: 1.4;
+  }
+
+  .tool-chip {
+    font-size: 0.82rem;
+    padding: 10px 16px;
+  }
+}
+
 /* ===== Desktop: el menú es una columna lateral fija e integrada ===== */
 @media (min-width: 981px) {
   :root {
@@ -2423,11 +2452,13 @@ form .primary-button:disabled {
   }
 
   /* el hero sangra hasta el borde derecho del navegador: la pantalla del
-     Mac queda pegada al borde, sin padding/centrado que la separe */
+     Mac queda pegada al borde, sin padding/centrado que la separe.
+     padding-top contenido para que quepa también en laptops de 720p */
   body.has-sidebar .hero {
     max-width: none;
+    padding-bottom: 24px;
     padding-right: 0;
-    padding-top: 56px;
+    padding-top: 40px;
   }
 
   /* hero a dos columnas: la derecha (pantalla) llena alto y ancho */
@@ -2501,11 +2532,21 @@ form .primary-button:disabled {
     flex-direction: column;
     gap: 6px;
     inset: 0;
-    justify-content: center;
+    /* centrado seguro: con justify-content center + overflow, el tope
+       quedaría recortado e inaccesible en pantallas bajas */
+    justify-content: flex-start;
     overflow-y: auto;
-    padding: 90px 26px 36px;
+    padding: 82px 26px 32px;
     position: fixed;
     z-index: 1;
+  }
+
+  .nav-links > :first-child {
+    margin-top: auto;
+  }
+
+  .nav-links > :last-child {
+    margin-bottom: auto;
   }
 
   .nav-links a {
