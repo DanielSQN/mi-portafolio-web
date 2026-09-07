@@ -25,11 +25,25 @@ export default function ProjectCard({ project, featured = false }) {
             }
           />
         ) : (
-          <>
-            <span />
-            <span />
-            <span />
-          </>
+          // sin captura todavía: una placa deliberada, no un esqueleto de
+          // carga, que es como se leían las tres barras grises anteriores
+          <span className="project-noshot">
+            <svg
+              aria-hidden="true"
+              height="34"
+              shapeRendering="crispEdges"
+              viewBox="0 0 12 10"
+              width="41"
+            >
+              <path
+                d="M0 0h12v8H0zM1 1h10v6H1zM4 9h4v1H4z"
+                fill="currentColor"
+                opacity="0.55"
+              />
+              <path d="M3 3h2v1H3zM7 3h2v1H7zM4 5h4v1H4z" fill="currentColor" />
+            </svg>
+            Sin captura
+          </span>
         )}
       </div>
       {project.categoryLabel ? (

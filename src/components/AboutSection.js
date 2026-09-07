@@ -7,9 +7,17 @@ const interestIcons = [Bike, Gamepad2, BookOpen, Dumbbell, Laptop];
 export default function AboutSection() {
   return (
     <section className="section-shell about-shell" id="sobre-mi">
-      <p className="section-kicker">
-        <span>02</span> Sobre mi
-      </p>
+      <div className="section-banner">
+        <span className="section-banner-index" aria-hidden="true">
+          02
+        </span>
+        <div className="section-banner-main">
+          <p className="section-banner-label">Sobre mí</p>
+          <h2>
+            Ingeniero de día, <span>explorador a tiempo completo.</span>
+          </h2>
+        </div>
+      </div>
       <Reveal className="about-section glass-card" variant="clip">
         <div className="portrait-card">
           <div className="portrait-glow" />
@@ -18,9 +26,6 @@ export default function AboutSection() {
 
         <div className="about-copy">
           <p className="eyebrow">Detrás del código</p>
-          <h2>
-            Ingeniero de día, <span>explorador a tiempo completo.</span>
-          </h2>
           <p>
             Cuando no estoy desplegando a producción, estoy rodando en moto,
             entrenando o desarmando alguna idea nueva. Creo que la mejor

@@ -15,20 +15,21 @@ export default function ProjectsSection() {
   return (
     <section className="section-shell" id="proyectos">
       <div className="projects-showcase glass-card">
-        <Reveal className="projects-intro" variant="clip">
-          <div className="projects-header-copy">
-            <p className="section-kicker">
-              <span>04</span> Proyectos destacados
-            </p>
+        <Reveal className="section-banner" variant="left">
+          <span className="section-banner-index" aria-hidden="true">
+            04
+          </span>
+          <div className="section-banner-main">
+            <p className="section-banner-label">Proyectos destacados</p>
             <h2>
               Ideas que salieron de localhost <span>y llegaron al mundo.</span>
             </h2>
-            <p>
-              Una colección de encargos, experimentos y obsesiones personales:
-              desde PWAs de finanzas hasta relojes con Arduino que predican
-              versículos. Cada una me enseñó algo distinto.
-            </p>
           </div>
+          <p className="section-banner-copy">
+            Una colección de encargos, experimentos y obsesiones personales:
+            desde PWAs de finanzas hasta relojes con Arduino que predican
+            versículos. Cada una me enseñó algo distinto.
+          </p>
         </Reveal>
 
         <StaggerGrid className="projects-bento">

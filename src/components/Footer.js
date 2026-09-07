@@ -12,7 +12,7 @@ export default function Footer() {
           <span>{profile.eyebrow} · {profile.location}</span>
         </div>
 
-        <nav className="footer-nav" aria-label="Navegacion del pie de pagina">
+        <nav className="footer-nav" aria-label="Navegación del pie de pagina">
           {navItems.map((item) => (
             <a key={item.href} href={`/${item.href}`}>
               {item.label}

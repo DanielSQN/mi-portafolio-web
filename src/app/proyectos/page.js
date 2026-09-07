@@ -9,7 +9,7 @@ import projects from "@/data/projects.json";
 export const metadata = {
   title: "Proyectos",
   description:
-    "Proyectos destacados de Daniel Quintero en desarrollo web, automatizacion, integraciones y analitica."
+    "Proyectos destacados de Daniel Quintero en desarrollo web, automatización, integraciones y analitica."
 };
 
 export default function ProjectsPage() {

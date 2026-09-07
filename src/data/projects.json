@@ -13,11 +13,11 @@
     "youtubeUrl": ""
   },
   {
-    "name": "Botones de Versiculo con Arduino",
+    "name": "Botones de Versículo con Arduino",
     "category": "personal",
     "categoryLabel": "Personal",
-    "tags": ["Arduino", "C++", "Electronica"],
-    "description": "Proyecto con botones fisicos en Arduino para activar y mostrar versiculos.",
+    "tags": ["Arduino", "C++", "Electrónica"],
+    "description": "Proyecto con botones físicos en Arduino para activar y mostrar versículos.",
     "accent": "arduino",
     "img": "/projects/arduino-botones-versiculo.png",
     "priority": 3,
@@ -26,11 +26,11 @@
     "youtubeUrl": "https://youtube.com/shorts/h_3Rsy91WHo"
   },
   {
-    "name": "Reloj de Versiculos con Matriz Arduino",
+    "name": "Reloj de Versículos con Matriz Arduino",
     "category": "personal",
     "categoryLabel": "Personal",
     "tags": ["Arduino", "Matriz LED", "C++"],
-    "description": "Reloj con matriz LED en Arduino que muestra versiculos y contenido programado.",
+    "description": "Reloj con matriz LED en Arduino que muestra versículos y contenido programado.",
     "accent": "arduino",
     "img": "/projects/arduino-matriz-reloj-versiculos.png",
     "priority": 4,
@@ -52,11 +52,11 @@
     "youtubeUrl": ""
   },
   {
-    "name": "Casa Domotica con Arduino",
+    "name": "Casa Domótica con Arduino",
     "category": "school",
     "categoryLabel": "Colegio",
     "tags": ["Arduino", "Bluetooth", "App Inventor"],
-    "description": "Maqueta de casa domotica con LEDs, puertas automaticas, reles de alto voltaje y control Bluetooth desde una app en App Inventor.",
+    "description": "Maqueta de casa domótica con LEDs, puertas automaticas, reles de alto voltaje y control Bluetooth desde una app en App Inventor.",
     "accent": "arduino",
     "img": "/projects/casa-domotica-arduino.png",
     "priority": 7,
@@ -65,11 +65,11 @@
     "youtubeUrl": "https://www.youtube.com/watch?v=cly4iNFuopY"
   },
   {
-    "name": "IA Musical y Analisis de Sentimientos",
+    "name": "IA Musical y Análisis de Sentimientos",
     "category": "university",
     "categoryLabel": "Universidad",
     "tags": ["Next.js", "Python", "IA"],
-    "description": "Proyecto de investigacion que analiza sentimientos por canciones escuchadas, crea dashboards y recomienda musica por generos similares.",
+    "description": "Proyecto de investigacion que analiza sentimientos por canciones escuchadas, crea dashboards y recomienda música por generos similares.",
     "accent": "music-ai",
     "img": "",
     "priority": 9,
@@ -78,11 +78,11 @@
     "youtubeUrl": "https://www.youtube.com/watch?v=lc15a3Xth6w"
   },
   {
-    "name": "Extension Chrome con IA para Servicio al Cliente",
+    "name": "Extensión Chrome con IA para Servicio al Cliente",
     "category": "freelance",
     "categoryLabel": "Freelance",
     "tags": ["JavaScript", "HTML", "AI APIs"],
-    "description": "Extension que analiza hilos de conversacion y propone respuestas en espanol e ingles, con opcion de generar respuestas personalizadas.",
+    "description": "Extensión que analiza hilos de conversación y propone respuestas en español e inglés, con opción de generar respuestas personalizadas.",
     "accent": "chrome-ai",
     "img": "",
     "priority": 5,
@@ -95,7 +95,7 @@
     "category": "work",
     "categoryLabel": "Laboral",
     "tags": ["Oracle OIC", "OSC", "Python"],
-    "description": "Integracion entre CRM y el sistema PQRS de la SFC para 33 momentos de intercambio de informacion, con microservicio Python para cifrado.",
+    "description": "Integración entre CRM y el sistema PQRS de la SFC para 33 momentos de intercambio de información, con microservicio Python para cifrado.",
     "accent": "enterprise",
     "img": "",
     "priority": 8,
@@ -104,7 +104,7 @@
     "youtubeUrl": ""
   },
   {
-    "name": "Agente Copilot para Analisis PQRS",
+    "name": "Agente Copilot para Análisis PQRS",
     "category": "work",
     "categoryLabel": "Laboral",
     "tags": ["Copilot Studio", "REST API", "OIC"],
@@ -121,7 +121,7 @@
     "category": "work",
     "categoryLabel": "Laboral",
     "tags": ["Python", "OIC", "GCP"],
-    "description": "Microservicio Python conectado con OIC y GCP para traer informacion de clientes y apoyar modelos de rotacion para marketing y ventas.",
+    "description": "Microservicio Python conectado con OIC y GCP para traer información de clientes y apoyar modelos de rotacion para marketing y ventas.",
     "accent": "automation",
     "img": "",
     "priority": 10,
@@ -134,7 +134,7 @@
     "category": "work",
     "categoryLabel": "Laboral",
     "tags": ["Oracle OIC", "Cifrado", "REST"],
-    "description": "Integracion OIC para enviar respuestas al cliente con metodos de cifrado que fortalecen la seguridad y la gestion de PQRS.",
+    "description": "Integración OIC para enviar respuestas al cliente con metodos de cifrado que fortalecen la seguridad y la gestión de PQRS.",
     "accent": "enterprise",
     "img": "",
     "priority": 11,

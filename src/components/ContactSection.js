@@ -82,17 +82,23 @@ export default function ContactSection() {
 
   return (
     <section className="section-shell contact-section" id="contacto">
-      <Reveal className="contact-copy" variant="left">
-        <p className="section-kicker">
-          <span>07</span> Contacto
-        </p>
-        <h2>
-          Tu idea merece <span>un gran código.</span>
-        </h2>
-        <p>
+      <Reveal className="section-banner" variant="left">
+        <span className="section-banner-index" aria-hidden="true">
+          07
+        </span>
+        <div className="section-banner-main">
+          <p className="section-banner-label">Contacto</p>
+          <h2>
+            Tu idea merece <span>un gran código.</span>
+          </h2>
+        </div>
+        <p className="section-banner-copy">
           ¿Un proyecto, una vacante o solo ganas de hablar de tecnología? Mi
           bandeja de entrada está abierta — respondo más rápido que un webhook.
         </p>
+      </Reveal>
+
+      <Reveal className="contact-copy" variant="left">
         <div className="contact-list">
           <a href={`mailto:${profile.email}`}>
             <Mail size={17} /> {profile.email}
@@ -117,11 +123,11 @@ export default function ContactSection() {
               <input name="name" placeholder="Nombre" autoComplete="name" required />
             </label>
             <label>
-              <span>Correo electronico</span>
+              <span>Correo electrónico</span>
               <input
                 name="email"
                 type="email"
-                placeholder="Correo electronico"
+                placeholder="Correo electrónico"
                 autoComplete="email"
                 required
               />

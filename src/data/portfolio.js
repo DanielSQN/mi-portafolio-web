@@ -7,7 +7,7 @@ export const profile = {
   headline: "Construyo soluciones que generan impacto.",
   summary:
     "Ingeniero de sistemas y desarrollador full stack. Llevo ideas del localhost a producción: integraciones que no fallan, automatización que devuelve horas e interfaces que la gente disfruta.",
-  location: "Bogota, Colombia",
+  location: "Bogotá, Colombia",
   email: "dsqn.dna@gmail.com",
   phone: "+57 302 384 6761",
   linkedin: "linkedin.com/in/danielsantiagoqn",
@@ -61,7 +61,7 @@ export const stats = [
 
 export const navItems = [
   { label: "Inicio", href: "#inicio" },
-  { label: "Sobre mi", href: "#sobre-mi" },
+  { label: "Sobre mí", href: "#sobre-mi" },
   { label: "Experiencia", href: "#experiencia" },
   { label: "Proyectos", href: "#proyectos" },
   { label: "Stack", href: "#stack" },
@@ -74,7 +74,7 @@ export const experience = [
     period: "Dic 2023 - Actualidad",
     duration: "2 años 5 meses",
     company: "COLFONDOS S.A.",
-    location: "Bogota, Colombia",
+    location: "Bogotá, Colombia",
     roles: [
       {
         period: "Abr 2024 - Actualidad",
@@ -89,7 +89,7 @@ export const experience = [
       },
       {
         period: "Dic 2023 - Abr 2024",
-        title: "Ingeniero Jr de Proyectos Agiles",
+        title: "Ingeniero Jr de Proyectos Ágiles",
         details: [
           "Gestioné backlog evolutivo y requerimientos tecnológicos.",
           "Brindé soporte funcional y técnico sobre ecosistema Oracle.",
@@ -99,10 +99,41 @@ export const experience = [
     ]
   },
   {
+    period: "Sep 2023 - Dic 2023",
+    duration: "3 meses",
+    company: "ITIS",
+    location: "Bogotá, Colombia",
+    roles: [
+      {
+        period: "Sep 2023 - Dic 2023",
+        title: "Consultor Técnico Oracle",
+        details: [
+          "Diseño técnico funcional para integraciones entre ERP, OIC y plataformas empresariales."
+        ]
+      }
+    ]
+  },
+  {
+    period: "Jul 2023 - Sep 2023",
+    duration: "2 meses",
+    company: "PICURIT",
+    location: "Bogotá, Colombia",
+    roles: [
+      {
+        period: "Jul 2023 - Sep 2023",
+        title: "Full Stack Developer Freelance",
+        details: [
+          "Desarrollé una extensión Chrome integrada con APIs de IA.",
+          "Construí módulos empresariales con Python y JavaScript."
+        ]
+      }
+    ]
+  },
+  {
     period: "Sep 2018 - Ago 2023",
     duration: "4 años 11 meses",
     company: "TIMESTAMP (Arin Innovation)",
-    location: "Bogota, Colombia",
+    location: "Bogotá, Colombia",
     roles: [
       {
         period: "Feb 2023 - Ago 2023",
@@ -123,37 +154,6 @@ export const experience = [
         ]
       }
     ]
-  },
-  {
-    period: "Sep 2023 - Dic 2023",
-    duration: "3 meses",
-    company: "ITIS",
-    location: "Bogota, Colombia",
-    roles: [
-      {
-        period: "Sep 2023 - Dic 2023",
-        title: "Consultor Técnico Oracle",
-        details: [
-          "Diseño técnico funcional para integraciones entre ERP, OIC y plataformas empresariales."
-        ]
-      }
-    ]
-  },
-  {
-    period: "Jul 2023 - Sep 2023",
-    duration: "2 meses",
-    company: "PICURIT",
-    location: "Bogota, Colombia",
-    roles: [
-      {
-        period: "Jul 2023 - Sep 2023",
-        title: "Full Stack Developer Freelance",
-        details: [
-          "Desarrollé una extensión Chrome integrada con APIs de IA.",
-          "Construí módulos empresariales con Python y JavaScript."
-        ]
-      }
-    ]
   }
 ];
 
@@ -171,7 +171,7 @@ export const skillGroups = [
     skills: ["Oracle Cloud", "Oracle OIC", "Oracle Fusion", "GCP", "Visual Builder"]
   },
   {
-    name: "IA & Automatizacion",
+    name: "IA & Automatización",
     skills: ["AI APIs", "Copilot Studio", "OpenAI", "GitHub Copilot", "Codex", "Claude Code"]
   },
   {
@@ -185,7 +185,7 @@ export const interests = [
   "Gaming",
   "Dios • Salmo 23",
   "Entrenamiento",
-  "Tecnologia"
+  "Tecnología"
 ];
 
 export const socialLinks = [
