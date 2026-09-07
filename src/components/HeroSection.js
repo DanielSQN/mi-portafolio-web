@@ -11,7 +11,7 @@ import {
   profile,
   typewriterSpecialties
 } from "@/data/portfolio";
-import HeroJsonCard from "./HeroJsonCard";
+import HeroFicha from "./HeroFicha";
 import { WebCorner } from "./PixelWeb";
 import TypewriterLine from "./TypewriterLine";
 
@@ -195,9 +195,7 @@ export default function HeroSection() {
         </div>
 
         <div className="hero-visual">
-          <div className="code-stage">
-            <HeroJsonCard data={heroJson} tools={orbitItems} />
-          </div>
+          <HeroFicha data={heroJson} tools={orbitItems} />
         </div>
       </div>
     </section>

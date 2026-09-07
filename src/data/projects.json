@@ -19,10 +19,10 @@
     "tags": ["Arduino", "C++", "Electrónica"],
     "description": "Proyecto con botones físicos en Arduino para activar y mostrar versículos.",
     "accent": "arduino",
-    "img": "/projects/arduino-botones-versículo.png",
+    "img": "/projects/arduino-botones-versiculo.png",
     "priority": 3,
     "viewUrl": "",
-    "githubUrl": "https://github.com/DanielSQN/arduino-botones-versículo",
+    "githubUrl": "https://github.com/DanielSQN/arduino-botones-versiculo",
     "youtubeUrl": "https://youtube.com/shorts/h_3Rsy91WHo"
   },
   {
@@ -32,10 +32,10 @@
     "tags": ["Arduino", "Matriz LED", "C++"],
     "description": "Reloj con matriz LED en Arduino que muestra versículos y contenido programado.",
     "accent": "arduino",
-    "img": "/projects/arduino-matriz-reloj-versículos.png",
+    "img": "/projects/arduino-matriz-reloj-versiculos.png",
     "priority": 4,
     "viewUrl": "",
-    "githubUrl": "https://github.com/DanielSQN/arduino-matriz-reloj-versículos",
+    "githubUrl": "https://github.com/DanielSQN/arduino-matriz-reloj-versiculos",
     "youtubeUrl": "https://youtube.com/shorts/hmtxgzqWS6M"
   },
   {
@@ -58,7 +58,7 @@
     "tags": ["Arduino", "Bluetooth", "App Inventor"],
     "description": "Maqueta de casa domótica con LEDs, puertas automaticas, reles de alto voltaje y control Bluetooth desde una app en App Inventor.",
     "accent": "arduino",
-    "img": "/projects/casa-domótica-arduino.png",
+    "img": "/projects/casa-domotica-arduino.png",
     "priority": 7,
     "viewUrl": "",
     "githubUrl": "",

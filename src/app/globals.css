@@ -670,100 +670,6 @@ p {
   right: 20%;
 }
 
-.laptop {
-  background: rgba(6, 8, 12, 0.94);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 0;
-  box-shadow:
-    0 30px 90px rgba(0, 0, 0, 0.55),
-    0 0 44px rgba(255, 45, 45, 0.1);
-  overflow: hidden;
-  position: relative;
-  transform: perspective(900px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
-  transform-style: preserve-3d;
-  transition:
-    transform 180ms ease,
-    box-shadow 180ms ease;
-  width: min(520px, 70vw);
-  z-index: 2;
-}
-
-.laptop:hover {
-  box-shadow:
-    0 36px 100px rgba(0, 0, 0, 0.6),
-    0 0 60px rgba(255, 45, 45, 0.16);
-}
-
-.code-window-bar {
-  align-items: center;
-  background: rgba(255, 255, 255, 0.04);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  color: var(--soft);
-  display: flex;
-  gap: 12px;
-  padding: 10px 14px;
-}
-
-.code-window-file {
-  color: var(--muted);
-  flex: 1;
-  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
-  font-size: 0.68rem;
-  letter-spacing: 0.04em;
-  text-align: center;
-}
-
-.code-window-status {
-  background: rgba(255, 255, 255, 0.03);
-  border-top: 1px solid rgba(255, 255, 255, 0.07);
-  color: var(--soft);
-  display: flex;
-  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
-  font-size: 0.62rem;
-  justify-content: space-between;
-  letter-spacing: 0.04em;
-  padding: 7px 14px;
-}
-
-.code-window-branch {
-  color: var(--red-bright);
-}
-
-.code-window-ok {
-  color: #4ade80;
-}
-
-.laptop-screen {
-  background: linear-gradient(145deg, rgba(255, 45, 45, 0.07), transparent);
-  min-height: 300px;
-  overflow: hidden;
-  padding: 16px;
-  position: relative;
-}
-
-.window-dot-row {
-  display: flex;
-  gap: 6px;
-}
-
-.window-dot-row span {
-  border-radius: 0;
-  height: 10px;
-  width: 10px;
-}
-
-.window-dot-row span:nth-child(1) {
-  background: #ff5f57;
-}
-
-.window-dot-row span:nth-child(2) {
-  background: #febc2e;
-}
-
-.window-dot-row span:nth-child(3) {
-  background: #28c840;
-}
-
 code {
   color: #f3f4f6;
   display: grid;
@@ -774,27 +680,6 @@ code {
   overflow-wrap: anywhere;
   position: relative;
   z-index: 1;
-}
-
-.json-code {
-  border-left: 1px solid rgba(255, 255, 255, 0.16);
-  min-width: 0;
-  padding-left: 18px;
-  white-space: pre-wrap;
-}
-
-.json-key {
-  color: #7df09b;
-  font-weight: 700;
-}
-
-.json-value {
-  color: #9fd2ff;
-  overflow-wrap: anywhere;
-}
-
-.json-bracket {
-  color: #ffd400;
 }
 
 .json-status {
@@ -818,46 +703,6 @@ code {
   50% {
     opacity: 0.55;
   }
-}
-
-.json-indent {
-  padding-left: 26px;
-}
-
-/* ===== Hero: la "pantalla" llena la columna y el JSON va centrado, con
-   rieles tipo carrusel de herramientas arriba y abajo ===== */
-.code-stage {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  min-height: 0;
-  min-width: 0;
-  width: 100%;
-}
-
-.code-stage .laptop {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  min-height: 0;
-  transform: none;
-  width: 100%;
-}
-
-.code-stage .laptop-screen {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  gap: 14px;
-  min-height: 0;
-}
-
-/* el JSON queda centrado entre los rieles superior e inferior */
-.code-stage .laptop-screen .json-code {
-  align-content: center;
-  align-self: center;
-  flex: 1;
-  min-height: 0;
 }
 
 .tool-rail {
@@ -1360,7 +1205,6 @@ code {
   position: absolute;
   z-index: 1;
 }
-
 
 .project-shot.integrations::before {
   background: linear-gradient(135deg, rgba(255, 45, 45, 0.4), rgba(27, 42, 60, 0.7));
@@ -2065,10 +1909,6 @@ form .primary-button:disabled {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
   }
-
-  .laptop {
-    transform: none !important;
-  }
 }
 
 /* pantallas muy anchas: el JSON escala para no perderse en la pantalla */
@@ -2083,10 +1923,6 @@ form .primary-button:disabled {
     font-size: 0.82rem;
     padding: 10px 16px;
   }
-}
-
-/* ===== Desktop: el menú es una columna lateral fija e integrada ===== */
-@media (min-width: 981px) {
 }
 
 @media (max-width: 980px) {.hero-grid,
@@ -2264,16 +2100,6 @@ form .primary-button:disabled {
   .orbit-chip-3,
   .orbit-chip-6 {
     grid-column: 3;
-  }
-
-  .code-stage .laptop {
-    width: 100%;
-  }
-
-  .laptop-screen {
-    min-height: 318px;
-    margin-top: 0;
-    width: 100%;
   }
 
   code {
@@ -2490,7 +2316,6 @@ form .primary-button:disabled {
   font-size: 0.44rem;
   justify-content: space-between;
   letter-spacing: 1px;
-  text-transform: uppercase;
 }
 
 .hud-progress-head b {
@@ -2533,7 +2358,6 @@ form .primary-button:disabled {
   justify-content: center;
   letter-spacing: 1px;
   padding: 13px 15px;
-  text-transform: uppercase;
   transition:
     transform 140ms ease,
     box-shadow 140ms ease;
@@ -2580,7 +2404,6 @@ form .primary-button:disabled {
   font-size: 0.44rem;
   letter-spacing: 1px;
   margin: 8px 0 6px 4px;
-  text-transform: uppercase;
 }
 
 .hud-rail-list {
@@ -2627,7 +2450,9 @@ form .primary-button:disabled {
   color: #14060a;
 }
 
+/* en desktop el CV vive solo en la cabecera; aquí sería un duplicado */
 .hud-rail-cv {
+  display: none;
   margin-top: auto;
 }
 
@@ -2680,7 +2505,6 @@ form .primary-button:disabled {
   font-size: 0.55rem;
   gap: 9px;
   letter-spacing: 1px;
-  text-transform: uppercase;
 }
 
 .hud-cmd-keys {
@@ -2779,10 +2603,10 @@ body.has-hud .site-footer {
    fija mientras pasa la lista larga de la derecha: además de reforzar
    el HUD, elimina el hueco vacío que dejaba al ser mucho más corta. */
 @media (min-width: 981px) {
-  .content-grid > .section-copy {
-    align-self: start;
-    position: sticky;
-    top: calc(var(--hud-top-compact) + 22px);
+  /* el banner ya no compite con el contenido por el ancho: la columna
+     lateral desapareció, así que tampoco hace falta fijarla */
+  .content-grid {
+    grid-template-columns: minmax(0, 1fr);
   }
 }
 
@@ -2805,6 +2629,11 @@ body.has-hud .site-footer {
   .hud-progress,
   .hud-cv {
     display: none;
+  }
+
+  /* la cabecera oculta el CV en móvil, así que el panel sí lo lleva */
+  .hud-rail-cv {
+    display: inline-flex;
   }
 
   .hud-menu {
@@ -2867,7 +2696,6 @@ body.has-hud .site-footer {
     font-size: 0.5rem;
     letter-spacing: 1px;
     padding: 9px 8px;
-    text-transform: uppercase;
     white-space: nowrap;
   }
 
@@ -2958,7 +2786,6 @@ body.has-hud .site-footer {
   gap: 12px;
   letter-spacing: 1px;
   position: relative;
-  text-transform: uppercase;
   z-index: 1;
 }
 
@@ -3037,14 +2864,6 @@ body.has-hud .site-footer {
   letter-spacing: 0;
 }
 
-/* --- ventana de código del hero --- */
-
-.laptop,
-.code-stage .laptop {
-  border: 3px solid var(--line);
-  box-shadow: 6px 6px 0 #0a0f2c;
-}
-
 /* --- botones --- */
 
 .primary-button,
@@ -3054,7 +2873,6 @@ body.has-hud .site-footer {
   font-family: var(--font-display-stack);
   font-size: 0.56rem;
   letter-spacing: 1px;
-  text-transform: uppercase;
 }
 
 .ghost-button {
@@ -3079,6 +2897,8 @@ body.has-hud .site-footer {
   font-size: 0.5rem;
   font-weight: 400;
   letter-spacing: 1px;
+  /* sin uppercase: la pixel-font dibuja mal los acentos en caja alta */
+  text-transform: none;
 }
 
 .section-kicker span {
@@ -3176,5 +2996,299 @@ body.has-hud .site-footer {
 @media (prefers-reduced-motion: reduce) {
   .hud-thread-spider {
     transition: none;
+  }
+}
+
+/* ===========================================================
+   Estructura nueva: banner de sección a ancho completo
+   =========================================================== */
+
+.section-banner {
+  align-items: center;
+  background: var(--panel);
+  border: 3px solid var(--line);
+  border-left: 8px solid var(--red);
+  box-shadow: var(--shadow-hard);
+  display: grid;
+  gap: 8px 22px;
+  grid-template-columns: auto minmax(0, 1fr) minmax(0, 22rem);
+  margin-bottom: 26px;
+  padding: 18px 22px;
+}
+
+.section-banner-index {
+  align-self: start;
+  color: var(--amber);
+  font-family: var(--font-display-stack);
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.section-banner-main {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+
+.section-banner-label {
+  color: var(--red-bright);
+  font-family: var(--font-display-stack);
+  font-size: 0.5rem;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.section-banner h2 {
+  margin: 0;
+}
+
+.section-banner-copy {
+  align-self: end;
+  border-left: 2px solid var(--line);
+  color: var(--muted);
+  font-size: 0.86rem;
+  line-height: 1.75;
+  margin: 0;
+  padding-left: 16px;
+}
+
+/* ===========================================================
+   Ficha de personaje del hero (reemplaza al JSON)
+   =========================================================== */
+
+.ficha {
+  background: var(--surface-strong);
+  border: 3px solid var(--line);
+  box-shadow: 6px 6px 0 #0a0f2c;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.ficha-bar {
+  align-items: center;
+  background: #101a4a;
+  border-bottom: 3px solid var(--line);
+  display: flex;
+  gap: 14px;
+  justify-content: space-between;
+  padding: 12px 16px;
+}
+
+.ficha-bar-title {
+  color: #ffffff;
+  font-family: var(--font-display-stack);
+  font-size: 0.55rem;
+  letter-spacing: 1px;
+}
+
+.ficha-bar-state {
+  align-items: center;
+  color: #7ef0b0;
+  display: inline-flex;
+  font-size: 0.72rem;
+  gap: 8px;
+}
+
+.ficha-bar-state i {
+  background: #7ef0b0;
+  height: 9px;
+  width: 9px;
+}
+
+.ficha-body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px 18px;
+}
+
+.ficha-id {
+  align-items: center;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: auto minmax(0, 1fr);
+}
+
+.ficha-avatar {
+  align-items: center;
+  background: var(--red);
+  border: 3px solid #ffd0d0;
+  box-shadow: var(--shadow-hard-red);
+  color: var(--ink);
+  display: flex;
+  font-family: var(--font-display-stack);
+  font-size: 1rem;
+  height: 76px;
+  justify-content: center;
+  position: relative;
+  width: 76px;
+}
+
+.ficha-avatar-spider {
+  bottom: -9px;
+  color: var(--ink);
+  position: absolute;
+  right: -9px;
+}
+
+.ficha-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin: 0;
+  min-width: 0;
+}
+
+.ficha-rows div {
+  display: grid;
+  gap: 4px 12px;
+  grid-template-columns: 5.2rem minmax(0, 1fr);
+}
+
+.ficha-rows dt {
+  color: var(--dim);
+  font-family: var(--font-display-stack);
+  font-size: 0.42rem;
+  letter-spacing: 1px;
+  padding-top: 3px;
+}
+
+.ficha-rows dd {
+  color: var(--text);
+  font-size: 0.82rem;
+  margin: 0;
+}
+
+.ficha-rows dd.is-accent {
+  color: var(--amber);
+}
+
+.ficha-block-title {
+  color: var(--dim);
+  font-family: var(--font-display-stack);
+  font-size: 0.42rem;
+  letter-spacing: 1px;
+  margin: 0 0 10px;
+}
+
+.ficha-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.ficha-tags span {
+  border: 2px solid var(--line-soft);
+  color: var(--muted);
+  font-size: 0.74rem;
+  padding: 5px 8px;
+}
+
+.ficha-powers {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ficha-power {
+  align-items: center;
+  display: grid;
+  gap: 12px;
+  grid-template-columns: minmax(0, 1fr) 84px;
+}
+
+.ficha-power-label {
+  color: var(--text);
+  font-size: 0.78rem;
+}
+
+.ficha-power-track {
+  display: flex;
+  gap: 3px;
+}
+
+.ficha-power-track i {
+  background: var(--red);
+  border: 2px solid #080c22;
+  flex: 1 1 0;
+  height: 11px;
+}
+
+.ficha-mission {
+  color: var(--amber);
+  font-size: 0.82rem;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.ficha-creed {
+  border-top: 2px solid var(--line-soft);
+  padding-top: 16px;
+}
+
+.ficha-creed p:not(.ficha-block-title) {
+  color: var(--soft);
+  font-size: 0.76rem;
+  line-height: 1.7;
+  margin: 0 0 8px;
+}
+
+.ficha-creed-progress {
+  color: var(--red-bright) !important;
+  font-style: italic;
+}
+
+/* ===========================================================
+   Cifras como tira del HUD
+   =========================================================== */
+
+.stats-grid article {
+  background: var(--panel);
+  border: 3px solid var(--line);
+  box-shadow: var(--shadow-hard);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 18px 16px;
+}
+
+.stats-grid strong {
+  color: var(--amber);
+  font-family: var(--font-display-stack);
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.stats-grid span {
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.55;
+}
+
+@media (max-width: 980px) {
+  .section-banner {
+    border-left-width: 6px;
+    grid-template-columns: auto minmax(0, 1fr);
+    padding: 15px 16px;
+  }
+
+  .section-banner-copy {
+    border-left: 0;
+    border-top: 2px solid var(--line);
+    grid-column: 1 / -1;
+    padding: 12px 0 0;
+  }
+
+  .ficha-id {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .ficha-power {
+    grid-template-columns: minmax(0, 1fr) 66px;
   }
 }
