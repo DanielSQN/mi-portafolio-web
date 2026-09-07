@@ -231,11 +231,15 @@ export default function Navbar({ subpage = false }) {
             </span>
             <span className="hud-cmd-sep" aria-hidden="true" />
             <span className="hud-cmd-now">
-              {atEnd
-                ? "Fin del recorrido"
-                : `${String(activeIndex + 1).padStart(2, "0")}/07 · ${
-                    navItems[activeIndex]?.label
-                  }`}
+              {atEnd ? (
+                "Fin del recorrido"
+              ) : (
+                <>
+                  {String(activeIndex + 1).padStart(2, "0")}/07
+                  {/* el nombre se oculta en móvil: no cabe en 390px */}
+                  <em> · {navItems[activeIndex]?.label}</em>
+                </>
+              )}
             </span>
             <span className="hud-cmd-spacer" />
             {atEnd || !nextItem ? (
@@ -245,7 +249,8 @@ export default function Navbar({ subpage = false }) {
             ) : (
               <a className="hud-cmd-next" href={nextItem.href}>
                 <em>Siguiente</em>
-                {String(activeIndex + 2).padStart(2, "0")} {nextItem.label}
+                {String(activeIndex + 2).padStart(2, "0")}
+                <b>{nextItem.label}</b>
                 <Chevron />
               </a>
             )}

@@ -185,7 +185,7 @@ export const interests = [
   "Gaming",
   "Dios • Salmo 23",
   "Entrenamiento",
-  "Tecnologia"
+  "Tecnología"
 ];
 
 export const socialLinks = [

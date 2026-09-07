@@ -66,7 +66,7 @@ export default function Image() {
           </h1>
 
           <p style={{ color: "#c7c7d1", fontSize: 25, lineHeight: 1.45, margin: 0 }}>
-            Software Engineer especializado en desarrollo full stack, automatizacion y
+            Software Engineer especializado en desarrollo full stack, automatización y
             soluciones digitales de alto impacto.
           </p>
         </div>

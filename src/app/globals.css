@@ -1361,25 +1361,6 @@ code {
   z-index: 1;
 }
 
-.project-shot span {
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 0;
-  display: block;
-  position: relative;
-  z-index: 1;
-}
-
-.project-shot span:nth-child(1) {
-  width: 60%;
-}
-
-.project-shot span:nth-child(2) {
-  width: 84%;
-}
-
-.project-shot span:nth-child(3) {
-  width: 42%;
-}
 
 .project-shot.integrations::before {
   background: linear-gradient(135deg, rgba(255, 45, 45, 0.4), rgba(27, 42, 60, 0.7));
@@ -1835,8 +1816,9 @@ code {
   color: #f0f6fc;
 }
 
+/* el azul de marca rompía la fila: los tres iconos heredan el color */
 .linkedin-brand {
-  color: #0a66c2;
+  color: currentColor;
 }
 
 .contact-panel {
@@ -2734,9 +2716,25 @@ form .primary-button:disabled {
   padding: 8px 10px;
 }
 
+.hud-cmd-next em,
+.hud-cmd-now em {
+  font-style: normal;
+}
+
 .hud-cmd-next em {
   color: #5c1010;
-  font-style: normal;
+}
+
+.hud-cmd-next b {
+  font-weight: 400;
+}
+
+/* los nombres de sección no pueden partir la barra en dos líneas */
+.hud-cmd-keys,
+.hud-cmd-now,
+.hud-cmd-next,
+.hud-cmd-back {
+  white-space: nowrap;
 }
 
 .hud-bottom.is-end .hud-cmd-now {
@@ -2904,8 +2902,15 @@ body.has-hud .site-footer {
     min-height: 46px;
   }
 
-  .hud-cmd-next em {
+  /* en 390px solo caben el contador y el número de la siguiente */
+  .hud-cmd-next em,
+  .hud-cmd-next b,
+  .hud-cmd-now em {
     display: none;
+  }
+
+  .hud-cmd-next {
+    gap: 7px;
   }
 }
 
@@ -2916,4 +2921,168 @@ body.has-hud .site-footer {
   .hud-progress-track i {
     transition: none;
   }
+}
+
+/* ===========================================================
+   Pase pixel al contenido: paneles, chips y placas
+   =========================================================== */
+
+/* --- proyectos --- */
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+}
+
+.project-card:hover {
+  box-shadow: 3px 3px 0 #0a0f2c;
+  transform: translate(3px, 3px);
+}
+
+.project-shot {
+  align-content: center;
+  background: #0a0f2c;
+  border: 3px solid var(--line);
+  justify-items: center;
+}
+
+/* placa de "sin captura": intencional, no un esqueleto de carga */
+.project-noshot {
+  align-items: center;
+  color: var(--dim);
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-display-stack);
+  font-size: 0.5rem;
+  gap: 12px;
+  letter-spacing: 1px;
+  position: relative;
+  text-transform: uppercase;
+  z-index: 1;
+}
+
+.project-category {
+  background: var(--panel);
+  border: 2px solid var(--line);
+  color: var(--amber);
+  font-family: var(--font-display-stack);
+  font-size: 0.45rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  padding: 7px 8px;
+}
+
+.project-category.work {
+  border-color: var(--line-red);
+  color: var(--red-bright);
+}
+
+.card-heading h3 {
+  font-family: var(--font-display-stack);
+  font-size: 0.68rem;
+  line-height: 1.6;
+}
+
+.tag-row span,
+.tool-chip {
+  border: 2px solid var(--line-soft);
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+
+.project-actions a,
+.social-row a {
+  border: 2px solid var(--line);
+  box-shadow: 3px 3px 0 #0a0f2c;
+}
+
+.project-actions a:hover,
+.social-row a:hover {
+  border-color: var(--red);
+  box-shadow: 1px 1px 0 #0a0f2c;
+  transform: translate(2px, 2px);
+}
+
+/* --- stack: cada categoría es un panel del HUD --- */
+
+.skill-group {
+  border: 3px solid var(--line);
+  box-shadow: var(--shadow-hard);
+}
+
+.skill-group h3,
+.skill-group-title {
+  font-family: var(--font-display-stack);
+  font-size: 0.66rem;
+  line-height: 1.6;
+}
+
+/* --- certificaciones y estadísticas --- */
+
+.cert-card {
+  border: 3px solid var(--line);
+  box-shadow: var(--shadow-hard);
+}
+
+.cert-card h3 {
+  font-family: var(--font-display-stack);
+  font-size: 0.6rem;
+  line-height: 1.7;
+}
+
+.stat-card strong,
+.stat-value {
+  font-family: var(--font-display-stack);
+  letter-spacing: 0;
+}
+
+/* --- ventana de código del hero --- */
+
+.laptop,
+.code-stage .laptop {
+  border: 3px solid var(--line);
+  box-shadow: 6px 6px 0 #0a0f2c;
+}
+
+/* --- botones --- */
+
+.primary-button,
+.ghost-button {
+  border-width: 3px;
+  box-shadow: 4px 4px 0 #59090c;
+  font-family: var(--font-display-stack);
+  font-size: 0.56rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.ghost-button {
+  box-shadow: 4px 4px 0 #0a0f2c;
+}
+
+.primary-button:hover,
+.ghost-button:hover {
+  box-shadow: 2px 2px 0 #59090c;
+  transform: translate(2px, 2px);
+}
+
+.ghost-button:hover {
+  box-shadow: 2px 2px 0 #0a0f2c;
+}
+
+/* --- eyebrow / kicker en tipografía del HUD --- */
+
+.eyebrow,
+.section-kicker {
+  font-family: var(--font-display-stack);
+  font-size: 0.5rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.section-kicker span {
+  color: var(--text);
+  font-family: var(--font-display-stack);
+  font-size: 0.85rem;
 }

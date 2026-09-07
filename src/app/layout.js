@@ -34,7 +34,7 @@ export const metadata = {
     template: "%s | Daniel Quintero"
   },
   description:
-    "Software Engineer especializado en desarrollo full stack, automatizacion y soluciones digitales de alto impacto.",
+    "Software Engineer especializado en desarrollo full stack, automatización y soluciones digitales de alto impacto.",
   applicationName: "Daniel Quintero Portfolio",
   authors: [{ name: "Daniel Quintero", url: siteUrl }],
   creator: "Daniel Quintero",
