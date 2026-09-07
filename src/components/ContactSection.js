@@ -117,11 +117,11 @@ export default function ContactSection() {
               <input name="name" placeholder="Nombre" autoComplete="name" required />
             </label>
             <label>
-              <span>Correo electronico</span>
+              <span>Correo electrónico</span>
               <input
                 name="email"
                 type="email"
-                placeholder="Correo electronico"
+                placeholder="Correo electrónico"
                 autoComplete="email"
                 required
               />

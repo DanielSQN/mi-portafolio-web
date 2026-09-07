@@ -1,15 +1,22 @@
 import "./globals.css";
-import { Inter, Space_Grotesk } from "next/font/google";
+import { Press_Start_2P, Space_Mono } from "next/font/google";
 import { profile } from "@/data/portfolio";
 
-const inter = Inter({
+// Space Mono es el cuerpo: monoespaciada pero con altura de x suficiente
+// para párrafos largos, a diferencia de las pixel-fonts.
+const spaceMono = Space_Mono({
   subsets: ["latin"],
+  weight: ["400", "700"],
   variable: "--font-sans",
   display: "swap"
 });
 
-const spaceGrotesk = Space_Grotesk({
+// Press Start 2P solo para titulares y etiquetas del HUD. Cubre acentos
+// del español (Á É Í Ó Ú Ñ ¿ ¡) y las flechas ↑ ↓, pero NO ▪ ni ▸:
+// esos se dibujan con SVG o pseudo-elementos, nunca como glifo.
+const pressStart = Press_Start_2P({
   subsets: ["latin"],
+  weight: "400",
   variable: "--font-display",
   display: "swap"
 });
@@ -17,7 +24,7 @@ const spaceGrotesk = Space_Grotesk({
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || profile.siteUrl;
 
 export const viewport = {
-  themeColor: "#030304"
+  themeColor: "#070a1e"
 };
 
 export const metadata = {
@@ -39,9 +46,9 @@ export const metadata = {
     "Next.js",
     "React",
     "Integraciones empresariales",
-    "Automatizacion",
+    "Automatización",
     "Inteligencia artificial",
-    "Bogota"
+    "Bogotá"
   ],
   alternates: {
     canonical: "/"
@@ -90,7 +97,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="es" className={`${inter.variable} ${spaceGrotesk.variable}`}>
+    <html lang="es" className={`${spaceMono.variable} ${pressStart.variable}`}>
       <body>{children}</body>
     </html>
   );

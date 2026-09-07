@@ -8,7 +8,7 @@ export default function AboutSection() {
   return (
     <section className="section-shell about-shell" id="sobre-mi">
       <p className="section-kicker">
-        <span>02</span> Sobre mi
+        <span>02</span> Sobre mí
       </p>
       <Reveal className="about-section glass-card" variant="clip">
         <div className="portrait-card">

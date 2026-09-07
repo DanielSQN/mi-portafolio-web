@@ -13,11 +13,11 @@
     "youtubeUrl": ""
   },
   {
-    "name": "Botones de Versiculo con Arduino",
+    "name": "Botones de Versículo con Arduino",
     "category": "personal",
     "categoryLabel": "Personal",
-    "tags": ["Arduino", "C++", "Electronica"],
-    "description": "Proyecto con botones fisicos en Arduino para activar y mostrar versiculos.",
+    "tags": ["Arduino", "C++", "Electrónica"],
+    "description": "Proyecto con botones físicos en Arduino para activar y mostrar versículos.",
     "accent": "arduino",
     "img": "/projects/arduino-botones-versiculo.png",
     "priority": 3,
@@ -26,11 +26,11 @@
     "youtubeUrl": "https://youtube.com/shorts/h_3Rsy91WHo"
   },
   {
-    "name": "Reloj de Versiculos con Matriz Arduino",
+    "name": "Reloj de Versículos con Matriz Arduino",
     "category": "personal",
     "categoryLabel": "Personal",
     "tags": ["Arduino", "Matriz LED", "C++"],
-    "description": "Reloj con matriz LED en Arduino que muestra versiculos y contenido programado.",
+    "description": "Reloj con matriz LED en Arduino que muestra versículos y contenido programado.",
     "accent": "arduino",
     "img": "/projects/arduino-matriz-reloj-versiculos.png",
     "priority": 4,
@@ -65,7 +65,7 @@
     "youtubeUrl": "https://www.youtube.com/watch?v=cly4iNFuopY"
   },
   {
-    "name": "IA Musical y Analisis de Sentimientos",
+    "name": "IA Musical y Análisis de Sentimientos",
     "category": "university",
     "categoryLabel": "Universidad",
     "tags": ["Next.js", "Python", "IA"],
@@ -78,11 +78,11 @@
     "youtubeUrl": "https://www.youtube.com/watch?v=lc15a3Xth6w"
   },
   {
-    "name": "Extension Chrome con IA para Servicio al Cliente",
+    "name": "Extensión Chrome con IA para Servicio al Cliente",
     "category": "freelance",
     "categoryLabel": "Freelance",
     "tags": ["JavaScript", "HTML", "AI APIs"],
-    "description": "Extension que analiza hilos de conversacion y propone respuestas en espanol e ingles, con opcion de generar respuestas personalizadas.",
+    "description": "Extensión que analiza hilos de conversación y propone respuestas en español e inglés, con opción de generar respuestas personalizadas.",
     "accent": "chrome-ai",
     "img": "",
     "priority": 5,
@@ -104,7 +104,7 @@
     "youtubeUrl": ""
   },
   {
-    "name": "Agente Copilot para Analisis PQRS",
+    "name": "Agente Copilot para Análisis PQRS",
     "category": "work",
     "categoryLabel": "Laboral",
     "tags": ["Copilot Studio", "REST API", "OIC"],
