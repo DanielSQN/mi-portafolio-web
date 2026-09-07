@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Download, Menu, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { navItems, profile } from "@/data/portfolio";
+import { Spider, WebCorner } from "./PixelWeb";
 
 // Press Start 2P no trae ▸ (U+25B8): el chevron va dibujado.
 function Chevron({ size = 10 }) {
@@ -157,6 +158,7 @@ export default function Navbar({ subpage = false }) {
         aria-label="Secciones del portafolio"
         className={`hud-rail ${open ? "is-open" : ""}`}
       >
+        <WebCorner className="hud-web-rail" />
         <p className="hud-rail-title">Secciones</p>
 
         <div className="hud-rail-list">
@@ -191,6 +193,16 @@ export default function Navbar({ subpage = false }) {
           <i aria-hidden="true" />
           compilando_ideas
         </p>
+
+        {/* la araña baja por el hilo siguiendo la posición del scroll */}
+        <div className="hud-thread" aria-hidden="true">
+          <span
+            className="hud-thread-spider"
+            style={{ top: `${(progress * 100).toFixed(2)}%` }}
+          >
+            <Spider size={22} />
+          </span>
+        </div>
       </nav>
 
       {/* ===== TIRA DE SECCIONES (solo móvil) ===== */}

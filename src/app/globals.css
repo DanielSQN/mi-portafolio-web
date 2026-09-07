@@ -3086,3 +3086,95 @@ body.has-hud .site-footer {
   font-family: var(--font-display-stack);
   font-size: 0.85rem;
 }
+
+/* ===========================================================
+   Detalles pixel: telaraña de esquina y araña que sigue el scroll
+   Formas genéricas dibujadas a mano, decorativas y aria-hidden.
+   =========================================================== */
+
+/* La telaraña vive dentro del rail y del hero, no como capa fija sobre
+   la página: detrás del contenido caía siempre bajo las tarjetas y no se
+   veía; delante, cruzaba el texto. */
+.pixel-web {
+  color: var(--line);
+  pointer-events: none;
+  position: absolute;
+}
+
+.hud-web-rail {
+  bottom: 76px;
+  height: 132px;
+  left: 0;
+  opacity: 0.5;
+  transform: scaleY(-1);
+  width: 132px;
+}
+
+/* el contenido del rail se posiciona para pintar sobre la telaraña,
+   que queda como textura de fondo y no encima del botón de CV */
+.hud-rail-title,
+.hud-rail-list,
+.hud-rail-cv,
+.hud-status {
+  position: relative;
+}
+
+.hero {
+  position: relative;
+}
+
+.hero-web {
+  height: 150px;
+  opacity: 0.42;
+  right: 0;
+  top: 0;
+  transform: scaleX(-1);
+  width: 150px;
+}
+
+.hud-thread {
+  background: repeating-linear-gradient(
+    180deg,
+    var(--line) 0 4px,
+    transparent 4px 9px
+  );
+  bottom: 12px;
+  position: absolute;
+  right: -1px;
+  top: 12px;
+  width: 2px;
+}
+
+.hud-thread-spider {
+  align-items: center;
+  /* el disco oscuro la despega del borde del rail, donde se perdía */
+  background: var(--background);
+  border: 2px solid var(--line);
+  color: var(--text);
+  display: flex;
+  height: 34px;
+  justify-content: center;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  transition: top 220ms ease-out;
+  width: 34px;
+}
+
+@media (max-width: 980px) {
+  /* el rail es un panel deslizante: el hilo no tiene dónde vivir */
+  .hud-thread {
+    display: none;
+  }
+
+  .hero-web {
+    height: 96px;
+    width: 96px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hud-thread-spider {
+    transition: none;
+  }
+}

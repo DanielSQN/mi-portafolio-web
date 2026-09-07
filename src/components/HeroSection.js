@@ -12,6 +12,7 @@ import {
   typewriterSpecialties
 } from "@/data/portfolio";
 import HeroJsonCard from "./HeroJsonCard";
+import { WebCorner } from "./PixelWeb";
 import TypewriterLine from "./TypewriterLine";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -141,6 +142,7 @@ export default function HeroSection() {
 
   return (
     <section className="hero section-shell" id="inicio" ref={sectionRef}>
+      <WebCorner className="hero-web" />
       <div className="hero-grid">
         <div className="hero-copy">
           <p className="hero-terminal">
