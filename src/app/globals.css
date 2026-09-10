@@ -187,7 +187,7 @@ body::before {
 
 .hero-grid,
 .content-grid,
-.contact-section,
+.contact-body,
 .about-section {
   display: grid;
   gap: 42px;
@@ -1616,8 +1616,11 @@ code {
 }
 
 .contact-section {
-  align-items: center;
   padding-bottom: 80px;
+}
+
+.contact-body {
+  align-items: start;
 }
 
 .contact-list {
@@ -1629,9 +1632,23 @@ code {
 .contact-list a,
 .contact-list span {
   align-items: center;
+  border: 2px solid var(--line-soft);
   color: var(--muted);
-  display: inline-flex;
-  gap: 10px;
+  display: flex;
+  gap: 12px;
+  padding: 13px 14px;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+.contact-list a:hover,
+.contact-list a:focus-visible {
+  border-color: var(--red);
+  box-shadow: 3px 3px 0 #0a0f2c;
+  color: var(--text);
+  transform: translate(-2px, -2px);
 }
 
 .contact-list svg {
@@ -1745,9 +1762,9 @@ form .primary-button:disabled {
 }
 
 .social-row {
-  border-top: 1px solid var(--line);
-  margin-top: 20px;
-  padding-top: 18px;
+  border-top: 2px solid var(--line-soft);
+  margin-top: 22px;
+  padding-top: 20px;
 }
 
 .social-row a {
@@ -1917,7 +1934,7 @@ form .primary-button:disabled {
 
 @media (max-width: 980px) {.hero-grid,
   .content-grid,
-  .contact-section,
+  .contact-body,
   .about-section {
     grid-template-columns: minmax(0, 1fr);
   }
