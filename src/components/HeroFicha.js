@@ -40,9 +40,9 @@ function PowerBar({ label }) {
   );
 }
 
-export default function HeroFicha({ data, tools = [] }) {
+export default function HeroFicha({ data, tools = [], children }) {
   return (
-    <div className="ficha">
+    <div className="ficha ficha-hero">
       <div className="ficha-bar">
         <span className="ficha-bar-title">Ficha de personaje</span>
         <span className="ficha-bar-state">
@@ -54,6 +54,9 @@ export default function HeroFicha({ data, tools = [] }) {
       <ToolRail side="top" tools={tools} />
 
       <div className="ficha-body">
+        <div className="ficha-speech">{children}</div>
+
+        <div className="ficha-data">
         <div className="ficha-id">
           <span className="ficha-avatar" aria-hidden="true">
             SQ
@@ -103,6 +106,7 @@ export default function HeroFicha({ data, tools = [] }) {
           <p>{data.fe.mi_roca}</p>
           <p>{data.fe.promesa}</p>
           <p className="ficha-creed-progress">{data.fe.en_progreso}</p>
+        </div>
         </div>
       </div>
 

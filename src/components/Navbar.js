@@ -2,37 +2,19 @@
 
 import Link from "next/link";
 import { Download, Menu, X } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { navItems, profile } from "@/data/portfolio";
 import { Spider, WebCorner } from "./PixelWeb";
 
-// Press Start 2P no trae ▸ (U+25B8): el chevron va dibujado.
-function Chevron({ size = 10 }) {
-  return (
-    <svg
-      aria-hidden="true"
-      fill="none"
-      height={size}
-      shapeRendering="crispEdges"
-      viewBox="0 0 6 8"
-      width={(size * 6) / 8}
-    >
-      <path d="M1 0h1v1H1zM2 1h1v1H2zM3 2h1v1H3zM4 3h1v2H4zM3 5h1v1H3zM2 6h1v1H2zM1 7h1v1H1z" fill="currentColor" />
-    </svg>
-  );
-}
-
+// Sin barra superior ni barra de comandos: el rail lateral es ahora el
+// único chrome fijo y concentra identidad, progreso, secciones y CV.
 export default function Navbar({ subpage = false }) {
   const [open, setOpen] = useState(false);
-  const [compact, setCompact] = useState(false);
   const [progress, setProgress] = useState(0);
   const [activeIndex, setActiveIndex] = useState(0);
-  const stripRef = useRef(null);
 
   useEffect(() => {
     const updateOnScroll = () => {
-      setCompact(window.scrollY > 120);
-
       const max = document.documentElement.scrollHeight - window.innerHeight;
       setProgress(max > 0 ? Math.min(window.scrollY / max, 1) : 0);
 
@@ -58,22 +40,6 @@ export default function Navbar({ subpage = false }) {
     };
   }, [subpage]);
 
-  // en móvil la tira es más ancha que la pantalla: arrastra el chip
-  // activo a la vista para que el scroll-spy se vea
-  useEffect(() => {
-    const strip = stripRef.current;
-    const chip = strip?.children[activeIndex];
-    if (!strip || !chip) return;
-
-    const target =
-      chip.offsetLeft - strip.clientWidth / 2 + chip.clientWidth / 2;
-    const behavior = window.matchMedia("(prefers-reduced-motion: reduce)")
-      .matches
-      ? "auto"
-      : "smooth";
-    strip.scrollTo({ left: Math.max(target, 0), behavior });
-  }, [activeIndex]);
-
   // marca el layout que reserva la columna del rail
   useEffect(() => {
     document.body.classList.add("has-hud");
@@ -95,70 +61,43 @@ export default function Navbar({ subpage = false }) {
   }, [open]);
 
   const href = (item) => (subpage ? `/${item.href}` : item.href);
-  const atEnd = progress > 0.985;
-  const nextItem = navItems[activeIndex + 1];
+  const Brand = subpage ? Link : "a";
 
   return (
     <>
-      {/* ===== BARRA SUPERIOR — fija siempre, encoge al bajar ===== */}
-      <header className={`hud-top ${compact ? "is-compact" : ""}`}>
-        {subpage ? (
-          <Link aria-label="Ir al inicio" className="hud-badge" href="/">
-            SQ
-          </Link>
-        ) : (
-          <a aria-label="Ir al inicio" className="hud-badge" href="#inicio">
-            SQ
-          </a>
-        )}
-
-        <span className="hud-id">
-          <strong>{profile.navName || profile.name}</strong>
-          <small>Software Engineer · Bogotá</small>
-        </span>
-
-        <div className="hud-progress" aria-hidden="true">
-          <div className="hud-progress-head">
-            <span>Progreso de recorrido</span>
-            <b>{Math.round(progress * 100)}%</b>
-          </div>
-          <div className="hud-progress-track">
-            {navItems.map((item, index) => (
-              <i
-                className={index <= activeIndex && !subpage ? "is-on" : ""}
-                key={item.href}
-              />
-            ))}
-          </div>
-        </div>
-
-        <a
-          className="hud-cv"
-          download
-          href={profile.cvUrl}
-          rel="noreferrer"
-          target="_blank"
-        >
-          Descargar CV <Download size={13} />
-        </a>
-
-        <button
-          aria-expanded={open}
-          aria-label={open ? "Cerrar menú" : "Abrir menú"}
-          className="hud-menu"
-          onClick={() => setOpen((current) => !current)}
-          type="button"
-        >
-          {open ? <X size={20} /> : <Menu size={20} />}
-        </button>
-      </header>
-
-      {/* ===== RAIL LATERAL (desktop) / PANEL (móvil) ===== */}
       <nav
         aria-label="Secciones del portafolio"
         className={`hud-rail ${open ? "is-open" : ""}`}
       >
         <WebCorner className="hud-web-rail" />
+
+        <Brand
+          aria-label="Ir al inicio"
+          className="hud-rail-brand"
+          href={subpage ? "/" : "#inicio"}
+          onClick={() => setOpen(false)}
+        >
+          <span className="hud-badge">SQ</span>
+          <span className="hud-id">
+            <strong>{profile.navName || profile.name}</strong>
+            <small>Software Engineer</small>
+          </span>
+        </Brand>
+
+        {!subpage ? (
+          <div className="hud-progress" aria-hidden="true">
+            <div className="hud-progress-head">
+              <span>Recorrido</span>
+              <b>{Math.round(progress * 100)}%</b>
+            </div>
+            <div className="hud-progress-track">
+              {navItems.map((item, index) => (
+                <i className={index <= activeIndex ? "is-on" : ""} key={item.href} />
+              ))}
+            </div>
+          </div>
+        ) : null}
+
         <p className="hud-rail-title">Secciones</p>
 
         <div className="hud-rail-list">
@@ -205,70 +144,17 @@ export default function Navbar({ subpage = false }) {
         </div>
       </nav>
 
-      {/* ===== TIRA DE SECCIONES (solo móvil) ===== */}
-      {!subpage ? (
-        <div className="hud-strip" aria-hidden="true" ref={stripRef}>
-          {navItems.map((item, index) => (
-            <a
-              className={index === activeIndex ? "is-active" : ""}
-              href={item.href}
-              key={item.href}
-              tabIndex={-1}
-            >
-              <span>{String(index + 1).padStart(2, "0")}</span> {item.label}
-            </a>
-          ))}
-        </div>
-      ) : null}
-
-      {/* ===== BARRA DE COMANDOS — fija abajo ===== */}
-      <div className={`hud-bottom ${atEnd ? "is-end" : ""}`}>
-        {subpage ? (
-          <>
-            <Link className="hud-cmd-back" href="/">
-              <span className="hud-key" aria-hidden="true">
-                <Chevron />
-              </span>
-              Volver al inicio
-            </Link>
-            <span className="hud-cmd-spacer" />
-          </>
-        ) : (
-          <>
-            <span className="hud-cmd-keys">
-              <span className="hud-key" aria-hidden="true">
-                ↑↓
-              </span>
-              Navegar
-            </span>
-            <span className="hud-cmd-sep" aria-hidden="true" />
-            <span className="hud-cmd-now">
-              {atEnd ? (
-                "Fin del recorrido"
-              ) : (
-                <>
-                  {String(activeIndex + 1).padStart(2, "0")}/07
-                  {/* el nombre se oculta en móvil: no cabe en 390px */}
-                  <em> · {navItems[activeIndex]?.label}</em>
-                </>
-              )}
-            </span>
-            <span className="hud-cmd-spacer" />
-            {atEnd || !nextItem ? (
-              <a className="hud-cmd-next" href="#inicio">
-                <span aria-hidden="true">↑</span> Volver arriba
-              </a>
-            ) : (
-              <a className="hud-cmd-next" href={nextItem.href}>
-                <em>Siguiente</em>
-                {String(activeIndex + 2).padStart(2, "0")}
-                <b>{nextItem.label}</b>
-                <Chevron />
-              </a>
-            )}
-          </>
-        )}
-      </div>
+      {/* En móvil no cabe una columna fija. En vez de reponer una barra,
+          un único botón abre el mismo rail como panel deslizante. */}
+      <button
+        aria-expanded={open}
+        aria-label={open ? "Cerrar menú" : "Abrir menú"}
+        className="hud-fab"
+        onClick={() => setOpen((current) => !current)}
+        type="button"
+      >
+        {open ? <X size={22} /> : <Menu size={22} />}
+      </button>
 
       {open ? (
         <button
