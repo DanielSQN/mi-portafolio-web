@@ -98,25 +98,43 @@ export default function ContactSection() {
         </p>
       </Reveal>
 
-      <Reveal className="contact-copy" variant="left">
-        <div className="contact-list">
-          <a href={`mailto:${profile.email}`}>
-            <Mail size={17} /> {profile.email}
-          </a>
-          <a href={`tel:${profile.phone.replaceAll(" ", "")}`}>
-            <Phone size={17} /> {profile.phone}
-          </a>
-          <span>
-            <MapPin size={17} /> {profile.location}
-          </span>
-          <a href={`https://${profile.github}`} target="_blank" rel="noreferrer">
-            <GitHubBrandIcon /> {profile.github}
-          </a>
-        </div>
-      </Reveal>
+      <div className="contact-body">
+        <Reveal className="contact-copy" variant="left">
+          <div className="contact-list">
+            <a href={`mailto:${profile.email}`}>
+              <Mail size={17} /> {profile.email}
+            </a>
+            <a href={`tel:${profile.phone.replaceAll(" ", "")}`}>
+              <Phone size={17} /> {profile.phone}
+            </a>
+            <span>
+              <MapPin size={17} /> {profile.location}
+            </span>
+            <a href={`https://${profile.github}`} target="_blank" rel="noreferrer">
+              <GitHubBrandIcon /> {profile.github}
+            </a>
+          </div>
 
-      <Reveal className="contact-panel glass-card" delay={120} variant="right">
-        <form onSubmit={handleSubmit}>
+          <div className="social-row">
+            {socialLinks.map((link) => {
+              const isExternal = link.href.startsWith("http");
+              return (
+                <a
+                  href={link.href}
+                  key={link.label}
+                  aria-label={link.label}
+                  target={isExternal ? "_blank" : undefined}
+                  rel={isExternal ? "noreferrer" : undefined}
+                >
+                  <SocialIcon label={link.label} />
+                </a>
+              );
+            })}
+          </div>
+        </Reveal>
+
+        <Reveal className="contact-panel glass-card" delay={120} variant="right">
+          <form onSubmit={handleSubmit}>
           <div className="form-row">
             <label>
               <span>Nombre</span>
@@ -169,23 +187,8 @@ export default function ContactSection() {
             </p>
           ) : null}
         </form>
-        <div className="social-row">
-          {socialLinks.map((link) => {
-            const isExternal = link.href.startsWith("http");
-            return (
-              <a
-                href={link.href}
-                key={link.label}
-                aria-label={link.label}
-                target={isExternal ? "_blank" : undefined}
-                rel={isExternal ? "noreferrer" : undefined}
-              >
-                <SocialIcon label={link.label} />
-              </a>
-            );
-          })}
-        </div>
-      </Reveal>
+        </Reveal>
+      </div>
     </section>
   );
 }

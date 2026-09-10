@@ -143,61 +143,55 @@ export default function HeroSection() {
   return (
     <section className="hero section-shell" id="inicio" ref={sectionRef}>
       <WebCorner className="hero-web" />
-      <div className="hero-grid">
-        <div className="hero-copy">
+      <HeroFicha data={heroJson} tools={orbitItems}>
           <p className="hero-terminal">
-            <span className="hero-terminal-prompt">~$</span> whoami
-            <span className="hero-terminal-output">
-              {" "}
-              → Daniel Santiago Quintero · «{profile.preferredName}»
+          <span className="hero-terminal-prompt">~$</span> whoami
+          <span className="hero-terminal-output">
+            {" "}
+            → Daniel Santiago Quintero · «{profile.preferredName}»
+          </span>
+        </p>
+        <h1 className="hero-title" aria-label={`${heroTitle.lead} ${heroTitle.accent}`}>
+          <TitleWords text={heroTitle.lead} />
+          <TitleWords text={heroTitle.accent} accent />
+        </h1>
+        <p className="hero-summary">{profile.summary}</p>
+        <TypewriterLine prefix="Construyo" words={typewriterSpecialties} />
+        <div className="hero-actions">
+          <MagneticLink className="primary-button hero-cta" href="/proyectos">
+            Explorar mi trabajo
+            <span className="cta-arrow" aria-hidden="true">
+              <ArrowRight size={18} />
+              <ArrowRight size={18} />
             </span>
-          </p>
-          <h1 className="hero-title" aria-label={`${heroTitle.lead} ${heroTitle.accent}`}>
-            <TitleWords text={heroTitle.lead} />
-            <TitleWords text={heroTitle.accent} accent />
-          </h1>
-          <p className="hero-summary">{profile.summary}</p>
-          <TypewriterLine prefix="Construyo" words={typewriterSpecialties} />
-          <div className="hero-actions">
-            <MagneticLink className="primary-button hero-cta" href="/proyectos">
-              Explorar mi trabajo
-              <span className="cta-arrow" aria-hidden="true">
-                <ArrowRight size={18} />
-                <ArrowRight size={18} />
-              </span>
-            </MagneticLink>
-            <a className="ghost-button" href="#contacto">
-              Hablemos de tu idea <MessageCircle size={17} />
-            </a>
-          </div>
-          <div className="hero-social">
-            <a
-              href={`https://${profile.github}`}
-              target="_blank"
-              rel="noreferrer"
-              aria-label="GitHub"
-            >
-              <FaGithub size={18} />
-            </a>
-            <a
-              href={`https://${profile.linkedin}`}
-              target="_blank"
-              rel="noreferrer"
-              aria-label="LinkedIn"
-            >
-              <FaLinkedinIn size={18} />
-            </a>
-          </div>
-          <a className="scroll-cue" href="#sobre-mi">
-            <span>Sigue bajando, hay más</span>
-            <ChevronDown size={18} />
+          </MagneticLink>
+          <a className="ghost-button" href="#contacto">
+            Hablemos de tu idea <MessageCircle size={17} />
           </a>
         </div>
-
-        <div className="hero-visual">
-          <HeroFicha data={heroJson} tools={orbitItems} />
+        <div className="hero-social">
+          <a
+            href={`https://${profile.github}`}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="GitHub"
+          >
+            <FaGithub size={18} />
+          </a>
+          <a
+            href={`https://${profile.linkedin}`}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="LinkedIn"
+          >
+            <FaLinkedinIn size={18} />
+          </a>
         </div>
-      </div>
+        <a className="scroll-cue" href="#sobre-mi">
+          <span>Sigue bajando, hay más</span>
+          <ChevronDown size={18} />
+        </a>
+      </HeroFicha>
     </section>
   );
 }

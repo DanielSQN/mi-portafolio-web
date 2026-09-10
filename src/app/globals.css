@@ -29,14 +29,8 @@
   --shadow-hard: 5px 5px 0 #0a0f2c;
   --shadow-hard-red: 5px 5px 0 #59090c;
 
-  /* Alturas del HUD. Son constantes a propósito: la barra superior
-     encoge visualmente pero el hueco reservado no cambia, así el
-     contenido nunca salta al hacer scroll. */
-  --hud-top: 76px;
-  --hud-top-compact: 52px;
-  --hud-bottom: 64px;
-  --hud-rail: 236px;
-  --hud-strip: 52px;
+  /* Ancho de la única zona fija que queda: el rail lateral. */
+  --hud-rail: 248px;
 
   --font-sans-stack: var(--font-sans), ui-monospace, "SF Mono", Menlo,
     Consolas, monospace;
@@ -97,14 +91,10 @@ body {
   color: var(--text);
   font-family: var(--font-sans-stack);
   letter-spacing: 0;
-  /* hueco reservado para las barras fijas del HUD */
-  padding-top: var(--hud-top);
-  padding-bottom: var(--hud-bottom);
 }
 
 section[id] {
-  /* la cabecera fija comprimida + la cabecera pegajosa de sección */
-  scroll-margin-top: calc(var(--hud-top-compact) + 18px);
+  scroll-margin-top: 24px;
 }
 
 a {
@@ -197,7 +187,7 @@ body::before {
 
 .hero-grid,
 .content-grid,
-.contact-section,
+.contact-body,
 .about-section {
   display: grid;
   gap: 42px;
@@ -1626,8 +1616,11 @@ code {
 }
 
 .contact-section {
-  align-items: center;
   padding-bottom: 80px;
+}
+
+.contact-body {
+  align-items: start;
 }
 
 .contact-list {
@@ -1639,9 +1632,23 @@ code {
 .contact-list a,
 .contact-list span {
   align-items: center;
+  border: 2px solid var(--line-soft);
   color: var(--muted);
-  display: inline-flex;
-  gap: 10px;
+  display: flex;
+  gap: 12px;
+  padding: 13px 14px;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+.contact-list a:hover,
+.contact-list a:focus-visible {
+  border-color: var(--red);
+  box-shadow: 3px 3px 0 #0a0f2c;
+  color: var(--text);
+  transform: translate(-2px, -2px);
 }
 
 .contact-list svg {
@@ -1755,9 +1762,9 @@ form .primary-button:disabled {
 }
 
 .social-row {
-  border-top: 1px solid var(--line);
-  margin-top: 20px;
-  padding-top: 18px;
+  border-top: 2px solid var(--line-soft);
+  margin-top: 22px;
+  padding-top: 20px;
 }
 
 .social-row a {
@@ -1927,7 +1934,7 @@ form .primary-button:disabled {
 
 @media (max-width: 980px) {.hero-grid,
   .content-grid,
-  .contact-section,
+  .contact-body,
   .about-section {
     grid-template-columns: minmax(0, 1fr);
   }
@@ -2226,33 +2233,6 @@ form .primary-button:disabled {
   }
 }
 
-/* ===========================================================
-   HUD ARCADE — chrome fijo (barra superior, rail y comandos)
-   Las tres zonas son position: fixed y el body reserva su alto
-   en :root, así el contenido nunca salta durante el scroll.
-   =========================================================== */
-
-.hud-top {
-  align-items: center;
-  background: linear-gradient(180deg, #101a4a, #0a1132);
-  border-bottom: 4px solid var(--line);
-  display: grid;
-  gap: 18px;
-  grid-template-columns: auto auto minmax(0, 1fr) auto auto;
-  height: var(--hud-top);
-  left: 0;
-  padding: 0 18px;
-  position: fixed;
-  right: 0;
-  top: 0;
-  transition: height 220ms ease;
-  z-index: 40;
-}
-
-.hud-top.is-compact {
-  height: var(--hud-top-compact);
-}
-
 .hud-badge {
   align-items: center;
   background: var(--red);
@@ -2269,12 +2249,6 @@ form .primary-button:disabled {
     width 220ms ease,
     font-size 220ms ease;
   width: 44px;
-}
-
-.hud-top.is-compact .hud-badge {
-  font-size: 0.62rem;
-  height: 30px;
-  width: 30px;
 }
 
 .hud-id {
@@ -2298,10 +2272,6 @@ form .primary-button:disabled {
   text-transform: uppercase;
 }
 
-.hud-top.is-compact .hud-id small {
-  display: none;
-}
-
 .hud-progress {
   display: flex;
   flex-direction: column;
@@ -2323,10 +2293,6 @@ form .primary-button:disabled {
   font-weight: 400;
 }
 
-.hud-top.is-compact .hud-progress-head {
-  display: none;
-}
-
 .hud-progress-track {
   display: flex;
   gap: 3px;
@@ -2344,7 +2310,6 @@ form .primary-button:disabled {
   background: var(--red);
 }
 
-.hud-cv,
 .hud-rail-cv {
   align-items: center;
   background: var(--amber);
@@ -2363,22 +2328,9 @@ form .primary-button:disabled {
     box-shadow 140ms ease;
 }
 
-.hud-cv:hover,
 .hud-rail-cv:hover {
   box-shadow: 2px 2px 0 #6b4a00;
   transform: translate(2px, 2px);
-}
-
-.hud-menu {
-  align-items: center;
-  background: transparent;
-  border: 2px solid var(--line);
-  color: var(--text);
-  cursor: pointer;
-  display: none;
-  height: 44px;
-  justify-content: center;
-  width: 44px;
 }
 
 /* ----------------------- rail lateral ----------------------- */
@@ -2386,14 +2338,14 @@ form .primary-button:disabled {
 .hud-rail {
   background: rgba(9, 14, 44, 0.94);
   border-right: 4px solid var(--line);
-  bottom: var(--hud-bottom);
+  bottom: 0;
   display: flex;
   flex-direction: column;
   gap: 7px;
   left: 0;
   padding: 18px 14px;
   position: fixed;
-  top: var(--hud-top);
+  top: 0;
   width: var(--hud-rail);
   z-index: 30;
 }
@@ -2450,9 +2402,7 @@ form .primary-button:disabled {
   color: #14060a;
 }
 
-/* en desktop el CV vive solo en la cabecera; aquí sería un duplicado */
 .hud-rail-cv {
-  display: none;
   margin-top: auto;
 }
 
@@ -2473,121 +2423,6 @@ form .primary-button:disabled {
   width: 9px;
 }
 
-/* --------------------- barra de comandos --------------------- */
-
-.hud-bottom {
-  align-items: center;
-  background: linear-gradient(180deg, #0a1132, #101a4a);
-  border-top: 4px solid var(--line);
-  bottom: 0;
-  display: flex;
-  gap: 16px;
-  height: var(--hud-bottom);
-  left: 0;
-  padding: 0 18px;
-  position: fixed;
-  right: 0;
-  z-index: 40;
-}
-
-.hud-bottom.is-end {
-  background: var(--amber);
-  border-top-color: var(--amber);
-}
-
-.hud-cmd-keys,
-.hud-cmd-now,
-.hud-cmd-next,
-.hud-cmd-back {
-  align-items: center;
-  display: inline-flex;
-  font-family: var(--font-display-stack);
-  font-size: 0.55rem;
-  gap: 9px;
-  letter-spacing: 1px;
-}
-
-.hud-cmd-keys {
-  color: var(--soft);
-}
-
-.hud-key {
-  background: var(--soft);
-  border: 2px solid var(--text);
-  color: var(--ink);
-  padding: 6px 8px;
-}
-
-.hud-cmd-sep {
-  background: var(--line);
-  height: 22px;
-  width: 2px;
-}
-
-.hud-cmd-now {
-  color: var(--amber);
-}
-
-.hud-cmd-spacer {
-  flex-grow: 1;
-}
-
-.hud-cmd-next,
-.hud-cmd-back {
-  background: var(--red);
-  border: 2px solid #ffd0d0;
-  color: #14060a;
-  padding: 8px 10px;
-}
-
-.hud-cmd-next em,
-.hud-cmd-now em {
-  font-style: normal;
-}
-
-.hud-cmd-next em {
-  color: #5c1010;
-}
-
-.hud-cmd-next b {
-  font-weight: 400;
-}
-
-/* los nombres de sección no pueden partir la barra en dos líneas */
-.hud-cmd-keys,
-.hud-cmd-now,
-.hud-cmd-next,
-.hud-cmd-back {
-  white-space: nowrap;
-}
-
-.hud-bottom.is-end .hud-cmd-now {
-  color: var(--amber-ink);
-}
-
-.hud-bottom.is-end .hud-cmd-keys {
-  color: #6b5200;
-}
-
-.hud-bottom.is-end .hud-key {
-  background: var(--amber-ink);
-  border-color: var(--amber-ink);
-  color: var(--amber);
-}
-
-.hud-bottom.is-end .hud-cmd-sep {
-  background: var(--amber-ink);
-}
-
-.hud-bottom.is-end .hud-cmd-next {
-  background: var(--ink);
-  border-color: var(--ink);
-  color: var(--amber);
-}
-
-/* ------------------- tira móvil y scrim ------------------- */
-
-.hud-strip,
 .hud-scrim {
   display: none;
 }
@@ -2611,33 +2446,9 @@ body.has-hud .site-footer {
 }
 
 @media (max-width: 980px) {
-  body {
-    padding-top: calc(var(--hud-top) + var(--hud-strip));
-  }
-
   body.has-hud main,
   body.has-hud .site-footer {
     margin-left: 0;
-  }
-
-  .hud-top {
-    gap: 12px;
-    grid-template-columns: auto minmax(0, 1fr) auto;
-    padding: 0 12px;
-  }
-
-  .hud-progress,
-  .hud-cv {
-    display: none;
-  }
-
-  /* la cabecera oculta el CV en móvil, así que el panel sí lo lleva */
-  .hud-rail-cv {
-    display: inline-flex;
-  }
-
-  .hud-menu {
-    display: inline-flex;
   }
 
   /* el rail se convierte en panel deslizante */
@@ -2665,85 +2476,9 @@ body.has-hud .site-footer {
     position: fixed;
     z-index: 50;
   }
-
-  /* tira horizontal de secciones bajo la cabecera */
-  .hud-strip {
-    align-items: center;
-    background: #0a1132;
-    border-bottom: 3px solid var(--line);
-    display: flex;
-    gap: 7px;
-    height: var(--hud-strip);
-    left: 0;
-    overflow-x: auto;
-    padding: 0 12px;
-    position: fixed;
-    right: 0;
-    scrollbar-width: none;
-    top: var(--hud-top);
-    z-index: 39;
-  }
-
-  .hud-strip::-webkit-scrollbar {
-    display: none;
-  }
-
-  .hud-strip a {
-    border: 2px solid var(--line-soft);
-    color: #7f92d8;
-    flex-shrink: 0;
-    font-family: var(--font-display-stack);
-    font-size: 0.5rem;
-    letter-spacing: 1px;
-    padding: 9px 8px;
-    white-space: nowrap;
-  }
-
-  .hud-strip a.is-active {
-    background: var(--red);
-    border: 2px solid #ffd0d0;
-    color: #14060a;
-  }
-
-  .hud-strip a span {
-    color: #3f4f92;
-  }
-
-  .hud-strip a.is-active span {
-    color: #14060a;
-  }
-
-  /* la barra de comandos baja a la zona del pulgar */
-  .hud-bottom {
-    gap: 10px;
-    height: 68px;
-    padding: 0 12px;
-  }
-
-  .hud-cmd-keys,
-  .hud-cmd-sep {
-    display: none;
-  }
-
-  .hud-cmd-next,
-  .hud-cmd-back {
-    min-height: 46px;
-  }
-
-  /* en 390px solo caben el contador y el número de la siguiente */
-  .hud-cmd-next em,
-  .hud-cmd-next b,
-  .hud-cmd-now em {
-    display: none;
-  }
-
-  .hud-cmd-next {
-    gap: 7px;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .hud-top,
   .hud-badge,
   .hud-rail,
   .hud-progress-track i {
@@ -3290,5 +3025,222 @@ body.has-hud .site-footer {
 
   .ficha-power {
     grid-template-columns: minmax(0, 1fr) 66px;
+  }
+}
+
+/* ===========================================================
+   El rail asume lo que hacían las dos barras fijas
+   =========================================================== */
+
+.hud-rail-brand {
+  align-items: center;
+  border-bottom: 2px solid var(--line-soft);
+  display: flex;
+  gap: 11px;
+  padding: 4px 2px 16px;
+  position: relative;
+}
+
+.hud-rail-brand .hud-badge {
+  flex-shrink: 0;
+}
+
+.hud-rail .hud-progress {
+  padding: 16px 2px;
+  position: relative;
+}
+
+.hud-rail-title {
+  margin-top: 4px;
+}
+
+/* Botón flotante: en móvil no cabe una columna fija, y reponer una
+   barra sería volver a lo que se quitó. Va abajo a la derecha, en la
+   zona del pulgar, con área táctil de 56px. */
+.hud-fab {
+  align-items: center;
+  background: var(--red);
+  border: 3px solid #ffd0d0;
+  bottom: 18px;
+  box-shadow: var(--shadow-hard-red);
+  color: #14060a;
+  cursor: pointer;
+  display: none;
+  height: 56px;
+  justify-content: center;
+  position: fixed;
+  right: 18px;
+  width: 56px;
+  z-index: 60;
+}
+
+.hud-fab:hover {
+  box-shadow: 2px 2px 0 #59090c;
+  transform: translate(2px, 2px);
+}
+
+/* ===========================================================
+   La ficha es el hero: ocupa la pantalla y contiene el discurso
+   =========================================================== */
+
+.hero {
+  padding-bottom: 0;
+  padding-top: 0;
+}
+
+.ficha-hero {
+  min-height: calc(100vh - 48px);
+}
+
+.ficha-hero .ficha-body {
+  display: grid;
+  flex-grow: 1;
+  gap: 28px 34px;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  padding: 26px 24px;
+}
+
+.ficha-speech {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  justify-content: center;
+  min-width: 0;
+}
+
+.ficha-speech .hero-title,
+.ficha-speech .hero-summary,
+.ficha-speech .hero-terminal {
+  margin-bottom: 0;
+}
+
+.ficha-data {
+  border-left: 2px solid var(--line-soft);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+  padding-left: 26px;
+}
+
+/* el hero ya no necesita su propia rejilla: la ficha la provee */
+.hero-grid,
+.hero-visual {
+  display: contents;
+}
+
+@media (max-width: 1180px) {
+  .ficha-hero .ficha-body {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .ficha-data {
+    border-left: 0;
+    border-top: 2px solid var(--line-soft);
+    padding-left: 0;
+    padding-top: 22px;
+  }
+}
+
+@media (max-width: 980px) {
+  .hud-fab {
+    display: inline-flex;
+  }
+
+  .ficha-hero {
+    min-height: 0;
+  }
+
+  .ficha-hero .ficha-body {
+    padding: 20px 15px;
+  }
+}
+
+/* el nombre no cabe a dos líneas en el ancho del rail */
+.hud-rail-brand .hud-id strong {
+  /* Press Start 2P es casi monoespaciada y muy ancha: a 0.58rem el
+     nombre se partía en dos líneas dentro del rail */
+  font-size: 0.54rem;
+  line-height: 1.5;
+}
+
+.hud-rail-brand .hud-id small {
+  font-size: 0.62rem;
+  letter-spacing: 1px;
+}
+
+/* En pantallas bajas (1366x768 es lo común en portátil) la ficha se
+   pasaba del alto útil. Se compacta en vez de recortarse. */
+@media (min-width: 981px) and (max-height: 900px) {
+  .ficha-hero .ficha-body {
+    gap: 20px 28px;
+    padding: 18px 20px;
+  }
+
+  .ficha-hero .ficha-speech {
+    gap: 13px;
+  }
+
+  .ficha-hero .ficha-data {
+    gap: 14px;
+  }
+
+  .ficha-hero .ficha-avatar {
+    font-size: 0.8rem;
+    height: 60px;
+    width: 60px;
+  }
+
+  .ficha-hero .ficha-block-title {
+    margin-bottom: 7px;
+  }
+
+  .ficha-hero .ficha-powers {
+    gap: 6px;
+  }
+
+  .ficha-hero .ficha-creed {
+    padding-top: 12px;
+  }
+
+  .ficha-hero .ficha-creed p:not(.ficha-block-title) {
+    font-size: 0.71rem;
+    line-height: 1.6;
+    margin-bottom: 5px;
+  }
+
+  /* con dos marquesinas el panel no cabe; basta la de arriba */
+  .ficha-hero .tool-rail-bottom {
+    display: none;
+  }
+
+  .ficha-hero .hero-summary {
+    font-size: 0.82rem;
+  }
+}
+
+/* segundo escalón: 1280x720 y portátiles bajos */
+@media (min-width: 981px) and (max-height: 780px) {
+  .ficha-hero .ficha-body {
+    gap: 16px 24px;
+    padding: 13px 18px;
+  }
+
+  .ficha-hero .ficha-speech {
+    gap: 10px;
+  }
+
+  .ficha-hero .hero-title {
+    font-size: clamp(0.95rem, 1.6vw, 1.4rem);
+  }
+
+  .ficha-hero .ficha-creed p:not(.ficha-block-title) {
+    font-size: 0.68rem;
+    margin-bottom: 4px;
+  }
+
+  .ficha-hero .tool-chip {
+    font-size: 0.72rem;
+    padding: 6px 10px;
   }
 }
