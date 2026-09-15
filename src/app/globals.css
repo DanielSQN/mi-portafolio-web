@@ -3129,7 +3129,7 @@ body.has-hud .site-footer {
 
 /* el numeral vive detrás del texto, recortado por el borde derecho */
 .section-head-ghost {
-  color: #101a4a;
+  color: #7a1a2e;
   font-family: var(--font-display-stack);
   font-size: 13rem;
   line-height: 0.78;

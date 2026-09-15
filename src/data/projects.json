@@ -1,6 +1,6 @@
 [
   {
-    "name": "Persil & MAS Color — Promo de facturas",
+    "name": "Persil + MAS Te Premian",
     "category": "freelance",
     "categoryLabel": "Freelance",
     "tags": [
@@ -8,9 +8,9 @@
       "React",
       "WhatsApp"
     ],
-    "description": "Sitio de la promoción de Persil y MAS Color (Henkel Colombiana): los participantes registran su factura por WhatsApp y consultan las bases de la campaña.",
+    "description": "Landing de la promoción de Persil y MAS Color: el comprador registra su factura de Éxito o Jumbo por WhatsApp y participa por una de ocho lavadoras Whirlpool. Mecánica paso a paso, premios, preguntas frecuentes y términos.",
     "accent": "ai",
-    "img": "",
+    "img": "/projects/persil-mas-te-premian.png",
     "priority": 1,
     "viewUrl": "https://www.persilymastepremian.com.co",
     "githubUrl": "",
