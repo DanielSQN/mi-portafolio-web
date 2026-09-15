@@ -23,7 +23,8 @@ export default function AboutSection() {
       <Reveal className="about-section glass-card" variant="clip">
         <div className="portrait-card">
           <div className="portrait-glow" />
-          <div className="portrait-photo" aria-label="Foto de Daniel Quintero" />
+          <div className="portrait-photo" role="img"
+            aria-label="Retrato de Santiago Quintero, Software Engineer" />
         </div>
 
         <div className="about-copy">

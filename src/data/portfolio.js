@@ -1,6 +1,7 @@
 export const profile = {
-  name: "Daniel Quintero",
-  navName: "Santiago Quintero",
+  name: "Santiago Quintero",
+  // el nombre completo solo se usa en los datos estructurados y en la ficha
+  legalName: "Daniel Santiago Quintero Niño",
   preferredName: "Santi",
   role: "Software Engineer | Full Stack Developer | Integrations & Automation",
   eyebrow: "Software Engineer",
@@ -12,7 +13,7 @@ export const profile = {
   phone: "+57 302 384 6761",
   linkedin: "linkedin.com/in/danielsantiagoqn",
   github: "github.com/DanielSQN",
-  siteUrl: "https://mi-portafolio-web.vercel.app",
+  siteUrl: "https://dsqn.dev",
   cvLabel: "Descargar CV",
   cvUrl: "/cv/Daniel-Quintero-CV.pdf"
 };

@@ -27,54 +27,64 @@ export const viewport = {
   themeColor: "#070a1e"
 };
 
+const TITULO = "Santiago Quintero — Software Engineer en Bogotá";
+const DESCRIPCION =
+  "Santiago Quintero, ingeniero de sistemas y Software Engineer en Bogotá. " +
+  "Siete años construyendo integraciones empresariales con Oracle Integration " +
+  "Cloud, interfaces con Next.js y React, y automatización con IA para el " +
+  "sector financiero.";
+
 export const metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Daniel Quintero | Software Engineer",
-    template: "%s | Daniel Quintero"
+    default: TITULO,
+    template: "%s | Santiago Quintero"
   },
-  description:
-    "Software Engineer especializado en desarrollo full stack, automatización y soluciones digitales de alto impacto.",
-  applicationName: "Daniel Quintero Portfolio",
-  authors: [{ name: "Daniel Quintero", url: siteUrl }],
-  creator: "Daniel Quintero",
-  publisher: "Daniel Quintero",
+  description: DESCRIPCION,
+  applicationName: "Portafolio de Santiago Quintero",
+  authors: [{ name: profile.name, url: siteUrl }],
+  creator: profile.name,
+  publisher: profile.name,
+  category: "technology",
   keywords: [
-    "Daniel Quintero",
-    "Software Engineer",
-    "Oracle OIC",
+    "Santiago Quintero",
+    "Daniel Santiago Quintero",
+    "Santiago Quintero desarrollador",
+    "Software Engineer Bogotá",
+    "desarrollador full stack Colombia",
+    "Oracle Integration Cloud",
+    "integraciones empresariales",
     "Next.js",
     "React",
-    "Integraciones empresariales",
-    "Automatización",
-    "Inteligencia artificial",
-    "Bogotá"
+    "automatización",
+    "portafolio desarrollador"
   ],
   alternates: {
     canonical: "/"
   },
   openGraph: {
-    title: "Daniel Quintero | Software Engineer",
-    description:
-      "Construyo soluciones que generan impacto.",
+    title: TITULO,
+    description: DESCRIPCION,
     url: "/",
-    siteName: "Daniel Quintero Portfolio",
+    siteName: "Santiago Quintero",
     locale: "es_CO",
-    type: "website",
+    type: "profile",
+    firstName: "Santiago",
+    lastName: "Quintero",
+    username: "DanielSQN",
     images: [
       {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Daniel Quintero Software Engineer"
+        alt: "Santiago Quintero — Software Engineer en Bogotá"
       }
     ]
   },
   twitter: {
     card: "summary_large_image",
-    title: "Daniel Quintero | Software Engineer",
-    description:
-      "Construyo soluciones que generan impacto.",
+    title: TITULO,
+    description: DESCRIPCION,
     images: ["/opengraph-image"]
   },
   robots: {
@@ -84,6 +94,7 @@ export const metadata = {
       index: true,
       follow: true,
       "max-image-preview": "large",
+      "max-video-preview": -1,
       "max-snippet": -1
     }
   },
@@ -95,10 +106,60 @@ export const metadata = {
   manifest: "/manifest.webmanifest"
 };
 
+// Datos estructurados: es lo que permite a Google entender que la página
+// describe a una persona concreta y enlazarla con sus perfiles.
+const personaJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: profile.name,
+  alternateName: [profile.legalName, profile.preferredName],
+  url: siteUrl,
+  image: `${siteUrl}/profile/daniel-quintero.png`,
+  jobTitle: "Software Engineer",
+  description: DESCRIPCION,
+  email: `mailto:${profile.email}`,
+  telephone: profile.phone,
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Bogotá",
+    addressCountry: "CO"
+  },
+  nationality: { "@type": "Country", name: "Colombia" },
+  knowsLanguage: ["es", "en"],
+  sameAs: [`https://${profile.github}`, `https://${profile.linkedin}`],
+  knowsAbout: [
+    "Oracle Integration Cloud",
+    "Integraciones empresariales",
+    "Next.js",
+    "React",
+    "Node.js",
+    "Python",
+    "Automatización de procesos",
+    "APIs REST y SOAP"
+  ]
+};
+
+const sitioJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Santiago Quintero",
+  url: siteUrl,
+  inLanguage: "es-CO",
+  author: { "@type": "Person", name: profile.name }
+};
+
 export default function RootLayout({ children }) {
   return (
-    <html lang="es" className={`${spaceMono.variable} ${pressStart.variable}`}>
-      <body>{children}</body>
+    <html lang="es-CO" className={`${spaceMono.variable} ${pressStart.variable}`}>
+      <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify([personaJsonLd, sitioJsonLd])
+          }}
+        />
+        {children}
+      </body>
     </html>
   );
 }

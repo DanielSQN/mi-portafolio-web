@@ -7,7 +7,16 @@ import certifications from "@/data/certifications.json";
 export const metadata = {
   title: "Certificaciones",
   description:
-    "Certificaciones de Daniel Quintero en cloud, integraciones, datos, IA y metodologias de entrega."
+    "Certificaciones de Santiago Quintero en Oracle Cloud, integraciones, " +
+    "datos, inteligencia artificial y metodologías ágiles de entrega.",
+  alternates: { canonical: "/certificaciones" },
+  openGraph: {
+    title: "Certificaciones | Santiago Quintero",
+    description:
+      "Credenciales en Oracle Cloud, integraciones, datos, IA y metodologías ágiles.",
+    url: "/certificaciones",
+    images: ["/opengraph-image"]
+  }
 };
 
 export default function CertificationsPage() {

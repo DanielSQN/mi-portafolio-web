@@ -9,7 +9,16 @@ import projects from "@/data/projects.json";
 export const metadata = {
   title: "Proyectos",
   description:
-    "Proyectos destacados de Daniel Quintero en desarrollo web, automatización, integraciones y analitica."
+    "Proyectos de Santiago Quintero: landings de campaña con Next.js, PWAs, " +
+    "integraciones empresariales, agentes con IA y electrónica con Arduino.",
+  alternates: { canonical: "/proyectos" },
+  openGraph: {
+    title: "Proyectos | Santiago Quintero",
+    description:
+      "Landings de campaña, PWAs, integraciones empresariales, agentes con IA y electrónica con Arduino.",
+    url: "/proyectos",
+    images: ["/opengraph-image"]
+  }
 };
 
 export default function ProjectsPage() {
