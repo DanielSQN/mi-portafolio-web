@@ -79,7 +79,7 @@ export default function Navbar({ subpage = false }) {
         >
           <span className="hud-badge">SQ</span>
           <span className="hud-id">
-            <strong>{profile.navName || profile.name}</strong>
+            <strong>{profile.name}</strong>
             <small>Software Engineer</small>
           </span>
         </Brand>
