@@ -82,18 +82,13 @@ export default function HeroSection() {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
 
-      tl.from(".hero-terminal", { autoAlpha: 0, y: 26, duration: 0.7 })
-        .from(
-          ".hero-word",
-          {
-            yPercent: 115,
-            autoAlpha: 0,
-            duration: 0.95,
-            stagger: 0.065,
-            ease: "power4.out"
-          },
-          "-=0.35"
-        )
+      tl.from(".hero-word", {
+        yPercent: 115,
+        autoAlpha: 0,
+        duration: 0.95,
+        stagger: 0.065,
+        ease: "power4.out"
+      })
         .from(".hero-summary", { autoAlpha: 0, y: 30, duration: 0.85 }, "-=0.55")
         .from(".typewriter-line", { autoAlpha: 0, y: 22, duration: 0.7 }, "-=0.6")
         .from(
@@ -108,7 +103,7 @@ export default function HeroSection() {
         )
         .from(".scroll-cue", { autoAlpha: 0, duration: 0.7 }, "-=0.3")
         .from(
-          ".laptop",
+          ".ficha",
           {
             autoAlpha: 0,
             y: 40,
@@ -125,16 +120,6 @@ export default function HeroSection() {
           0.7
         );
 
-      gsap.to(".hero-copy", {
-        y: -34,
-        ease: "none",
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top top",
-          end: "bottom top",
-          scrub: 0.6
-        }
-      });
     }, sectionRef);
 
     return () => ctx.revert();
@@ -144,13 +129,6 @@ export default function HeroSection() {
     <section className="hero section-shell" id="inicio" ref={sectionRef}>
       <WebCorner className="hero-web" />
       <HeroFicha data={heroJson} tools={orbitItems}>
-          <p className="hero-terminal">
-          <span className="hero-terminal-prompt">~$</span> whoami
-          <span className="hero-terminal-output">
-            {" "}
-            → Daniel Santiago Quintero · «{profile.preferredName}»
-          </span>
-        </p>
         <h1 className="hero-title" aria-label={`${heroTitle.lead} ${heroTitle.accent}`}>
           <TitleWords text={heroTitle.lead} />
           <TitleWords text={heroTitle.accent} accent />

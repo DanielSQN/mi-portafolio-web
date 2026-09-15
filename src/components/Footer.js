@@ -1,47 +1,19 @@
 import { ArrowUp } from "lucide-react";
-import { navItems, profile, socialLinks } from "@/data/portfolio";
+import { profile } from "@/data/portfolio";
 
+// El rail lateral ya lleva identidad y navegación, y la sección de
+// contacto los enlaces sociales. El pie se queda con lo único que no
+// está en ningún otro sitio: la nota legal y el volver arriba.
 export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
     <footer className="site-footer">
-      <div className="footer-shell">
-        <div className="footer-brand">
-          <strong>{profile.name}</strong>
-          <span>{profile.eyebrow} · {profile.location}</span>
-        </div>
-
-        <nav className="footer-nav" aria-label="Navegación del pie de pagina">
-          {navItems.map((item) => (
-            <a key={item.href} href={`/${item.href}`}>
-              {item.label}
-            </a>
-          ))}
-        </nav>
-
-        <div className="footer-social">
-          {socialLinks.map((link) => {
-            const isExternal = link.href.startsWith("http");
-            return (
-              <a
-                href={link.href}
-                key={link.label}
-                target={isExternal ? "_blank" : undefined}
-                rel={isExternal ? "noreferrer" : undefined}
-              >
-                {link.label}
-              </a>
-            );
-          })}
-        </div>
-      </div>
-
       <div className="footer-bottom">
         <small>
           © {year} {profile.name}. Construido con Next.js.
         </small>
-        <a className="back-to-top" href="#inicio" aria-label="Volver arriba">
+        <a className="back-to-top" href="#inicio">
           Volver arriba <ArrowUp size={14} />
         </a>
       </div>

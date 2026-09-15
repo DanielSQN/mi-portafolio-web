@@ -128,11 +128,6 @@ export default function Navbar({ subpage = false }) {
           {profile.cvLabel} <Download size={14} />
         </a>
 
-        <p className="hud-status">
-          <i aria-hidden="true" />
-          compilando_ideas
-        </p>
-
         {/* la araña baja por el hilo siguiendo la posición del scroll */}
         <div className="hud-thread" aria-hidden="true">
           <span
