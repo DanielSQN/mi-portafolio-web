@@ -13,7 +13,7 @@ export const profile = {
   phone: "+57 302 384 6761",
   linkedin: "linkedin.com/in/danielsantiagoqn",
   github: "github.com/DanielSQN",
-  siteUrl: "https://dsqn.dev",
+  siteUrl: "https://www.dsqn.dev",
   cvLabel: "Descargar CV",
   cvUrl: "/cv/Daniel-Quintero-CV.pdf"
 };
