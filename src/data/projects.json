@@ -1,13 +1,34 @@
 [
   {
+    "name": "Persil & MAS Color — Promo de facturas",
+    "category": "freelance",
+    "categoryLabel": "Freelance",
+    "tags": [
+      "Next.js",
+      "React",
+      "WhatsApp"
+    ],
+    "description": "Sitio de la promoción de Persil y MAS Color (Henkel Colombiana): los participantes registran su factura por WhatsApp y consultan las bases de la campaña.",
+    "accent": "ai",
+    "img": "",
+    "priority": 1,
+    "viewUrl": "https://www.persilymastepremian.com.co",
+    "githubUrl": "",
+    "youtubeUrl": ""
+  },
+  {
     "name": "Personal Finance PWA",
     "category": "personal",
     "categoryLabel": "Personal",
-    "tags": ["Next.js", "PWA", "Finanzas"],
+    "tags": [
+      "Next.js",
+      "PWA",
+      "Finanzas"
+    ],
     "description": "PWA local-first para organizar ingresos, gastos, presupuesto, ahorro y recibos en pesos colombianos.",
     "accent": "finance",
     "img": "/projects/personal-finance-pwa.png",
-    "priority": 1,
+    "priority": 2,
     "viewUrl": "https://personal-finance-pwa-blond.vercel.app/",
     "githubUrl": "https://github.com/DanielSQN/personal-finance-pwa",
     "youtubeUrl": ""
@@ -16,11 +37,15 @@
     "name": "Botones de Versículo con Arduino",
     "category": "personal",
     "categoryLabel": "Personal",
-    "tags": ["Arduino", "C++", "Electrónica"],
+    "tags": [
+      "Arduino",
+      "C++",
+      "Electrónica"
+    ],
     "description": "Proyecto con botones físicos en Arduino para activar y mostrar versículos.",
     "accent": "arduino",
     "img": "/projects/arduino-botones-versiculo.png",
-    "priority": 3,
+    "priority": 4,
     "viewUrl": "",
     "githubUrl": "https://github.com/DanielSQN/arduino-botones-versiculo",
     "youtubeUrl": "https://youtube.com/shorts/h_3Rsy91WHo"
@@ -29,11 +54,15 @@
     "name": "Reloj de Versículos con Matriz Arduino",
     "category": "personal",
     "categoryLabel": "Personal",
-    "tags": ["Arduino", "Matriz LED", "C++"],
+    "tags": [
+      "Arduino",
+      "Matriz LED",
+      "C++"
+    ],
     "description": "Reloj con matriz LED en Arduino que muestra versículos y contenido programado.",
     "accent": "arduino",
     "img": "/projects/arduino-matriz-reloj-versiculos.png",
-    "priority": 4,
+    "priority": 5,
     "viewUrl": "",
     "githubUrl": "https://github.com/DanielSQN/arduino-matriz-reloj-versiculos",
     "youtubeUrl": "https://youtube.com/shorts/hmtxgzqWS6M"
@@ -42,11 +71,15 @@
     "name": "Carta Invitacion Boda LT",
     "category": "freelance",
     "categoryLabel": "Freelance",
-    "tags": ["Next.js", "TypeScript", "Invitacion"],
+    "tags": [
+      "Next.js",
+      "TypeScript",
+      "Invitacion"
+    ],
     "description": "Invitacion web interactiva para la boda de Luisa y Tattan con carta animada, detalles del evento y confirmacion.",
     "accent": "wedding",
     "img": "/projects/carta-invitacion-boda-lt.png",
-    "priority": 6,
+    "priority": 7,
     "viewUrl": "",
     "githubUrl": "https://github.com/DanielSQN/carta-invitacion-boda-LT",
     "youtubeUrl": ""
@@ -55,11 +88,15 @@
     "name": "Casa Domótica con Arduino",
     "category": "school",
     "categoryLabel": "Colegio",
-    "tags": ["Arduino", "Bluetooth", "App Inventor"],
+    "tags": [
+      "Arduino",
+      "Bluetooth",
+      "App Inventor"
+    ],
     "description": "Maqueta de casa domótica con LEDs, puertas automaticas, reles de alto voltaje y control Bluetooth desde una app en App Inventor.",
     "accent": "arduino",
     "img": "/projects/casa-domotica-arduino.png",
-    "priority": 7,
+    "priority": 8,
     "viewUrl": "",
     "githubUrl": "",
     "youtubeUrl": "https://www.youtube.com/watch?v=cly4iNFuopY"
@@ -68,11 +105,15 @@
     "name": "IA Musical y Análisis de Sentimientos",
     "category": "university",
     "categoryLabel": "Universidad",
-    "tags": ["Next.js", "Python", "IA"],
+    "tags": [
+      "Next.js",
+      "Python",
+      "IA"
+    ],
     "description": "Proyecto de investigacion que analiza sentimientos por canciones escuchadas, crea dashboards y recomienda música por generos similares.",
     "accent": "music-ai",
     "img": "",
-    "priority": 9,
+    "priority": 10,
     "viewUrl": "",
     "githubUrl": "",
     "youtubeUrl": "https://www.youtube.com/watch?v=lc15a3Xth6w"
@@ -81,11 +122,15 @@
     "name": "Extensión Chrome con IA para Servicio al Cliente",
     "category": "freelance",
     "categoryLabel": "Freelance",
-    "tags": ["JavaScript", "HTML", "AI APIs"],
+    "tags": [
+      "JavaScript",
+      "HTML",
+      "AI APIs"
+    ],
     "description": "Extensión que analiza hilos de conversación y propone respuestas en español e inglés, con opción de generar respuestas personalizadas.",
     "accent": "chrome-ai",
     "img": "",
-    "priority": 5,
+    "priority": 6,
     "viewUrl": "",
     "githubUrl": "",
     "youtubeUrl": ""
@@ -94,11 +139,15 @@
     "name": "SmartSupervision PQRS",
     "category": "work",
     "categoryLabel": "Laboral",
-    "tags": ["Oracle OIC", "OSC", "Python"],
+    "tags": [
+      "Oracle OIC",
+      "OSC",
+      "Python"
+    ],
     "description": "Integración entre CRM y el sistema PQRS de la SFC para 33 momentos de intercambio de información, con microservicio Python para cifrado.",
     "accent": "enterprise",
     "img": "",
-    "priority": 8,
+    "priority": 9,
     "viewUrl": "",
     "githubUrl": "",
     "youtubeUrl": ""
@@ -107,11 +156,15 @@
     "name": "Agente Copilot para Análisis PQRS",
     "category": "work",
     "categoryLabel": "Laboral",
-    "tags": ["Copilot Studio", "REST API", "OIC"],
+    "tags": [
+      "Copilot Studio",
+      "REST API",
+      "OIC"
+    ],
     "description": "Agente en Microsoft Copilot Studio integrado con servicios REST para consultar PQRS, analizar sentimientos y generar respuestas automatizadas.",
     "accent": "copilot",
     "img": "",
-    "priority": 2,
+    "priority": 3,
     "viewUrl": "",
     "githubUrl": "",
     "youtubeUrl": ""
@@ -120,11 +173,15 @@
     "name": "Modelo de Rotacion de Contactos",
     "category": "work",
     "categoryLabel": "Laboral",
-    "tags": ["Python", "OIC", "GCP"],
+    "tags": [
+      "Python",
+      "OIC",
+      "GCP"
+    ],
     "description": "Microservicio Python conectado con OIC y GCP para traer información de clientes y apoyar modelos de rotacion para marketing y ventas.",
     "accent": "automation",
     "img": "",
-    "priority": 10,
+    "priority": 11,
     "viewUrl": "",
     "githubUrl": "",
     "youtubeUrl": ""
@@ -133,11 +190,15 @@
     "name": "Comunicacion Segura de Respuestas PQRS",
     "category": "work",
     "categoryLabel": "Laboral",
-    "tags": ["Oracle OIC", "Cifrado", "REST"],
+    "tags": [
+      "Oracle OIC",
+      "Cifrado",
+      "REST"
+    ],
     "description": "Integración OIC para enviar respuestas al cliente con metodos de cifrado que fortalecen la seguridad y la gestión de PQRS.",
     "accent": "enterprise",
     "img": "",
-    "priority": 11,
+    "priority": 12,
     "viewUrl": "",
     "githubUrl": "",
     "youtubeUrl": ""
@@ -146,11 +207,15 @@
     "name": "Mi Plan de Salud",
     "category": "freelance",
     "categoryLabel": "Freelance",
-    "tags": ["HTML", "CSS", "JavaScript"],
+    "tags": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ],
     "description": "Sitio para asesoria de medicina prepagada con cotizacion por WhatsApp, planes de salud y secciones informativas.",
     "accent": "health",
     "img": "",
-    "priority": 12,
+    "priority": 13,
     "viewUrl": "",
     "githubUrl": "https://github.com/DanielSQN/plan-de-salud",
     "youtubeUrl": ""

@@ -79,15 +79,6 @@ export default function HeroFicha({ data, tools = [], children }) {
         </div>
 
         <div className="ficha-block">
-          <p className="ficha-block-title">Clase</p>
-          <div className="ficha-tags">
-            {data.sobre_mi.map((item) => (
-              <span key={item}>{item}</span>
-            ))}
-          </div>
-        </div>
-
-        <div className="ficha-block">
           <p className="ficha-block-title">Superpoderes</p>
           <ul className="ficha-powers">
             {data.superpoderes.map((power) => (

@@ -7,16 +7,18 @@ const interestIcons = [Bike, Gamepad2, BookOpen, Dumbbell, Laptop];
 export default function AboutSection() {
   return (
     <section className="section-shell about-shell" id="sobre-mi">
-      <div className="section-banner">
-        <span className="section-banner-index" aria-hidden="true">
-          02
+      <div className="section-head">
+        <span className="section-head-rule" aria-hidden="true" />
+        <p className="section-head-count">
+          02 <span>/ 07</span>
+        </p>
+        <p className="section-head-label">Sobre mí</p>
+        <h2>
+          Ingeniero de día, <span>explorador a tiempo completo.</span>
+        </h2>
+        <span className="section-head-ghost" aria-hidden="true">
+          2
         </span>
-        <div className="section-banner-main">
-          <p className="section-banner-label">Sobre mí</p>
-          <h2>
-            Ingeniero de día, <span>explorador a tiempo completo.</span>
-          </h2>
-        </div>
       </div>
       <Reveal className="about-section glass-card" variant="clip">
         <div className="portrait-card">

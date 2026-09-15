@@ -82,20 +82,22 @@ export default function ContactSection() {
 
   return (
     <section className="section-shell contact-section" id="contacto">
-      <Reveal className="section-banner" variant="left">
-        <span className="section-banner-index" aria-hidden="true">
-          07
-        </span>
-        <div className="section-banner-main">
-          <p className="section-banner-label">Contacto</p>
-          <h2>
-            Tu idea merece <span>un gran código.</span>
-          </h2>
-        </div>
-        <p className="section-banner-copy">
+      <Reveal className="section-head" variant="left">
+        <span className="section-head-rule" aria-hidden="true" />
+        <p className="section-head-count">
+          07 <span>/ 07</span>
+        </p>
+        <p className="section-head-label">Contacto</p>
+        <h2>
+          Tu idea merece <span>un gran código.</span>
+        </h2>
+        <p className="section-head-copy">
           ¿Un proyecto, una vacante o solo ganas de hablar de tecnología? Mi
           bandeja de entrada está abierta — respondo más rápido que un webhook.
         </p>
+        <span className="section-head-ghost" aria-hidden="true">
+          7
+        </span>
       </Reveal>
 
       <div className="contact-body">
