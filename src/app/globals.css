@@ -3265,8 +3265,18 @@ body.has-hud .site-footer {
 }
 
 @media (max-width: 1180px) {
+  /* La regla de dos columnas de arriba se escribió después de la de una
+     columna del bloque original, así que la pisaba en todos los anchos y
+     en móvil el hero quedaba en 193px de texto y 93px de datos. */
+  .ficha-hero .ficha-body {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
   .ficha-hero .ficha-data {
+    border-left: 0;
+    border-top: 2px solid var(--line-soft);
     padding-left: 0;
+    padding-top: 22px;
   }
 }
 
